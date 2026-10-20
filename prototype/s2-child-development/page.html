@@ -1,0 +1,236 @@
+<title>다음걸음 아이 발달 지원</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: 한 장짜리 안내문 — 화면에선 한 줄 흐름, 인쇄(A4)에선 단계 3개를 왼쪽, 보조 상자를 오른쪽에 둔 2단 */
+:root {
+  --paper: #f6f8f7;
+  --ink: #1b2826;
+  --muted: #4c5d59;
+  --line: #cbd8d4;
+  --care: #1d6b5b;
+  --care-soft: #e2efeb;
+  --urgent: #9a4b08;
+  --urgent-soft: #fbeedd;
+  --display: "Gowun Batang", "Nanum Myeongjo", "Apple SD Gothic Neo", serif;
+  --body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #141c1b; --ink: #e5eeeb; --muted: #a7b8b3; --line: #2f3f3c;
+    --care: #6cc2ac; --care-soft: #1c2e2a; --urgent: #f0a65c; --urgent-soft: #33261a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #141c1b; --ink: #e5eeeb; --muted: #a7b8b3; --line: #2f3f3c;
+  --care: #6cc2ac; --care-soft: #1c2e2a; --urgent: #f0a65c; --urgent-soft: #33261a;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.sheet {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding-block: 2rem 3rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: 1.75rem;
+}
+
+/* 머리 */
+header { display: grid; gap: .6rem; border-bottom: 2px solid var(--ink); padding-bottom: 1.1rem; }
+.meta { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-size: .9rem; color: var(--muted); }
+.meta b { color: var(--care); font-weight: 700; letter-spacing: .02em; }
+h1 {
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  line-height: 1.25;
+  margin: 0;
+  text-wrap: balance;
+}
+.lead { margin: 0; max-width: 40em; font-size: 1.15rem; }
+
+/* 본문 2단 */
+.cols { display: grid; gap: 1.75rem; align-items: start; }
+@media (min-width: 52rem) { .cols { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); align-items: start; } }
+
+/* 단계 — 실제 순서라 번호를 붙임 */
+ol.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem; counter-reset: step; align-content: start; }
+.step { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: .9rem; counter-increment: step; }
+.step::before {
+  content: counter(step);
+  width: 2.6rem; height: 2.6rem;
+  border-radius: 50%;
+  background: var(--care);
+  color: var(--paper);
+  font-weight: 700; font-size: 1.25rem;
+  display: grid; place-items: center;
+}
+.step h2 { margin: 0 0 .15rem; font-size: 1.3rem; line-height: 1.4; text-wrap: balance; }
+.when { display: block; font-size: .85rem; font-weight: 700; color: var(--care); letter-spacing: .04em; }
+.step p { margin: .4rem 0 0; }
+.step ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+.step li + li { margin-top: .15rem; }
+.say {
+  margin-top: .5rem;
+  padding: .6rem .85rem;
+  border-left: 3px solid var(--care);
+  background: var(--care-soft);
+  font-weight: 500;
+}
+.small { font-size: .92rem; color: var(--muted); }
+.hospitals { font-size: .9rem; color: var(--muted); margin-top: .35rem; }
+
+/* 오른쪽 상자 */
+aside { display: grid; gap: 1.1rem; }
+.box { padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 6px; display: grid; gap: .45rem; }
+.box h3 { margin: 0; font-size: 1.1rem; line-height: 1.4; }
+.box p, .box ul { margin: 0; }
+.box ul { padding-left: 1.1rem; }
+.box.urgent { background: var(--urgent-soft); border-color: transparent; }
+.box.urgent h3 { color: var(--urgent); }
+.tag { font-size: .8rem; font-weight: 700; letter-spacing: .06em; color: var(--urgent); }
+
+.check { list-style: none; padding-left: 0 !important; display: grid; gap: .3rem; }
+.check li { display: grid; grid-template-columns: 1.2rem minmax(0, 1fr); gap: .5rem; }
+.check li::before { content: ""; width: .95rem; height: .95rem; margin-top: .38rem; border: 1.5px solid var(--muted); border-radius: 2px; }
+
+dl.phones { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .35rem 1rem; }
+dl.phones dt { color: var(--ink); }
+dl.phones dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; user-select: all; }
+
+dl.phones dd.txt { font-weight: 500; user-select: auto; }
+
+footer { border-top: 1px solid var(--line); padding-top: 1rem; display: grid; gap: .5rem; font-size: .85rem; color: var(--muted); }
+footer p { margin: 0; }
+.ask { font-size: 1rem; color: var(--ink); font-weight: 500; }
+footer a { color: var(--care); }
+a:focus-visible { outline: 2px solid var(--care); outline-offset: 2px; }
+
+/* A4 한 장 인쇄 */
+@page { size: A4; margin: 11mm 12mm; }
+@media print {
+  :root { --paper: #fff; --ink: #111; --muted: #3d4b48; --line: #b9c7c3; --care: #155b4c; --care-soft: #e8f2ef; --urgent: #8a4100; --urgent-soft: #fbefe0; color-scheme: light; }
+  body { font-size: 10.3pt; line-height: 1.5; background: #fff; }
+  .sheet { padding: 0; max-width: none; gap: 3.5mm; }
+  header { gap: 1.5mm; padding-bottom: 2.5mm; }
+  h1 { font-size: 19pt; }
+  .lead { font-size: 10pt; }
+  .cols { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 5mm; }
+  ol.steps { gap: 5mm; }
+  .step { grid-template-columns: 7mm minmax(0, 1fr); gap: 2.5mm; }
+  .step::before { width: 7mm; height: 7mm; font-size: 10pt; }
+  .step h2 { font-size: 11pt; }
+  .step p, .step ul { margin-top: 1mm; }
+  .say { padding: 1.5mm 2.5mm; margin-top: 1.5mm; }
+  aside { gap: 2.5mm; }
+  .box { padding: 2.5mm 3mm; gap: 1mm; }
+  .box h3 { font-size: 10pt; }
+  .hospitals, .small { font-size: 8.4pt; }
+  footer { font-size: 7.6pt; padding-top: 2mm; gap: 1mm; }
+  .ask { font-size: 9pt; }
+  footer a { color: inherit; text-decoration: none; }
+}
+</style>
+
+
+<main class="sheet">
+  <header>
+    <div class="meta"><b>다음걸음</b><span>화성시</span><span>2026년 10월 21일 기준</span></div>
+    <h1>아이 발달이 늦다는 말을 들었을 때</h1>
+    <p class="lead">영유아 검진이나 어린이집에서 아이 발달이 걱정된다는 말을 들었다면, 아래 순서대로 해 보세요. 장애 등록 전이라도 받을 수 있는 도움이 있습니다.</p>
+  </header>
+
+  <div class="cols">
+    <ol class="steps">
+      <li class="step">
+        <div>
+          <span class="when">검진 결과를 받았다면</span>
+          <h2>발달 정밀검사를 받고 검사비를 지원받으세요</h2>
+          <p>영유아 건강검진 발달평가에서 <strong>‘심화평가 권고’</strong>가 나왔다면 정밀검사비를 지원받을 수 있어요.</p>
+          <ul>
+            <li>기초생활수급·차상위는 최대 40만 원, 그 밖에는 최대 20만 원</li>
+            <li>검진일로부터 1년 안에 검사를 받고, 검사한 다음 해 상반기까지 보건소나 정부24에 신청</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="step">
+        <div>
+          <span class="when">진단을 받았다면, 등록 전이라도</span>
+          <h2>행정복지센터에 발달재활서비스를 신청하세요</h2>
+          <p>언어·놀이·행동·미술·음악 치료 같은 수업을 바우처로 지원합니다. <strong>만 6세 미만은 장애 등록 전에도</strong> 전문의 의뢰서와 검사 결과로 신청할 수 있어요.</p>
+          <ul>
+            <li>기준중위소득 180% 이하 가정. 소득에 따라 지원액이 다르고 본인부담금이 있어요.</li>
+            <li>주소지 읍·면·동 행정복지센터에 신청하고, 이용할 치료기관은 가족이 직접 골라 계약합니다.</li>
+          </ul>
+          <p class="small">치료기관 목록: 사회서비스 전자바우처 누리집(socialservice.or.kr)</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div>
+          <span class="when">어린이집·유치원·학교에서 도움이 필요하면</span>
+          <h2>특수교육대상자 선정을 신청하세요</h2>
+          <p>보호자가 <strong>화성오산교육지원청 특수교육지원센터</strong>에 진단·평가를 의뢰합니다. 장애 등록이 없어도 교육 지원이 필요하면 선정될 수 있어요.</p>
+          <ul>
+            <li>의뢰 후 30일 안에 진단·평가, 그 뒤 2주 안에 선정 여부를 알려 줍니다.</li>
+            <li>9세 미만은 ‘발달지체’로도 선정될 수 있어요.</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+
+    <aside>
+      <section class="box urgent" aria-labelledby="reg-h">
+        <span class="tag">알아 두세요</span>
+        <h3 id="reg-h">장애 등록은 가족이 정할 일이에요</h3>
+        <p>위 1~3번은 등록 없이도 시작할 수 있어요. 등록하면 장애아동수당, 활동지원 같은 도움이 더 열립니다. 서두르기보다 아이에게 무엇이 필요한지부터 살펴보세요.</p>
+      </section>
+
+      <section class="box" aria-labelledby="child-h">
+        <h3 id="child-h">아이의 마음도 함께 봐 주세요</h3>
+        <p>치료기관이나 반을 고를 때 아이가 편안해하는지, 좋아하는 활동이 있는지 함께 살펴보세요. 아이에게도 무슨 일인지 쉬운 말로 알려 주면 좋아요.</p>
+      </section>
+
+      <section class="box" aria-labelledby="note-h">
+        <h3 id="note-h">상담 전에 챙겨 두세요</h3>
+        <ul class="check">
+          <li>영유아 건강검진 결과지 (발달평가)</li>
+          <li>어린이집·유치원 선생님이 본 모습</li>
+          <li>병원 진단서·검사 결과</li>
+          <li>건강보험료 확인 자료 (소득 기준 확인용)</li>
+          <li>아이가 좋아하는 것, 힘들어하는 것 메모</li>
+        </ul>
+      </section>
+
+      <section class="box" aria-labelledby="tel-h">
+        <h3 id="tel-h">물어볼 곳</h3>
+        <dl class="phones">
+          <dt>정밀검사비</dt><dd class="txt">화성시 보건소</dd>
+          <dt>발달재활서비스</dt><dd class="txt">주소지 행정복지센터</dd>
+          <dt>특수교육</dt><dd class="txt">화성오산교육지원청</dd>
+          <dt>보건복지상담센터</dt><dd>129</dd>
+        </dl>
+      </section>
+    </aside>
+  </div>
+
+  <footer>
+    <p class="ask">이 안내를 처음 발달 이야기를 들었을 때 받았다면 덜 막막하셨을까요? 빠지거나 헷갈리는 내용을 알려 주세요.</p>
+    <p>‘다음걸음’ 검증용 시안입니다. 2026년 10월 21일 공개 자료로 만들었으며, 지원 금액과 기준은 해마다 바뀔 수 있으니 창구에서 확인하세요.</p>
+    <p>출처: <a href="https://www.guro.go.kr/health/contents.do?key=4616&amp;">영유아 발달 정밀검사비 지원 안내(구로구 보건소)</a> · <a href="https://ihearim.com/developmental-rehabilitation-service-guide/">발달재활서비스 안내(2026)</a> · <a href="https://kbmaeil.com/article/20260926500059">발달재활서비스 2026 소득기준(경북매일)</a> · <a href="https://www.sen.go.kr/www/eduinfo/specialedu/specialinfo/specialinfo_1.jsp">특수교육대상자 선정 절차(서울시교육청)</a></p>
+  </footer>
+</main>
