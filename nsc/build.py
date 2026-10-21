@@ -11,6 +11,7 @@ import json
 import re
 from collections import Counter, defaultdict
 
+from . import geo
 from .core import DATA, log, read_json, regions, today, write_json
 
 # 장기요양기관 유형 코드. 공통코드 문서로 확인되지 않은 이름은 verified=False 로 둔다.
@@ -170,7 +171,7 @@ def ltc_institutions(snap, rk):
             "kind_code": x.get("adminPttnCd"), "kind": kind, "kind_verified": verified,
             "services": [kind] if kind else [],
             "area_code": f'{x.get("siDoCd")}{x.get("siGunGuCd")}', "gu": None, "gu_from": None,
-            "address": None,   # 도로명·건물번호 코드만 제공 → 주소 변환은 다음 단계
+            "address": None,   # 도로명·건물번호 코드만 제공 → geo.apply 에서 채움
             "designated": x.get("longTermPeribRgtDt"),
             **ltc_record(d),
         })
@@ -363,6 +364,7 @@ def main():
             if not x.get("gu") and x.get("address"):
                 x["gu"], x["gu_from"] = guess_gu(x["address"], table)
         inst = ltc + prov + dmc
+        geo_sum = geo.apply(inst, r, GU)
 
         progs = []
         if wel_s:
@@ -381,12 +383,13 @@ def main():
             "counts": {"institutions": len(inst), "programs": len(progs),
                        **Counter(x["source"] for x in inst), "구": dict(Counter(x.get("gu") or "모름" for x in inst))},
             "fill": {
-                "장기요양기관": fill(ltc, ("tel", "gu", "address", "capacity", "fees", "programs", "staff", "rooms", "homepage", "transport", "parking", "floor", "evaluations", "dementia_services")),
-                "사회서비스 제공기관": fill(prov, ("tel", "gu", "address", "lat")),
-                "치매안심센터": fill(dmc, ("tel", "gu", "address", "programs")),
+                "장기요양기관": fill(ltc, ("tel", "gu", "address", "road_address", "lat", "capacity", "fees", "programs", "staff", "rooms", "homepage", "transport", "parking", "floor", "evaluations", "dementia_services")),
+                "사회서비스 제공기관": fill(prov, ("tel", "gu", "address", "road_address", "office_outside", "lat")),
+                "치매안심센터": fill(dmc, ("tel", "gu", "address", "lat", "programs")),
                 "제도": fill(progs, ("has_detail", "target", "criteria", "benefit", "apply", "contact", "year", "provider_count")),
             },
             "dev_rehab": rehab,
+            "geo": geo_sum,
             "learned": {"구 사전 토큰 수": len(table), "우편번호→구": len(zips), "장기요양 지역코드→구": code_gu},
             "standard_fields": {k: sorted((v or [{}])[0].keys()) for k, v in (std_s or {}).items()},
         }
