@@ -114,12 +114,23 @@ def ltc():
             "ltc_detail_pending": len(todo) - ok, "ltc_detail_errors": errs}
 
 
-def _welfare_details(kind, rows, url, extra):
+# 중앙부처 복지서비스 상세는 개발계정 하루 100회 한도 → 하루 80건, 노인·장애·돌봄 관련부터
+NATIONAL_DAILY_CAP = 80
+PRIORITY = ("노년", "장애", "돌봄", "보호", "요양", "발달", "치매", "활동지원", "재활")
+
+
+def _priority(x):
+    text = " ".join(str(x.get(k) or "") for k in ("servNm", "lifeArray", "trgterIndvdlArray", "intrsThemaArray"))
+    return 0 if any(w in text for w in PRIORITY) else 1
+
+
+def _welfare_details(kind, rows, url, extra, cap=DETAIL_CAP_PER_RUN):
     cache_p = DATA / "state" / f"welfare_{kind}_detail.json"
     cache = read_json(cache_p, {})
     todo = [x for x in rows
             if x.get("servId") and ((cache.get(x["servId"]) or {}).get("lastModYmd") != x.get("lastModYmd")
-                                    or _stale((cache.get(x["servId"]) or {}).get("fetched"), 30))][:DETAIL_CAP_PER_RUN]
+                                    or _stale((cache.get(x["servId"]) or {}).get("fetched"), 30))]
+    todo = sorted(todo, key=lambda x: ((cache.get(x["servId"]) is not None), _priority(x)))[:cap]
     # 초당 호출 제한에 걸리지 않도록 동시 요청을 낮춘다
     got = fetch_details(todo, lambda x: parse(get(url, {**extra, "servId": x["servId"]}), "wantedDtl")[0], workers=2)
     for x, items in got:
@@ -153,7 +164,7 @@ def _national_list():
 def welfare():
     nat, total, how = _national_list()
     log(f"중앙부처 복지서비스 {len(nat)}/{total} ({how})")
-    nat_cache, nat_ok = _welfare_details("national", nat, NAT_DETAIL, {"callTp": "D"})
+    nat_cache, nat_ok = _welfare_details("national", nat, NAT_DETAIL, {"callTp": "D"}, cap=NATIONAL_DAILY_CAP)
 
     loc = {}
     for rk, r in regions().items():
@@ -202,7 +213,10 @@ def standard(rows=1000):
         allrows, total, page = [], None, 1
         try:
             while True:
-                body = json.loads(get(url, {"pageNo": page, "numOfRows": rows, "type": "json"}))
+                raw = get(url, {"pageNo": page, "numOfRows": rows, "type": "json"})
+                if page == 1:
+                    status[name] = {"sample": raw[:400]}
+                body = json.loads(raw)
                 b = (body.get("response") or {}).get("body") or {}
                 items = b.get("items") or []
                 if isinstance(items, dict):
@@ -212,10 +226,84 @@ def standard(rows=1000):
                 if not items or len(allrows) >= total or page > 50:
                     break
                 page += 1
-            status[name] = {"rows": len(allrows), "total": total}
+            status[name] = {**status.get(name, {}), "rows": len(allrows), "total": total}
         except (ApiError, ValueError) as e:
-            status[name] = {"error": str(e)[:200], "rows": len(allrows)}
+            status[name] = {**status.get(name, {}), "error": str(e)[:200], "rows": len(allrows)}
         out[name] = allrows
         log(f"표준데이터 {name}: {status[name]}")
     write_json(snap("standard"), out, gz=True)
     return {"standard": status}
+
+
+# 파일 데이터 (포털 내려받기). 이름 → 공공데이터 번호
+FILES = {
+    "ltc_eval": "15104801",        # 국민건강보험공단 장기요양기관 평가 결과
+    "dementia_ltc": "15145962",    # 국민건강보험공단 치매관련급여 제공 장기요양기관 현황
+}
+
+
+def _portal(url, data=None, timeout=60):
+    import urllib.parse
+    import urllib.request
+    body = urllib.parse.urlencode(data).encode() if data else None
+    req = urllib.request.Request(url, data=body, headers={"User-Agent": "Mozilla/5.0 (next-step-care)"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read(), dict(r.headers)
+
+
+def _decode_table(raw):
+    import csv
+    import io
+    for enc in ("utf-8-sig", "cp949", "euc-kr"):
+        try:
+            text = raw.decode(enc)
+            break
+        except UnicodeDecodeError:
+            continue
+    else:
+        return None
+    return list(csv.DictReader(io.StringIO(text)))
+
+
+def files():
+    """포털 파일 데이터: 상세 페이지 → selectFileDataDownload.do(파일 번호) → 파일 내려받기 → CSV 해석."""
+    import re
+    out, status = {}, {}
+    for name, pk in FILES.items():
+        st = status.setdefault(name, {})
+        try:
+            page = _portal(f"https://www.data.go.kr/data/{pk}/fileData.do")[0].decode("utf-8", "replace")
+            m = re.search(r"fn_fileDataDown\('(\d+)',\s*'([^']+)',\s*'([^']*)',\s*'(\d+)'", page)
+            if not m:
+                st["error"] = "다운로드 버튼을 찾지 못함"
+                continue
+            meta, _ = _portal("https://www.data.go.kr/tcs/dss/selectFileDataDownload.do",
+                              {"publicDataPk": m.group(1), "publicDataDetailPk": m.group(2), "atchFileId": m.group(3),
+                               "fileDetailSn": m.group(4), "publicDataTyCode": "PR0051"})
+            info = json.loads(meta.decode("utf-8", "replace"))
+            st["meta"] = {k: info.get(k) for k in ("status", "atchFileId", "fileDetailSn")}
+            fid, sn = info.get("atchFileId"), info.get("fileDetailSn")
+            raw = None
+            for cand in (f"https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId={fid}&fileDetailSn={sn}",
+                         f"https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId={fid}&fileDetailSn={sn}&dataNm={name}"):
+                try:
+                    raw, headers = _portal(cand)
+                    st["url_used"] = cand.split("?")[0]
+                    st["content_type"] = headers.get("Content-Type")
+                    break
+                except Exception as e:  # noqa: BLE001
+                    st.setdefault("tries", []).append(str(e)[:120])
+            if raw is None:
+                continue
+            (DATA / "snap" / today()).mkdir(parents=True, exist_ok=True)
+            (DATA / "snap" / today() / f"file_{name}.bin").write_bytes(raw)
+            rows = _decode_table(raw)
+            st["bytes"] = len(raw)
+            st["rows"] = len(rows) if rows is not None else None
+            st["columns"] = list(rows[0].keys())[:40] if rows else None
+            out[name] = rows or []
+        except Exception as e:  # noqa: BLE001
+            st["error"] = str(e)[:200]
+        log(f"파일 {name}: {st}")
+    write_json(snap("files"), out, gz=True)
+    return {"files": status}

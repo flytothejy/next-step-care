@@ -90,6 +90,19 @@ def learn_gu(rows, prefix):
     return table
 
 
+def learn_zip_gu(rows, prefix):
+    """우편번호 → 구. 구가 확인된 기관의 우편번호로 배운다 (한 우편번호가 한 구에만 나올 때)."""
+    votes = defaultdict(Counter)
+    for r in rows:
+        if not (r.get("signguName") or "").startswith(prefix):
+            continue
+        z = (r.get("loadZip") or r.get("zip") or "").strip()
+        m = GU.search((r.get("signguName") or "") + " " + (r.get("loadAddress") or r.get("address") or ""))
+        if z and m:
+            votes[z][m.group(1)] += 1
+    return {z: c.most_common(1)[0][0] for z, c in votes.items() if len(c) == 1}
+
+
 def guess_gu(addr, table):
     m = GU.search(addr or "")
     if m:
@@ -164,7 +177,7 @@ def ltc_institutions(snap, rk):
     return out
 
 
-def provider_institutions(rows, prefix, table):
+def provider_institutions(rows, prefix, table, zips=None):
     by = {}
     for r in rows:
         if not (r.get("signguName") or "").startswith(prefix) or r.get("serviceTypeName") not in CARE_TYPES:
@@ -172,6 +185,9 @@ def provider_institutions(rows, prefix, table):
         pid = r.get("providerId")
         addr = " ".join(p for p in (r.get("loadAddress") or r.get("address"), r.get("loadAddressDetail") or r.get("addressDetail")) if p) or None
         g, how = guess_gu(f'{r.get("signguName") or ""} {addr or ""}', table)
+        if not g and zips:
+            g = zips.get((r.get("loadZip") or r.get("zip") or "").strip())
+            how = "우편번호" if g else None
         e = by.setdefault(pid, {
             "id": f"ssv:{pid}", "source": "사회서비스 제공기관", "name": r.get("providerName"),
             "services": [], "service_types": [], "gu": g, "gu_from": how,
@@ -225,7 +241,7 @@ def ltc_gu_from_names(ltc, providers):
         if n >= 2 and n / total >= 0.8:
             table[code] = g
     for x in ltc:
-        if x["area_code"] in table:
+        if x["area_code"] in table and not x.get("gu"):
             x["gu"], x["gu_from"] = table[x["area_code"]], "같은 이름 제공기관"
     return table
 
@@ -290,9 +306,14 @@ def main():
         prefix = r["provider_signgu_prefix"]
         prov_rows = (prov_s or {}).get("rows", [])
         table = learn_gu(prov_rows, prefix)
+        zips = learn_zip_gu(prov_rows, prefix)
 
         ltc = ltc_institutions(ltc_s, rk) if ltc_s else []
-        prov = provider_institutions(prov_rows, prefix, table)
+        for x in ltc:
+            z = (x.get("addr_codes") or {}).get("hmPostNo")
+            if z and z in zips:
+                x["gu"], x["gu_from"] = zips[z], "우편번호"
+        prov = provider_institutions(prov_rows, prefix, table, zips)
         dmc = dementia_centers((std_s or {}).get("dementia_center"), r["name"], table)
         code_gu = ltc_gu_from_names(ltc, prov)
         inst = ltc + prov + dmc
@@ -319,7 +340,7 @@ def main():
                 "치매안심센터": fill(dmc, ("tel", "gu", "address", "programs")),
                 "제도": fill(progs, ("has_detail", "target", "criteria", "benefit", "apply", "contact", "year", "provider_count")),
             },
-            "learned": {"구 사전 토큰 수": len(table), "장기요양 지역코드→구": code_gu},
+            "learned": {"구 사전 토큰 수": len(table), "우편번호→구": len(zips), "장기요양 지역코드→구": code_gu},
             "standard_fields": {k: sorted((v or [{}])[0].keys()) for k, v in (std_s or {}).items()},
         }
         write_json(out / "meta.json", meta)

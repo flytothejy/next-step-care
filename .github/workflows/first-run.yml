@@ -27,7 +27,7 @@ jobs:
           python-version: "3.12"
       - run: pip install -q -r requirements.txt
       - run: python -m nsc sync pull
-      - run: python -m nsc collect ltc welfare standard
+      - run: python -m nsc collect welfare standard files
         timeout-minutes: 70
         continue-on-error: true
       - run: python -m nsc build
