@@ -1,0 +1,513 @@
+{
+ "swagger": "2.0",
+ "info": {
+  "description": "국민건강보험공단의 장기요양기관 검색서비스 API는 공공데이터포털에서 제공하는 서비스로, 사용자가 장기요양기관에 대한 정보를 손쉽게 조회할 수 있도록 지원합니다. 이 API를 통해 이용자는 각 기관의 주소, 서비스 유형 등 정보를 검색할 수 있으며, 지역별로 분류된 데이터를 제공하여 접근성을 높입니다. 또한, 장기요양보험 관련 정보와 통계 자료를 활용하여 보다 나은 의료 서비스를 제공하는 데 기여합니다. 이를 통해 사용자들은 필요한 정보를 신속하게 얻고, 효율적인 의사결정을 할 수 있습니다.\n자세한 사항은 국민건강보험공단 장기요양실로 문의 주십시요",
+  "version": "1.0.0",
+  "title": "국민건강보험공단_장기요양기관 검색 서비스"
+ },
+ "host": "apis.data.go.kr/B550928/searchLtcInsttService02",
+ "basePath": "",
+ "schemes": [
+  "https",
+  "http"
+ ],
+ "paths": {
+  "/getBillGreentInsttSearchList02": {
+   "get": {
+    "responses": {
+     "200": {
+      "description": "성공",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "longTermAdminSym": {
+         "type": "string",
+         "description": "장기요양기관기호",
+         "properties": {}
+        },
+        "serviceKind": {
+         "type": "string",
+         "description": "기관유형코드 정의",
+         "properties": {}
+        },
+        "adminNm": {
+         "type": "string",
+         "description": "장기요양기관이름",
+         "properties": {}
+        },
+        "siDoCd": {
+         "type": "string",
+         "description": "공통항목 법정동 코드 설명 참조",
+         "properties": {}
+        },
+        "siGunGuCd": {
+         "type": "string",
+         "description": "공통항목 법정동 코드 설명 참조",
+         "properties": {}
+        },
+        "HDongCd": {
+         "type": "string",
+         "description": "공통항목 코드정의 법정동 코드 설명 참조",
+         "properties": {}
+        },
+        "BDongCd": {
+         "type": "string",
+         "description": "공통항목 코드정의 법정동 코드 설명 참조",
+         "properties": {}
+        },
+        "riCd": {
+         "type": "string",
+         "description": "공통항목 코드정의 법정동 코드 설명 참조",
+         "properties": {}
+        },
+        "hmPostNo": {
+         "type": "string",
+         "description": "우편번호",
+         "properties": {}
+        },
+        "roadNmCd": {
+         "type": "string",
+         "description": "행정표준 도로명코드",
+         "properties": {}
+        },
+        "gunmulMlno": {
+         "type": "string",
+         "description": "건물본번",
+         "properties": {}
+        },
+        "gunmulSlno": {
+         "type": "string",
+         "description": "건물부번",
+         "properties": {}
+        },
+        "locTelNo_1": {
+         "type": "string",
+         "description": "소재지전화번호-지역",
+         "properties": {}
+        },
+        "locTelNo_2": {
+         "type": "string",
+         "description": "소재지전화번호-국번",
+         "properties": {}
+        },
+        "locTelNo_3": {
+         "type": "string",
+         "description": "소재지전화번호-번호",
+         "properties": {}
+        }
+       },
+       "xml": {
+        "name": "response"
+       }
+      }
+     }
+    },
+    "tags": [
+     "API 목록"
+    ],
+    "summary": "청구그린기관 목록 검색 조회",
+    "description": "지역별, 급여종류별, 기관명별 청구그린기관 목록 조회",
+    "operationId": "getBillGreentInsttSearchList02",
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/xml"
+    ]
+   },
+   "parameters": [
+    {
+     "name": "siDoCd",
+     "description": "공통항목 법정동 코드 설명 참조",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "siGunGuCd",
+     "description": "공통항목 법정동 코드 설명 참조",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "serviceKind",
+     "description": "청구그린기관 급여종별 코드 정의",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "adminNm",
+     "description": "장기요양기관이름",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    }
+   ]
+  },
+  "/getLtcInsttSeachList02": {
+   "get": {
+    "responses": {
+     "200": {
+      "description": "성공",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "longTermAdminSym": {
+         "type": "string",
+         "description": "장기요양기관기호",
+         "properties": {}
+        },
+        "adminPttnCd": {
+         "type": "string",
+         "description": "공통항목 코드정의 기관유형 코드 정의 참조",
+         "properties": {}
+        },
+        "adminNm": {
+         "type": "string",
+         "description": "장기요양 기관이름",
+         "properties": {}
+        },
+        "siDoCd": {
+         "type": "string",
+         "description": "공통항목 법정동 코드 설명 참조",
+         "properties": {}
+        },
+        "siGunGuCd": {
+         "type": "string",
+         "description": "공통항목 법정동 코드 설명 참조",
+         "properties": {}
+        },
+        "longTermPeribRgtDt": {
+         "type": "string",
+         "description": "기관지정일",
+         "properties": {}
+        },
+        "stpRptDt": {
+         "type": "string",
+         "description": "등록일",
+         "properties": {}
+        }
+       },
+       "xml": {
+        "name": "response"
+       }
+      }
+     }
+    },
+    "tags": [
+     "API 목록"
+    ],
+    "summary": "장기요양기관 검색 목록 조회",
+    "description": "지역별, 급여종류별, 요양시설신고일별, 지정일별, 기관명별 장기요양시설 목록 조회",
+    "operationId": "getLtcInsttSeachList02",
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/xml"
+    ]
+   },
+   "parameters": [
+    {
+     "name": "siDoCd",
+     "description": "공통항목 법정동 코드설명 참조",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    },
+    {
+     "name": "siGunGuCd",
+     "description": "공통항목 법정동 코드설명 참조",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "adminPttnCd",
+     "description": "공통항목 코드 정의 기관유형코드 정의 참조",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "startRgtDt",
+     "description": "등록일 검색 시작 날짜",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "endRgtDt",
+     "description": "등록일 검색 끝 날짜",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "startStpRptDt",
+     "description": "지정일 검색 시작 날짜",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "endStpRptDt",
+     "description": "지정일 검색 끝 날짜",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "adminNm",
+     "description": "장기요양 기관이름",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    }
+   ]
+  }
+ },
+ "definitions": {
+  "getBillGreentInsttSearchList02_response": {
+   "type": "object",
+   "properties": {
+    "longTermAdminSym": {
+     "type": "string",
+     "description": "장기요양기관기호"
+    },
+    "serviceKind": {
+     "type": "string",
+     "description": "기관유형코드 정의"
+    },
+    "adminNm": {
+     "type": "string",
+     "description": "장기요양기관이름"
+    },
+    "siDoCd": {
+     "type": "string",
+     "description": "공통항목 법정동 코드 설명 참조"
+    },
+    "siGunGuCd": {
+     "type": "string",
+     "description": "공통항목 법정동 코드 설명 참조"
+    },
+    "HDongCd": {
+     "type": "string",
+     "description": "공통항목 코드정의 법정동 코드 설명 참조"
+    },
+    "BDongCd": {
+     "type": "string",
+     "description": "공통항목 코드정의 법정동 코드 설명 참조"
+    },
+    "riCd": {
+     "type": "string",
+     "description": "공통항목 코드정의 법정동 코드 설명 참조"
+    },
+    "hmPostNo": {
+     "type": "string",
+     "description": "우편번호"
+    },
+    "roadNmCd": {
+     "type": "string",
+     "description": "행정표준 도로명코드"
+    },
+    "gunmulMlno": {
+     "type": "string",
+     "description": "건물본번"
+    },
+    "gunmulSlno": {
+     "type": "string",
+     "description": "건물부번"
+    },
+    "locTelNo_1": {
+     "type": "string",
+     "description": "소재지전화번호-지역"
+    },
+    "locTelNo_2": {
+     "type": "string",
+     "description": "소재지전화번호-국번"
+    },
+    "locTelNo_3": {
+     "type": "string",
+     "description": "소재지전화번호-번호"
+    }
+   }
+  },
+  "getLtcInsttSeachList02_response": {
+   "type": "object",
+   "properties": {
+    "longTermAdminSym": {
+     "type": "string",
+     "description": "장기요양기관기호"
+    },
+    "adminPttnCd": {
+     "type": "string",
+     "description": "공통항목 코드정의 기관유형 코드 정의 참조"
+    },
+    "adminNm": {
+     "type": "string",
+     "description": "장기요양 기관이름"
+    },
+    "siDoCd": {
+     "type": "string",
+     "description": "공통항목 법정동 코드 설명 참조"
+    },
+    "siGunGuCd": {
+     "type": "string",
+     "description": "공통항목 법정동 코드 설명 참조"
+    },
+    "longTermPeribRgtDt": {
+     "type": "string",
+     "description": "기관지정일"
+    },
+    "stpRptDt": {
+     "type": "string",
+     "description": "등록일"
+    }
+   }
+  }
+ },
+ "swaggerOprtinVOs": [
+  {
+   "oprtinUrl": "http://openapigw.nhis.or.kr/ltc_openapi/service/searchLtcInsttService/getLtcInsttSeachList",
+   "oprtinNm": "장기요양기관 검색 목록 조회",
+   "oprtinDc": "지역별, 급여종류별, 요양시설신고일별, 지정일별, 기관명별 장기요양시설 목록 조회",
+   "gwSvcNm": "getLtcInsttSeachList02",
+   "operationId": "getLtcInsttSeachList02",
+   "publicDataTyDetailCode": "PRDE02",
+   "reqList": [
+    {
+     "paramtrNm": "siDoCd",
+     "paramtrDc": "공통항목 법정동 코드설명 참조",
+     "paramtrBassValue": "11",
+     "paramtrTy": "string",
+     "paramtrDivision": "필수",
+     "ck": true
+    },
+    {
+     "paramtrNm": "siGunGuCd",
+     "paramtrDc": "공통항목 법정동 코드설명 참조",
+     "paramtrBassValue": "320",
+     "paramtrTy": "string",
+     "paramtrDivision": "옵션",
+     "ck": true
+    },
+    {
+     "paramtrNm": "adminPttnCd",
+     "paramtrDc": "공통항목 코드 정의 기관유형코드 정의 참조",
+     "paramtrBassValue": "C04",
+     "paramtrTy": "string",
+     "paramtrDivision": "옵션",
+     "ck": true
+    },
+    {
+     "paramtrNm": "startRgtDt",
+     "paramtrDc": "등록일 검색 시작 날짜",
+     "paramtrBassValue": "20130301",
+     "paramtrTy": "string",
+     "paramtrDivision": "옵션",
+     "ck": true
+    },
+    {
+     "paramtrNm": "endRgtDt",
+     "paramtrDc": "등록일 검색 끝 날짜",
+     "paramtrBassValue": "20130301",
+     "paramtrTy": "string",
+     "paramtrDivision": "옵션",
+     "ck": true
+    },
+    {
+     "paramtrNm": "startStpRptDt",
+     "paramtrDc": "지정일 검색 시작 날짜",
+     "paramtrBassValue": "20130301",
+     "paramtrTy": "string",
+     "paramtrDivision": "옵션",
+     "ck": true
+    },
+    {
+     "paramtrNm": "endStpRptDt",
+     "paramtrDc": "지정일 검색 끝 날짜",
+     "paramtrBassValue": "20130301",
+     "paramtrTy": "string",
+     "paramtrDivision": "옵션",
+     "ck": true
+    },
+    {
+     "paramtrNm": "adminNm",
+     "paramtrDc": "장기요양 기관이름",
+     "paramtrBassValue": "선한요양원1호점",
+     "paramtrTy": "string",
+     "paramtrDivision": "옵션",
+     "ck": true
+    }
+   ],
+   "resList": [
+    {
+     "paramtrNm": "longTermAdminSym",
+     "paramtrDc": "장기요양기관기호",
+     "arrayYn": "N",
+     "paramtrDefNm": "",
+     "paramtrTy": "string",
+     "paramtrDivision": "필수",
+     "ck": true
+    },
+    {
+     "paramtrNm": "adminPttnCd",
+     "paramtrDc": "공통항목 코드정의 기관유형 코드 정의 참조",
+     "arrayYn": "N",
+     "paramtrDefNm": "",
+     "paramtrTy": "string",
+     "paramtrDivision": "필수",
+     "ck": true
+    },
+    {
+     "paramtrNm": "adminNm",
+     "paramtrDc": "장기요양 기관이름",
+     "arrayYn": "N",
+     "paramtrDefNm": "",
+     "paramtrTy": "string",
+     "paramtrDivision": "필수",
+     "ck": true
+    },
+    {
+     "paramtrNm": "siDoCd",
+     "paramtrDc": "공통항목 법정동 코드 설명 참조",
+     "arrayYn": "N",
+     "paramtrDefNm": "",
+     "paramtrTy": "string",
+     "paramtrDivision": "필수",
+     "ck": true
+    },
+    {
+     "paramtrNm": "siGunGuCd",
+     "paramtrDc": "공통항목 법정동 코드 설명 참조",
+     "arrayYn": "N",
+     "paramtrDefNm": "",
+     "paramtrTy": "string",
+     "paramtrDivision": "필수",
+     "ck": true
+    },
+    {
+     "paramtrNm": "longTermPeribRgtDt",
+     "paramtrDc": "기관지정일",
+     "arrayYn": "N",
+     "paramtrDefNm": "",
+     "paramtrTy": "string",
+     "paramtrDivision": "필수",
+     "ck": true
+    },
+    {
+     "paramtrNm": "stpRptDt",
+     "paramtrDc": "등록일",
+     "arrayYn": "N",
+     "paramtrDefNm": "",
+     "paramtrTy": "string",
+     "paramtrDivision": "필수",
+     "ck": true
+    }
+   ]
+  }
+ ]
+}

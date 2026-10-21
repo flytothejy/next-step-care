@@ -1,0 +1,1175 @@
+{
+ "swagger": "2.0",
+ "info": {
+  "description": "안내되는 복지서비스 API는 대국민 복지포털 복지로에서 제공합니다. 전국민을 대상으로 하는 중앙부처의 사회보장 급여 및 복지서비스 중 보건복지부 사회보장조정과에서 대상으로 선정된 사업을 대상으로 합니다. 중앙부처 복지서비스는 2가지 오퍼레이션 형태로 이용하실 수 있습니다. 복지서비스 목록조회는 다양한 복지서비스 목록을 한눈에 볼 수 있습니다. 복지서비스 상세조회에서는 지원대상, 선정기준, 신청방법 등을 안내하고 있으므로 내가 받을 수 있는 복지서비스인지 서비스 별 자세한 내용을 확인할 수 있습니다. 사회복지 다양한 분야에서 활용하실 수 있으므로, 자세한 사항은 '활용가이드_중앙부처복지서비스'와 공공데이터포털에서 제공하고 있는 SWAGGER 문서를 참고하여 주시기 바랍니다. ",
+  "version": "1.0.0",
+  "title": "한국사회보장정보원_중앙부처복지서비스"
+ },
+ "host": "apis.data.go.kr/B554287/NationalWelfareInformationsV001",
+ "basePath": "",
+ "schemes": [
+  "https",
+  "http"
+ ],
+ "paths": {
+  "/NationalWelfarelistV001": {
+   "get": {
+    "responses": {
+     "0": {
+      "description": "정상조회"
+     },
+     "10": {
+      "description": "잘못된  요청 파라메터 에러 "
+     },
+     "12": {
+      "description": "해당 오픈API 서비스가 없거나 폐기됨"
+     },
+     "20": {
+      "description": "서비스 접근거부"
+     },
+     "22": {
+      "description": "서비스 요청제한 횟수 초과에러"
+     },
+     "30": {
+      "description": "등록되지 않은 서비스키"
+     },
+     "31": {
+      "description": "활용기간 만료"
+     },
+     "99": {
+      "description": "기타 에러"
+     },
+     "200": {
+      "description": "성공",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "wantedList": {
+         "type": "object",
+         "description": "wantedList",
+         "properties": {
+          "totalCount": {
+           "type": "string",
+           "description": "전체 데이터수",
+           "properties": {}
+          },
+          "pageNo": {
+           "type": "string",
+           "description": "페이지번호",
+           "properties": {}
+          },
+          "numOfRows": {
+           "type": "string",
+           "description": "한페이지 결과수",
+           "properties": {}
+          },
+          "resultCode": {
+           "type": "string",
+           "description": "결과코드",
+           "properties": {}
+          },
+          "resultMessage": {
+           "type": "string",
+           "description": "결과메세지",
+           "properties": {}
+          },
+          "servList": {
+           "type": "object",
+           "description": "데이터 목록",
+           "properties": {
+            "inqNum": {
+             "type": "string",
+             "description": "조회수",
+             "properties": {}
+            },
+            "intrsThemaArray": {
+             "type": "string",
+             "description": "관심주제",
+             "properties": {}
+            },
+            "jurMnofNm": {
+             "type": "string",
+             "description": "소관부처명",
+             "properties": {}
+            },
+            "jurOrgNm": {
+             "type": "string",
+             "description": "소관조직명",
+             "properties": {}
+            },
+            "lifeArray": {
+             "type": "string",
+             "description": "생애주기",
+             "properties": {}
+            },
+            "onapPsbltYn": {
+             "type": "string",
+             "description": "온라인신청가능여부",
+             "properties": {}
+            },
+            "rprsCtadr": {
+             "type": "string",
+             "description": "문의처",
+             "properties": {}
+            },
+            "servDgst": {
+             "type": "string",
+             "description": "서비스 요약",
+             "properties": {}
+            },
+            "servDtlLink": {
+             "type": "string",
+             "description": "서비스 상세링크",
+             "properties": {}
+            },
+            "servId": {
+             "type": "string",
+             "description": "서비스ID",
+             "properties": {}
+            },
+            "servNm": {
+             "type": "string",
+             "description": "서비스명",
+             "properties": {}
+            },
+            "sprtCycNm": {
+             "type": "string",
+             "description": "지원주기",
+             "properties": {}
+            },
+            "srvPvsnNm": {
+             "type": "string",
+             "description": "제공유형",
+             "properties": {}
+            },
+            "svcfrstRegTs": {
+             "type": "string",
+             "description": "서비스 등록일",
+             "properties": {}
+            },
+            "trgterIndvdlArray": {
+             "type": "string",
+             "description": "가구유형",
+             "properties": {}
+            }
+           }
+          }
+         }
+        }
+       },
+       "xml": {
+        "name": "response"
+       }
+      }
+     },
+     "04": {
+      "description": "HTTP_ERROR"
+     }
+    },
+    "tags": [
+     "API 목록"
+    ],
+    "summary": "복지서비스 목록조회",
+    "description": "복지서비스 목록조회",
+    "operationId": "NationalWelfarelistV001",
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/xml"
+    ]
+   },
+   "parameters": [
+    {
+     "name": "serviceKey",
+     "description": "인증키",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    },
+    {
+     "name": "callTp",
+     "description": "호출할 페이지 타입을 반드시 설정합니다.(L: 목록, D:상세)",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    },
+    {
+     "name": "pageNo",
+     "description": "기본값 1, 최대 1000 검색 시작위치를 지정할 수 있습니다",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    },
+    {
+     "name": "numOfRows",
+     "description": "출력건수, 기본값 10, 최대 500 까지 가능합니다.",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    },
+    {
+     "name": "srchKeyCode",
+     "description": "001 제목 002 내용 003 제목+내용",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    },
+    {
+     "name": "searchWrd",
+     "description": "검색어",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "lifeArray",
+     "description": "생애주기(코드표참조)",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "trgterIndvdlArray",
+     "description": "가구유형(코드표참조)",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "intrsThemaArray",
+     "description": "관심주제(코드표참조)",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "age",
+     "description": "나이",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "onapPsbltYn",
+     "description": "온라인신청 가능여부(Y: 가능 N: 불가능)",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "orderBy",
+     "description": "정렬순서(date: 조회순, popular: 인기순)",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    }
+   ]
+  },
+  "/NationalWelfaredetailedV001": {
+   "get": {
+    "responses": {
+     "0": {
+      "description": "정상 조회"
+     },
+     "10": {
+      "description": "잘못된 요청 파라메타 에러"
+     },
+     "12": {
+      "description": "해당 오픈 API 서비스가 없거나 폐기됨"
+     },
+     "20": {
+      "description": "서비스 접근 거부"
+     },
+     "22": {
+      "description": "서비스 요청제한횟수 초과에러"
+     },
+     "30": {
+      "description": "등록되지 않은 서비스키"
+     },
+     "31": {
+      "description": "활용기간 만료"
+     },
+     "99": {
+      "description": "기타에러"
+     },
+     "200": {
+      "description": "성공",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "wantedDtl": {
+         "type": "object",
+         "description": "wantedDtl",
+         "properties": {
+          "servId": {
+           "type": "string",
+           "description": "서비스ID",
+           "properties": {}
+          },
+          "servNm": {
+           "type": "string",
+           "description": "서비스명",
+           "properties": {}
+          },
+          "jurMnofNm": {
+           "type": "string",
+           "description": "소관부처명",
+           "properties": {}
+          },
+          "tgtrDtlCn": {
+           "type": "string",
+           "description": "대상자 상세내용",
+           "properties": {}
+          },
+          "slctCritCn": {
+           "type": "string",
+           "description": "선정기준 내용",
+           "properties": {}
+          },
+          "alwServCn": {
+           "type": "string",
+           "description": "급여서비스 내용    ",
+           "properties": {}
+          },
+          "crtrYr": {
+           "type": "string",
+           "description": "기준연도",
+           "properties": {}
+          },
+          "rprsCtadr": {
+           "type": "string",
+           "description": "문의처",
+           "properties": {}
+          },
+          "wlfareInfoOutlCn": {
+           "type": "string",
+           "description": "서비스요약",
+           "properties": {}
+          },
+          "sprtCycNm": {
+           "type": "string",
+           "description": "지원주기",
+           "properties": {}
+          },
+          "srvPvsnNm": {
+           "type": "string",
+           "description": "제공유형",
+           "properties": {}
+          },
+          "lifeArray": {
+           "type": "string",
+           "description": "생애주기",
+           "properties": {}
+          },
+          "trgterIndvdlArray": {
+           "type": "string",
+           "description": "가구유형",
+           "properties": {}
+          },
+          "intrsThemaArray": {
+           "type": "string",
+           "description": "관심주제",
+           "properties": {}
+          },
+          "applmetList": {
+           "type": "object",
+           "description": "applmetList",
+           "properties": {
+            "servSeCode": {
+             "type": "string",
+             "description": "서비스 구분코드",
+             "properties": {}
+            },
+            "servSeDetailLink": {
+             "type": "string",
+             "description": "서비스 이용기관 내용",
+             "properties": {}
+            },
+            "servSeDetailNm": {
+             "type": "string",
+             "description": "서비스 이용 및 신청방법",
+             "properties": {}
+            }
+           }
+          },
+          "inqplCtadrList": {
+           "type": "object",
+           "description": "inqplCtadrList",
+           "properties": {
+            "servSeCode": {
+             "type": "string",
+             "description": "서비스 구분코드",
+             "properties": {}
+            },
+            "servSeDetailLink": {
+             "type": "string",
+             "description": "연락처",
+             "properties": {}
+            },
+            "servSeDetailNm": {
+             "type": "string",
+             "description": "문의처명",
+             "properties": {}
+            }
+           }
+          },
+          "inqplHmpgReldList": {
+           "type": "object",
+           "description": "inqplHmpgReldList",
+           "properties": {
+            "servSeCode": {
+             "type": "string",
+             "description": "서비스 구분코드",
+             "properties": {}
+            },
+            "servSeDetailLink": {
+             "type": "string",
+             "description": "사이트링크",
+             "properties": {}
+            },
+            "servSeDetailNm": {
+             "type": "string",
+             "description": "사이트명",
+             "properties": {}
+            }
+           }
+          },
+          "basfrmList": {
+           "type": "object",
+           "description": "basfrmList",
+           "properties": {
+            "servSeCode": {
+             "type": "string",
+             "description": "서비스 구분코드",
+             "properties": {}
+            },
+            "servSeDetailLink": {
+             "type": "string",
+             "description": "서식자료링크",
+             "properties": {}
+            },
+            "servSeDetailNm": {
+             "type": "string",
+             "description": "서식/자료명",
+             "properties": {}
+            }
+           }
+          },
+          "baslawList": {
+           "type": "object",
+           "description": "baslawList",
+           "properties": {
+            "servSeCode": {
+             "type": "string",
+             "description": "서비스 구분코드",
+             "properties": {}
+            },
+            "servSeDetailNm": {
+             "type": "string",
+             "description": "근거법령명",
+             "properties": {}
+            }
+           }
+          },
+          "resultCode": {
+           "type": "string",
+           "description": "resultCode",
+           "properties": {}
+          },
+          "resultMessage": {
+           "type": "string",
+           "description": "resultMessage",
+           "properties": {}
+          }
+         }
+        }
+       },
+       "xml": {
+        "name": "response"
+       }
+      }
+     },
+     "04": {
+      "description": "HTTP_ERROR"
+     }
+    },
+    "tags": [
+     "API 목록"
+    ],
+    "summary": "복지서비스 상세조회",
+    "description": "복지서비스 상세조회",
+    "operationId": "NationalWelfaredetailedV001",
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/xml"
+    ]
+   },
+   "parameters": [
+    {
+     "name": "serviceKey",
+     "description": "인증키",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    },
+    {
+     "name": "callTp",
+     "description": "호출할 페이지 타입을 반드시 설정합니다.(L: 목록, D:상세)",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    },
+    {
+     "name": "servId",
+     "description": "서비스ID",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    }
+   ]
+  }
+ },
+ "definitions": {
+  "NationalWelfarelistV001_response": {
+   "type": "object",
+   "properties": {
+    "wantedList": {
+     "type": "object",
+     "description": "wantedList",
+     "properties": {
+      "totalCount": {
+       "type": "string",
+       "description": "전체 데이터수"
+      },
+      "pageNo": {
+       "type": "string",
+       "description": "페이지번호"
+      },
+      "numOfRows": {
+       "type": "string",
+       "description": "한페이지 결과수"
+      },
+      "resultCode": {
+       "type": "string",
+       "description": "결과코드"
+      },
+      "resultMessage": {
+       "type": "string",
+       "description": "결과메세지"
+      },
+      "servList": {
+       "type": "object",
+       "description": "데이터 목록",
+       "properties": {
+        "inqNum": {
+         "type": "string",
+         "description": "조회수"
+        },
+        "intrsThemaArray": {
+         "type": "string",
+         "description": "관심주제"
+        },
+        "jurMnofNm": {
+         "type": "string",
+         "description": "소관부처명"
+        },
+        "jurOrgNm": {
+         "type": "string",
+         "description": "소관조직명"
+        },
+        "lifeArray": {
+         "type": "string",
+         "description": "생애주기"
+        },
+        "onapPsbltYn": {
+         "type": "string",
+         "description": "온라인신청가능여부"
+        },
+        "rprsCtadr": {
+         "type": "string",
+         "description": "문의처"
+        },
+        "servDgst": {
+         "type": "string",
+         "description": "서비스 요약"
+        },
+        "servDtlLink": {
+         "type": "string",
+         "description": "서비스 상세링크"
+        },
+        "servId": {
+         "type": "string",
+         "description": "서비스ID"
+        },
+        "servNm": {
+         "type": "string",
+         "description": "서비스명"
+        },
+        "sprtCycNm": {
+         "type": "string",
+         "description": "지원주기"
+        },
+        "srvPvsnNm": {
+         "type": "string",
+         "description": "제공유형"
+        },
+        "svcfrstRegTs": {
+         "type": "string",
+         "description": "서비스 등록일"
+        },
+        "trgterIndvdlArray": {
+         "type": "string",
+         "description": "가구유형"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "NationalWelfaredetailedV001_response": {
+   "type": "object",
+   "properties": {
+    "wantedDtl": {
+     "type": "object",
+     "description": "wantedDtl",
+     "properties": {
+      "servId": {
+       "type": "string",
+       "description": "서비스ID"
+      },
+      "servNm": {
+       "type": "string",
+       "description": "서비스명"
+      },
+      "jurMnofNm": {
+       "type": "string",
+       "description": "소관부처명"
+      },
+      "tgtrDtlCn": {
+       "type": "string",
+       "description": "대상자 상세내용"
+      },
+      "slctCritCn": {
+       "type": "string",
+       "description": "선정기준 내용"
+      },
+      "alwServCn": {
+       "type": "string",
+       "description": "급여서비스 내용    "
+      },
+      "crtrYr": {
+       "type": "string",
+       "description": "기준연도"
+      },
+      "rprsCtadr": {
+       "type": "string",
+       "description": "문의처"
+      },
+      "wlfareInfoOutlCn": {
+       "type": "string",
+       "description": "서비스요약"
+      },
+      "sprtCycNm": {
+       "type": "string",
+       "description": "지원주기"
+      },
+      "srvPvsnNm": {
+       "type": "string",
+       "description": "제공유형"
+      },
+      "lifeArray": {
+       "type": "string",
+       "description": "생애주기"
+      },
+      "trgterIndvdlArray": {
+       "type": "string",
+       "description": "가구유형"
+      },
+      "intrsThemaArray": {
+       "type": "string",
+       "description": "관심주제"
+      },
+      "applmetList": {
+       "type": "object",
+       "description": "applmetList",
+       "properties": {
+        "servSeCode": {
+         "type": "string",
+         "description": "서비스 구분코드"
+        },
+        "servSeDetailLink": {
+         "type": "string",
+         "description": "서비스 이용기관 내용"
+        },
+        "servSeDetailNm": {
+         "type": "string",
+         "description": "서비스 이용 및 신청방법"
+        }
+       }
+      },
+      "inqplCtadrList": {
+       "type": "object",
+       "description": "inqplCtadrList",
+       "properties": {
+        "servSeCode": {
+         "type": "string",
+         "description": "서비스 구분코드"
+        },
+        "servSeDetailLink": {
+         "type": "string",
+         "description": "연락처"
+        },
+        "servSeDetailNm": {
+         "type": "string",
+         "description": "문의처명"
+        }
+       }
+      },
+      "inqplHmpgReldList": {
+       "type": "object",
+       "description": "inqplHmpgReldList",
+       "properties": {
+        "servSeCode": {
+         "type": "string",
+         "description": "서비스 구분코드"
+        },
+        "servSeDetailLink": {
+         "type": "string",
+         "description": "사이트링크"
+        },
+        "servSeDetailNm": {
+         "type": "string",
+         "description": "사이트명"
+        }
+       }
+      },
+      "basfrmList": {
+       "type": "object",
+       "description": "basfrmList",
+       "properties": {
+        "servSeCode": {
+         "type": "string",
+         "description": "서비스 구분코드"
+        },
+        "servSeDetailLink": {
+         "type": "string",
+         "description": "서식자료링크"
+        },
+        "servSeDetailNm": {
+         "type": "string",
+         "description": "서식/자료명"
+        }
+       }
+      },
+      "baslawList": {
+       "type": "object",
+       "description": "baslawList",
+       "properties": {
+        "servSeCode": {
+         "type": "string",
+         "description": "서비스 구분코드"
+        },
+        "servSeDetailNm": {
+         "type": "string",
+         "description": "근거법령명"
+        }
+       }
+      },
+      "resultCode": {
+       "type": "string",
+       "description": "resultCode"
+      },
+      "resultMessage": {
+       "type": "string",
+       "description": "resultMessage"
+      }
+     }
+    }
+   }
+  }
+ },
+ "swaggerOprtinVOs": [
+  {
+   "oprtinUrl": "https://www.bokjiro.go.kr/ssis-tbu/NationalWelfareInformationsV001/NationalWelfaredetailedV001.do",
+   "oprtinNm": "복지서비스 상세조회",
+   "oprtinDc": "복지서비스 상세조회",
+   "gwSvcNm": "NationalWelfaredetailedV001",
+   "operationId": "NationalWelfaredetailedV001",
+   "publicDataTyDetailCode": "PRDE02",
+   "reqList": [
+    {
+     "paramtrNm": "serviceKey",
+     "paramtrDc": "인증키",
+     "paramtrBassValue": "-",
+     "paramtrTy": "string",
+     "paramtrDivision": "필수",
+     "ck": true
+    },
+    {
+     "paramtrNm": "callTp",
+     "paramtrDc": "호출할 페이지 타입을 반드시 설정합니다.(L: 목록, D:상세)",
+     "paramtrBassValue": "D",
+     "paramtrTy": "string",
+     "paramtrDivision": "필수",
+     "ck": true
+    },
+    {
+     "paramtrNm": "servId",
+     "paramtrDc": "서비스ID",
+     "paramtrBassValue": "WLF00001138",
+     "paramtrTy": "string",
+     "paramtrDivision": "필수",
+     "ck": true
+    }
+   ],
+   "resList": [
+    {
+     "paramtrNm": "wantedDtl",
+     "paramtrDc": "wantedDtl",
+     "arrayYn": "N",
+     "paramtrDefNm": "#/definitions/wantedDtl",
+     "subDefNm": "wantedDtl",
+     "paramtrTy": "object",
+     "paramtrDivision": "필수",
+     "ck": true,
+     "subParam": [
+      {
+       "paramtrNm": "servId",
+       "paramtrDc": "서비스ID",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "필수",
+       "ck": true
+      },
+      {
+       "paramtrNm": "servNm",
+       "paramtrDc": "서비스명",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "필수",
+       "ck": true
+      },
+      {
+       "paramtrNm": "jurMnofNm",
+       "paramtrDc": "소관부처명",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "필수",
+       "ck": true
+      },
+      {
+       "paramtrNm": "tgtrDtlCn",
+       "paramtrDc": "대상자 상세내용",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "옵션",
+       "ck": true
+      },
+      {
+       "paramtrNm": "slctCritCn",
+       "paramtrDc": "선정기준 내용",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "옵션",
+       "ck": true
+      },
+      {
+       "paramtrNm": "alwServCn",
+       "paramtrDc": "급여서비스 내용    ",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "옵션",
+       "ck": true
+      },
+      {
+       "paramtrNm": "crtrYr",
+       "paramtrDc": "기준연도",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "옵션",
+       "ck": true
+      },
+      {
+       "paramtrNm": "rprsCtadr",
+       "paramtrDc": "문의처",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "옵션",
+       "ck": true
+      },
+      {
+       "paramtrNm": "wlfareInfoOutlCn",
+       "paramtrDc": "서비스요약",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "옵션",
+       "ck": true
+      },
+      {
+       "paramtrNm": "sprtCycNm",
+       "paramtrDc": "지원주기",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "옵션",
+       "ck": true
+      },
+      {
+       "paramtrNm": "srvPvsnNm",
+       "paramtrDc": "제공유형",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "옵션",
+       "ck": true
+      },
+      {
+       "paramtrNm": "lifeArray",
+       "paramtrDc": "생애주기",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "옵션",
+       "ck": true
+      },
+      {
+       "paramtrNm": "trgterIndvdlArray",
+       "paramtrDc": "가구유형",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "옵션",
+       "ck": true
+      },
+      {
+       "paramtrNm": "intrsThemaArray",
+       "paramtrDc": "관심주제",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "옵션",
+       "ck": true
+      },
+      {
+       "paramtrNm": "applmetList",
+       "paramtrDc": "applmetList",
+       "arrayYn": "N",
+       "paramtrDefNm": "#/definitions/applmetList",
+       "subDefNm": "applmetList",
+       "paramtrTy": "object",
+       "paramtrDivision": "옵션",
+       "ck": true,
+       "subParam": [
+        {
+         "paramtrNm": "servSeCode",
+         "paramtrDc": "서비스 구분코드",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        },
+        {
+         "paramtrNm": "servSeDetailLink",
+         "paramtrDc": "서비스 이용기관 내용",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        },
+        {
+         "paramtrNm": "servSeDetailNm",
+         "paramtrDc": "서비스 이용 및 신청방법",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        }
+       ]
+      },
+      {
+       "paramtrNm": "inqplCtadrList",
+       "paramtrDc": "inqplCtadrList",
+       "arrayYn": "N",
+       "paramtrDefNm": "#/definitions/inqplCtadrList",
+       "subDefNm": "inqplCtadrList",
+       "paramtrTy": "object",
+       "paramtrDivision": "옵션",
+       "ck": true,
+       "subParam": [
+        {
+         "paramtrNm": "servSeCode",
+         "paramtrDc": "서비스 구분코드",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        },
+        {
+         "paramtrNm": "servSeDetailLink",
+         "paramtrDc": "연락처",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        },
+        {
+         "paramtrNm": "servSeDetailNm",
+         "paramtrDc": "문의처명",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        }
+       ]
+      },
+      {
+       "paramtrNm": "inqplHmpgReldList",
+       "paramtrDc": "inqplHmpgReldList",
+       "arrayYn": "N",
+       "paramtrDefNm": "#/definitions/inqplHmpgReldList",
+       "subDefNm": "inqplHmpgReldList",
+       "paramtrTy": "object",
+       "paramtrDivision": "옵션",
+       "ck": true,
+       "subParam": [
+        {
+         "paramtrNm": "servSeCode",
+         "paramtrDc": "서비스 구분코드",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        },
+        {
+         "paramtrNm": "servSeDetailLink",
+         "paramtrDc": "사이트링크",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        },
+        {
+         "paramtrNm": "servSeDetailNm",
+         "paramtrDc": "사이트명",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        }
+       ]
+      },
+      {
+       "paramtrNm": "basfrmList",
+       "paramtrDc": "basfrmList",
+       "arrayYn": "N",
+       "paramtrDefNm": "#/definitions/basfrmList",
+       "subDefNm": "basfrmList",
+       "paramtrTy": "object",
+       "paramtrDivision": "옵션",
+       "ck": true,
+       "subParam": [
+        {
+         "paramtrNm": "servSeCode",
+         "paramtrDc": "서비스 구분코드",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        },
+        {
+         "paramtrNm": "servSeDetailLink",
+         "paramtrDc": "서식자료링크",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        },
+        {
+         "paramtrNm": "servSeDetailNm",
+         "paramtrDc": "서식/자료명",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        }
+       ]
+      },
+      {
+       "paramtrNm": "baslawList",
+       "paramtrDc": "baslawList",
+       "arrayYn": "N",
+       "paramtrDefNm": "#/definitions/baslawList",
+       "subDefNm": "baslawList",
+       "paramtrTy": "object",
+       "paramtrDivision": "옵션",
+       "ck": true,
+       "subParam": [
+        {
+         "paramtrNm": "servSeCode",
+         "paramtrDc": "서비스 구분코드",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        },
+        {
+         "paramtrNm": "servSeDetailNm",
+         "paramtrDc": "근거법령명",
+         "arrayYn": "N",
+         "paramtrDefNm": "",
+         "paramtrTy": "string",
+         "paramtrDivision": "옵션",
+         "ck": true
+        }
+       ]
+      },
+      {
+       "paramtrNm": "resultCode",
+       "paramtrDc": "resultCode",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "필수",
+       "ck": true
+      },
+      {
+       "paramtrNm": "resultMessage",
+       "paramtrDc": "resultMessage",
+       "arrayYn": "N",
+       "paramtrDefNm": "",
+       "paramtrTy": "string",
+       "paramtrDivision": "필수",
+       "ck": true
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

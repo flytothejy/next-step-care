@@ -1,0 +1,323 @@
+{
+ "swagger": "2.0",
+ "info": {
+  "description": "본 데이터는 장애인, 산모, 아동, 노인 등 다양한 사회서비스를 필요로 하는 수요자 및 보호자에게 맞춤형 서비스를 제공하는 전국 사회서비스 제공기관의 상세 정보를 제공합니다. 주요 제공 항목으로는 기관명, 대표자명, 제공하는 사회서비스 유형(장애인활동지원, 산모·신생아 건강관리 지원, 아동청소년 심리지원 등), 기관 주소(도로명 및 지번), 전화번호, 팩스번호, 서비스 대상자 기준 등이 포함되어 있습니다. 이를 통해 국민들이 거주지 인근의 신뢰할 수 있는 우수한 사회서비스 제공기관을 손쉽게 검색하고 비교 및 선택할 수 있도록 지원하며, 관련 민간 비즈니스 모델 개발 및 복지 자원 분석 연구 등 다양한 분야에서 가치 있게 활용할 수 있습니다.",
+  "version": "1.0.0",
+  "title": "한국사회보장정보원_사회서비스 제공기관 정보 검색_GW"
+ },
+ "host": "apis.data.go.kr/B554287/provider",
+ "basePath": "",
+ "schemes": [
+  "https",
+  "http"
+ ],
+ "paths": {
+  "/providerList": {
+   "get": {
+    "responses": {
+     "200": {
+      "description": "성공",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "header": {
+         "type": "object",
+         "description": "header",
+         "properties": {
+          "resultCode": {
+           "type": "string",
+           "description": "결과코드",
+           "properties": {}
+          },
+          "resultMsg": {
+           "type": "string",
+           "description": "결과메시지",
+           "properties": {}
+          }
+         }
+        },
+        "body": {
+         "type": "object",
+         "description": "body",
+         "properties": {
+          "totalCount": {
+           "type": "string",
+           "description": "전체 결과 수",
+           "properties": {}
+          },
+          "pageNo": {
+           "type": "string",
+           "description": "페이지번호",
+           "properties": {}
+          },
+          "numOfRows": {
+           "type": "string",
+           "description": "한 페이지 결과 수",
+           "properties": {}
+          },
+          "items": {
+           "type": "object",
+           "description": "items",
+           "properties": {
+            "item": {
+             "type": "object",
+             "description": "item",
+             "properties": {
+              "address": {
+               "type": "string",
+               "description": "주소",
+               "properties": {}
+              },
+              "addressDetail": {
+               "type": "string",
+               "description": "주소 상세",
+               "properties": {}
+              },
+              "zip": {
+               "type": "string",
+               "description": "우편번호",
+               "properties": {}
+              },
+              "loadAddress": {
+               "type": "string",
+               "description": "도로명 주소",
+               "properties": {}
+              },
+              "loadAddressDetail": {
+               "type": "string",
+               "description": "도로명 주소 상세",
+               "properties": {}
+              },
+              "loadZip": {
+               "type": "string",
+               "description": "도로명 우편번호",
+               "properties": {}
+              },
+              "ownerName": {
+               "type": "string",
+               "description": "기관장명",
+               "properties": {}
+              },
+              "providerId": {
+               "type": "string",
+               "description": "제공기관 아이디",
+               "properties": {}
+              },
+              "providerName": {
+               "type": "string",
+               "description": "제공기관명",
+               "properties": {}
+              },
+              "serviceName": {
+               "type": "string",
+               "description": "사업명",
+               "properties": {}
+              },
+              "serviceTypeName": {
+               "type": "string",
+               "description": "사업구분명",
+               "properties": {}
+              },
+              "sidoName": {
+               "type": "string",
+               "description": "시도명",
+               "properties": {}
+              },
+              "signguName": {
+               "type": "string",
+               "description": "시군구명",
+               "properties": {}
+              },
+              "telNumber": {
+               "type": "string",
+               "description": "전화번호",
+               "properties": {}
+              },
+              "email": {
+               "type": "string",
+               "description": "이메일",
+               "properties": {}
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       },
+       "xml": {
+        "name": "response"
+       }
+      }
+     },
+     "300": {
+      "description": "데이터베이스 오류"
+     },
+     "401": {
+      "description": "Gateway 인증 처리 중 예외 발생"
+     }
+    },
+    "tags": [
+     "API 목록"
+    ],
+    "summary": "사회서비스 제공기관 목록 조회",
+    "description": "장애인, 산모, 아동 등 사회서비스를 필요로 하는 수요자에게 서비스를 제공하는 기관의 정보를 제공",
+    "operationId": "providerList",
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/xml"
+    ]
+   },
+   "parameters": [
+    {
+     "name": "serviceKey",
+     "description": "공공데이터포털에서 받은 인증키",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    },
+    {
+     "name": "pageNo",
+     "description": "페이지번호",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "numOfRows",
+     "description": "한 페이지 결과 수",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "serviceTypeName",
+     "description": "사업구분명",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    },
+    {
+     "name": "providerName",
+     "description": "제공기관명",
+     "type": "string",
+     "required": false,
+     "in": "query"
+    }
+   ]
+  }
+ },
+ "definitions": {
+  "providerList_response": {
+   "type": "object",
+   "properties": {
+    "header": {
+     "type": "object",
+     "description": "header",
+     "properties": {
+      "resultCode": {
+       "type": "string",
+       "description": "결과코드"
+      },
+      "resultMsg": {
+       "type": "string",
+       "description": "결과메시지"
+      }
+     }
+    },
+    "body": {
+     "type": "object",
+     "description": "body",
+     "properties": {
+      "totalCount": {
+       "type": "string",
+       "description": "전체 결과 수"
+      },
+      "pageNo": {
+       "type": "string",
+       "description": "페이지번호"
+      },
+      "numOfRows": {
+       "type": "string",
+       "description": "한 페이지 결과 수"
+      },
+      "items": {
+       "type": "object",
+       "description": "items",
+       "properties": {
+        "item": {
+         "type": "object",
+         "description": "item",
+         "properties": {
+          "address": {
+           "type": "string",
+           "description": "주소"
+          },
+          "addressDetail": {
+           "type": "string",
+           "description": "주소 상세"
+          },
+          "zip": {
+           "type": "string",
+           "description": "우편번호"
+          },
+          "loadAddress": {
+           "type": "string",
+           "description": "도로명 주소"
+          },
+          "loadAddressDetail": {
+           "type": "string",
+           "description": "도로명 주소 상세"
+          },
+          "loadZip": {
+           "type": "string",
+           "description": "도로명 우편번호"
+          },
+          "ownerName": {
+           "type": "string",
+           "description": "기관장명"
+          },
+          "providerId": {
+           "type": "string",
+           "description": "제공기관 아이디"
+          },
+          "providerName": {
+           "type": "string",
+           "description": "제공기관명"
+          },
+          "serviceName": {
+           "type": "string",
+           "description": "사업명"
+          },
+          "serviceTypeName": {
+           "type": "string",
+           "description": "사업구분명"
+          },
+          "sidoName": {
+           "type": "string",
+           "description": "시도명"
+          },
+          "signguName": {
+           "type": "string",
+           "description": "시군구명"
+          },
+          "telNumber": {
+           "type": "string",
+           "description": "전화번호"
+          },
+          "email": {
+           "type": "string",
+           "description": "이메일"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

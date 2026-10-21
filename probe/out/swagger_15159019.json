@@ -1,0 +1,424 @@
+{
+ "swagger": "2.0",
+ "info": {
+  "description": "본 데이터는 장애인, 산모, 아동 등 사회서비스를 필요로 하는 수요자에게 맞춤형 복지 서비스를 제공하는 전국 복지 기관의 상세 정보를 제공합니다. 주요 안내 항목으로는 기관명, 위치 주소, 연락처, 운영 시간, 주요 서비스 내용(돌봄, 가사, 산후조리, 보육 등) 및 이용 대상, 신청 자격이 포함되어 있습니다. 이를 통해 사회적 취약계층의 정보 접근성을 높이고, 원하는 복지 혜택을 신속하게 확인하여 신청할 수 있도록 돕습니다. 공공 복지 서비스의 효율성을 극대화하고 사각지대를 해소하는 데 기여하며, 복지 정책 수립 및 관련 학술 연구 자료로도 폭넓게 활용 가능한 고품질의 기관 정보 데이터셋입니다.",
+  "version": "1.0.0",
+  "title": "한국사회보장정보원_사회서비스 공통코드 조회_GW"
+ },
+ "host": "apis.data.go.kr/B554287/common",
+ "basePath": "",
+ "schemes": [
+  "https",
+  "http"
+ ],
+ "paths": {
+  "/serviceType": {
+   "get": {
+    "responses": {
+     "200": {
+      "description": "성공",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "header": {
+         "type": "object",
+         "description": "header",
+         "properties": {
+          "resultCode": {
+           "type": "string",
+           "description": "결과코드",
+           "properties": {}
+          },
+          "resultMsg": {
+           "type": "string",
+           "description": "결과메시지",
+           "properties": {}
+          }
+         }
+        },
+        "body": {
+         "type": "object",
+         "description": "body",
+         "properties": {
+          "items": {
+           "type": "object",
+           "description": "items",
+           "properties": {
+            "item": {
+             "type": "object",
+             "description": "item",
+             "properties": {
+              "serviceTypeCode": {
+               "type": "string",
+               "description": "사업구분코드",
+               "properties": {}
+              },
+              "serviceTypeName": {
+               "type": "string",
+               "description": "사업구분명",
+               "properties": {}
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       },
+       "xml": {
+        "name": "response"
+       }
+      }
+     },
+     "300": {
+      "description": "데이터베이스 오류"
+     },
+     "401": {
+      "description": "Gateway 인증 처리 중 예외 발생"
+     }
+    },
+    "tags": [
+     "API 목록"
+    ],
+    "summary": "사업구분 코드 조회",
+    "description": "사회서비스 제공기관 정보, 사회서비스 품질평가 정보에서 필요로 하는 공통코드를 확인할 수 있습니다. 제공되는 정보는 사업구분 코드 정보입니다.",
+    "operationId": "serviceType",
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/xml"
+    ]
+   },
+   "parameters": [
+    {
+     "name": "serviceKey",
+     "description": "공공데이터포털에서 받은 인증키",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    }
+   ]
+  },
+  "/sido": {
+   "get": {
+    "responses": {
+     "200": {
+      "description": "성공",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "header": {
+         "type": "object",
+         "description": "header",
+         "properties": {
+          "resultCode": {
+           "type": "string",
+           "description": "결과코드",
+           "properties": {}
+          },
+          "resultMsg": {
+           "type": "string",
+           "description": "결과메시지",
+           "properties": {}
+          }
+         }
+        },
+        "body": {
+         "type": "object",
+         "description": "body",
+         "properties": {
+          "items": {
+           "type": "object",
+           "description": "items",
+           "properties": {
+            "item": {
+             "type": "object",
+             "description": "item",
+             "properties": {
+              "sidoCode": {
+               "type": "string",
+               "description": "시도코드",
+               "properties": {}
+              },
+              "sidoName": {
+               "type": "string",
+               "description": "시도명",
+               "properties": {}
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       },
+       "xml": {
+        "name": "response"
+       }
+      }
+     },
+     "300": {
+      "description": "데이터베이스 오류"
+     },
+     "401": {
+      "description": "Gateway 인증 처리 중 예외 발생"
+     }
+    },
+    "tags": [
+     "API 목록"
+    ],
+    "summary": "시도코드 조회",
+    "description": "사회서비스 제공기관 정보, 사회서비스 품질평가 정보에서 필요로 하는 공통코드를 확인할 수 있습니다. 제공되는 정보는 시도 코드 정보입니다.",
+    "operationId": "sido",
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/xml"
+    ]
+   },
+   "parameters": [
+    {
+     "name": "serviceKey",
+     "description": "공공데이터포털에서 받은 인증키",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    }
+   ]
+  },
+  "/signgu": {
+   "get": {
+    "responses": {
+     "200": {
+      "description": "성공",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "header": {
+         "type": "object",
+         "description": "header",
+         "properties": {
+          "resultCode": {
+           "type": "string",
+           "description": "결과코드",
+           "properties": {}
+          },
+          "resultMsg": {
+           "type": "string",
+           "description": "결과메시지",
+           "properties": {}
+          }
+         }
+        },
+        "body": {
+         "type": "object",
+         "description": "body",
+         "properties": {
+          "items": {
+           "type": "object",
+           "description": "items",
+           "properties": {
+            "item": {
+             "type": "object",
+             "description": "item",
+             "properties": {
+              "signguName": {
+               "type": "string",
+               "description": "시군구명",
+               "properties": {}
+              },
+              "signguCode": {
+               "type": "string",
+               "description": "시군구 코드",
+               "properties": {}
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       },
+       "xml": {
+        "name": "response"
+       }
+      }
+     },
+     "300": {
+      "description": "데이터베이스 오류"
+     },
+     "401": {
+      "description": "Gateway 인증 처리 중 예외 발생"
+     }
+    },
+    "tags": [
+     "API 목록"
+    ],
+    "summary": "시군구코드 조회",
+    "description": "사회서비스 제공기관 정보, 사회서비스 품질평가 정보에서 필요로 하는 공통코드를 확인할 수 있습니다. 제공되는 정보는 시군구 코드 정보입니다.",
+    "operationId": "signgu",
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/xml"
+    ]
+   },
+   "parameters": [
+    {
+     "name": "serviceKey",
+     "description": "공공데이터포털에서 받은 인증키",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    },
+    {
+     "name": "sido",
+     "description": "시도코드",
+     "type": "string",
+     "required": true,
+     "in": "query"
+    }
+   ]
+  }
+ },
+ "definitions": {
+  "serviceType_response": {
+   "type": "object",
+   "properties": {
+    "header": {
+     "type": "object",
+     "description": "header",
+     "properties": {
+      "resultCode": {
+       "type": "string",
+       "description": "결과코드"
+      },
+      "resultMsg": {
+       "type": "string",
+       "description": "결과메시지"
+      }
+     }
+    },
+    "body": {
+     "type": "object",
+     "description": "body",
+     "properties": {
+      "items": {
+       "type": "object",
+       "description": "items",
+       "properties": {
+        "item": {
+         "type": "object",
+         "description": "item",
+         "properties": {
+          "serviceTypeCode": {
+           "type": "string",
+           "description": "사업구분코드"
+          },
+          "serviceTypeName": {
+           "type": "string",
+           "description": "사업구분명"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "sido_response": {
+   "type": "object",
+   "properties": {
+    "header": {
+     "type": "object",
+     "description": "header",
+     "properties": {
+      "resultCode": {
+       "type": "string",
+       "description": "결과코드"
+      },
+      "resultMsg": {
+       "type": "string",
+       "description": "결과메시지"
+      }
+     }
+    },
+    "body": {
+     "type": "object",
+     "description": "body",
+     "properties": {
+      "items": {
+       "type": "object",
+       "description": "items",
+       "properties": {
+        "item": {
+         "type": "object",
+         "description": "item",
+         "properties": {
+          "sidoCode": {
+           "type": "string",
+           "description": "시도코드"
+          },
+          "sidoName": {
+           "type": "string",
+           "description": "시도명"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "signgu_response": {
+   "type": "object",
+   "properties": {
+    "header": {
+     "type": "object",
+     "description": "header",
+     "properties": {
+      "resultCode": {
+       "type": "string",
+       "description": "결과코드"
+      },
+      "resultMsg": {
+       "type": "string",
+       "description": "결과메시지"
+      }
+     }
+    },
+    "body": {
+     "type": "object",
+     "description": "body",
+     "properties": {
+      "items": {
+       "type": "object",
+       "description": "items",
+       "properties": {
+        "item": {
+         "type": "object",
+         "description": "item",
+         "properties": {
+          "signguName": {
+           "type": "string",
+           "description": "시군구명"
+          },
+          "signguCode": {
+           "type": "string",
+           "description": "시군구 코드"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
