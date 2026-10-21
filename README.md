@@ -28,7 +28,7 @@ python -m nsc sync push                       # R2에 올리기
 ```
 
 GitHub Actions `collect`가 매일 06:40, 일요일 05:10(한국)에 돌고, `pages`가 결과를 GitHub Pages에 배포합니다.
-필요한 Secrets: `DATA_GO_KR_KEY`, `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET`.
+필요한 Secrets: `DATA_GO_KR_KEY`, `VWORLD_KEY`(주소→좌표, 브이월드), `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET`.
 사용자 입력은 저장하지 않습니다.
 
 ## 출발점
