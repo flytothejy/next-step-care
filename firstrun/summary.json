@@ -1,85 +1,86 @@
 {
- "sample_ltc_full": [
+ "sample_ltc_full": [],
+ "eval_grades": {
+  "null": 514
+ },
+ "sample_rehab": [
   {
-   "id": "ltc:24159000484",
-   "source": "장기요양기관",
-   "name": "베스트메딕스 복지용구점",
-   "kind_code": "B06",
-   "kind": "복지용구",
-   "kind_verified": false,
+   "id": "dmc:acf6a4165e26",
+   "source": "치매안심센터",
+   "name": "화성시치매안심센터 동탄분소",
    "services": [
-    "복지용구"
+    "치매 상담·검사"
    ],
-   "area_code": "41590",
-   "gu": "만세구",
-   "gu_from": "우편번호",
-   "address": null,
-   "designated": "20200301",
-   "tel": "070-8181-0226",
-   "floor": 2,
-   "addr_codes": {
-    "roadNmCd": "415914431358",
-    "gunmulMlno": "35",
-    "gunmulSlno": "0",
-    "hmPostNo": "18279",
-    "BDongCd": "256",
-    "HDongCd": "256"
+   "gu": "동탄구",
+   "gu_from": "주소",
+   "address": "경기도 화성시 동탄구 노작로 226-9",
+   "tel": "031-5189-4377",
+   "staff": {
+    "의사": 1,
+    "간호사": 7
    },
-   "capacity": {
-    "정원": 0,
-    "현원": 0,
-    "대기": 0
-   },
-   "fees": null,
    "programs": null,
-   "staff": {},
-   "rooms": null,
-   "homepage": "http://www.best-medics.co.kr",
-   "transport": "자가 이용 : 현대 기아로 324번길 35, 2층대중교통 : 화성시 남양사거리에서 현대 기아방면 마을버스 이용",
-   "parking": "4대 가능",
-   "partners": null,
-   "detail_fetched": "2026-10-21"
+   "lat": "37.20701031",
+   "lng": "127.078776121"
   },
   {
-   "id": "ltc:34159000426",
-   "source": "장기요양기관",
-   "name": "이원건강의료기 화성점",
-   "kind_code": "C06",
-   "kind": null,
-   "kind_verified": false,
-   "services": [],
-   "area_code": "41590",
+   "id": "dmc:c6cca43a6d87",
+   "source": "치매안심센터",
+   "name": "화성시치매안심센터 동부분소",
+   "services": [
+    "치매 상담·검사"
+   ],
    "gu": "병점구",
-   "gu_from": "우편번호",
-   "address": null,
-   "designated": "20190227",
-   "tel": "031-223-3322",
-   "floor": 1,
-   "addr_codes": {
-    "roadNmCd": "415953210050",
-    "gunmulMlno": "78",
-    "gunmulSlno": "0",
-    "hmPostNo": "18403",
-    "BDongCd": "102",
-    "HDongCd": "530"
+   "gu_from": "주소",
+   "address": "경기도 화성시 병점구 떡전골로 72-3",
+   "tel": "031-5189-4431",
+   "staff": {
+    "간호사": 4
    },
-   "capacity": {
-    "정원": 0,
-    "현원": 0,
-    "대기": 0
-   },
-   "fees": null,
    "programs": null,
-   "staff": {},
-   "rooms": null,
-   "homepage": "blog.naver.com/e1_medical",
-   "transport": "https://cafe.naver.com/eonemedical병점동 태안초등학교 후문 20m 앞 유진클라우스 1층태안문고 사거리 주차빌딩건물(유진클라우스BD,플러스82 ,버거웨이 강정판다 건물)(병점주공 2단지, 3단지 사이)자가용 이용시:  도로명)경기도 화성시 병점구 병점동로 78                       구주소)경기도 화성시 병점구 병점동 829-1번지",
-   "parking": "건물내 3층부터 8층까지 주차가능태안문고 사거리 유진클라우스BD 건물 주차 (3층부터 8층)하나님의교회옆 유료주차장(2시간 무료주차)",
-   "partners": null,
-   "detail_fetched": "2026-10-21"
+   "lat": "37.20527854",
+   "lng": "127.0349013"
   }
  ],
- "sample_dementia": [],
+ "sample_dementia": [
+  {
+   "id": "dmc:acf6a4165e26",
+   "source": "치매안심센터",
+   "name": "화성시치매안심센터 동탄분소",
+   "services": [
+    "치매 상담·검사"
+   ],
+   "gu": "동탄구",
+   "gu_from": "주소",
+   "address": "경기도 화성시 동탄구 노작로 226-9",
+   "tel": "031-5189-4377",
+   "staff": {
+    "의사": 1,
+    "간호사": 7
+   },
+   "programs": null,
+   "lat": "37.20701031",
+   "lng": "127.078776121"
+  },
+  {
+   "id": "dmc:c6cca43a6d87",
+   "source": "치매안심센터",
+   "name": "화성시치매안심센터 동부분소",
+   "services": [
+    "치매 상담·검사"
+   ],
+   "gu": "병점구",
+   "gu_from": "주소",
+   "address": "경기도 화성시 병점구 떡전골로 72-3",
+   "tel": "031-5189-4431",
+   "staff": {
+    "간호사": 4
+   },
+   "programs": null,
+   "lat": "37.20527854",
+   "lng": "127.0349013"
+  }
+ ],
  "capacity_waiting_total": 320,
  "with_waiting": 69,
  "program_sample": [
