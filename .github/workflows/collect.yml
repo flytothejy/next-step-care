@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       sources:
-        description: "수집할 원천 (공백 구분: ltc welfare providers)"
+        description: "수집할 원천 (공백 구분: ltc welfare providers standard)"
         default: "ltc welfare"
 
 permissions:
@@ -43,7 +43,7 @@ jobs:
         id: src
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then s="${{ inputs.sources }}"
-          elif [ "${{ github.event.schedule }}" = "10 20 * * 6" ]; then s="ltc welfare providers"
+          elif [ "${{ github.event.schedule }}" = "10 20 * * 6" ]; then s="ltc welfare providers standard"
           else s="ltc welfare"; fi
           echo "list=$s" >> "$GITHUB_OUTPUT"; echo "수집: $s"
       - name: pull state from R2

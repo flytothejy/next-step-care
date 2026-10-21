@@ -5,20 +5,39 @@
 - providers      사회서비스 제공기관 전국 목록 (지역 필터가 없어 전량)      매주
 """
 import datetime as dt
+import json
 from concurrent.futures import ThreadPoolExecutor
 
 from .core import DATA, ApiError, budget_left, get, log, page_all, parse, read_json, regions, today, write_json
 
 LTC_LIST = "https://apis.data.go.kr/B550928/searchLtcInsttService02/getLtcInsttSeachList02"
-LTC_DETAIL = "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/getGeneralSttusDetailInfoItem02"
+LTC_DETAIL = "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/"
+# 장기요양기관 상세 조회 9종: (이름, 오퍼레이션, 목록형 여부)
+LTC_OPS = [
+    ("general", "getGeneralSttusDetailInfoItem02", False),     # 일반현황: 주소코드·전화·층
+    ("capacity", "getAceptncNmprDetailInfoItem02", False),     # 입소인원: 정원·현원·대기
+    ("nonpay", "getNonBenefitSttusDetailInfoList02", True),    # 비급여: 식사비 등 추가 비용
+    ("programs", "getProgramSttusDetailInfoList02", True),     # 프로그램
+    ("staff", "getStaffSttusDetailInfoItem02", False),         # 인력
+    ("facility", "getInsttSttusDetailInfoItem02", False),      # 시설: 1~4인실, 프로그램실 등
+    ("etc", "getInsttEtcDetailInfoItem02", False),             # 홈페이지·교통편·주차
+    ("partners", "getConvInsttDetailInfoList02", True),        # 협약 의료기관
+    ("tools", "getWlfareToolDetailInfoList02", True),          # 복지용구
+]
 NAT_LIST = "https://apis.data.go.kr/B554287/NationalWelfareInformationsV001/NationalWelfarelistV001"
 NAT_DETAIL = "https://apis.data.go.kr/B554287/NationalWelfareInformationsV001/NationalWelfaredetailedV001"
 LOC_LIST = "https://apis.data.go.kr/B554287/LocalGovernmentWelfareInformations/LcgvWelfarelist"
 LOC_DETAIL = "https://apis.data.go.kr/B554287/LocalGovernmentWelfareInformations/LcgvWelfaredetailed"
 PROVIDER_LIST = "https://apis.data.go.kr/B554287/provider/providerList"
+# 표준데이터 API (전국, JSON). 이름 → 주소
+STANDARD = {
+    "dev_rehab": "https://api.data.go.kr/openapi/tn_pubr_public_developmental_rehabilitation_service_provider_api",
+    "dementia_center": "https://api.data.go.kr/openapi/tn_pubr_public_imbclty_cnter_api",
+}
 
 DETAIL_MAX_AGE_DAYS = 7
-DETAIL_CAP_PER_RUN = 400      # 하루 호출량 보호
+DETAIL_CAP_PER_RUN = 400      # 하루 호출량 보호 (복지서비스)
+LTC_CAP_PER_RUN = 600         # 기관 수 기준 (기관당 9회 호출)
 
 
 def snap(name):
@@ -41,18 +60,22 @@ def fetch_details(todo, call, workers=6, reserve=180):
         except ApiError as e:
             return x, None, str(e)[:120]
 
-    skipped = failed = 0
+    skipped, errors = 0, []
     with ThreadPoolExecutor(workers) as ex:
         for x, res, err in ex.map(one, todo):
             if err == "time":
                 skipped += 1
             elif err:
-                failed += 1
+                errors.append(err)
             else:
                 done[id(x)] = (x, res)
-    if skipped or failed:
-        log(f"상세: 시간 부족으로 미룸 {skipped}, 실패 {failed}")
+    if skipped or errors:
+        log(f"상세: 시간 부족으로 미룸 {skipped}, 실패 {len(errors)}", errors[:3])
+    LAST_ERRORS[:] = errors[:5]
     return list(done.values())
+
+
+LAST_ERRORS = []
 
 
 def ltc():
@@ -68,17 +91,27 @@ def ltc():
     cache_p = DATA / "state" / "ltc_detail.json"
     cache = read_json(cache_p, {})
     todo = [x for rows in out.values() for x in rows
-            if _stale((cache.get(x.get("longTermAdminSym")) or {}).get("fetched"))]
-    todo = todo[:DETAIL_CAP_PER_RUN]
-    got = fetch_details(todo, lambda x: parse(get(LTC_DETAIL, {"longTermAdminSym": x.get("longTermAdminSym"),
-                                                               "adminPttnCd": x.get("adminPttnCd", "")}), "item")[0], workers=4)
-    for x, items in got:
-        cache[x.get("longTermAdminSym")] = {"fetched": today(), "item": items[0] if items else None}
-    ok = len(got)
-    log(f"장기요양 상세 {ok}/{len(todo)}건 갱신 (캐시 {len(cache)})")
+            if "capacity" not in (cache.get(x.get("longTermAdminSym")) or {})
+            or _stale((cache.get(x.get("longTermAdminSym")) or {}).get("fetched"))][:LTC_CAP_PER_RUN]
+
+    def one(x):
+        sym, kind = x.get("longTermAdminSym"), x.get("adminPttnCd", "")
+        rec = {"fetched": today()}
+        for name, op, many in LTC_OPS:
+            items, _ = parse(get(LTC_DETAIL + op, {"longTermAdminSym": sym, "adminPttnCd": kind,
+                                                   "pageNo": 1, "numOfRows": 100}), "item")
+            rec[name] = items if many else (items[0] if items else None)
+        return rec
+
+    got = fetch_details(todo, one, workers=4, reserve=240)
+    for x, rec in got:
+        cache[x.get("longTermAdminSym")] = rec
+    ok, errs = len(got), list(LAST_ERRORS)
+    log(f"장기요양 상세 {ok}/{len(todo)}기관 갱신 (캐시 {len(cache)})")
     write_json(cache_p, cache)
-    write_json(snap("ltc"), {"list": out, "detail": {s: v["item"] for s, v in cache.items()}}, gz=True)
-    return {"ltc": {k: len(v) for k, v in out.items()}, "ltc_detail_refreshed": ok}
+    write_json(snap("ltc"), {"list": out, "detail": cache}, gz=True)
+    return {"ltc": {k: len(v) for k, v in out.items()}, "ltc_detail_refreshed": ok,
+            "ltc_detail_pending": len(todo) - ok, "ltc_detail_errors": errs}
 
 
 def _welfare_details(kind, rows, url, extra):
@@ -87,13 +120,18 @@ def _welfare_details(kind, rows, url, extra):
     todo = [x for x in rows
             if x.get("servId") and ((cache.get(x["servId"]) or {}).get("lastModYmd") != x.get("lastModYmd")
                                     or _stale((cache.get(x["servId"]) or {}).get("fetched"), 30))][:DETAIL_CAP_PER_RUN]
-    got = fetch_details(todo, lambda x: parse(get(url, {**extra, "servId": x["servId"]}), "wantedDtl")[0])
+    # 초당 호출 제한에 걸리지 않도록 동시 요청을 낮춘다
+    got = fetch_details(todo, lambda x: parse(get(url, {**extra, "servId": x["servId"]}), "wantedDtl")[0], workers=2)
     for x, items in got:
         cache[x["servId"]] = {"fetched": today(), "lastModYmd": x.get("lastModYmd"), "item": items[0] if items else None}
     ok = len(got)
     write_json(cache_p, cache)
     log(f"복지서비스 {kind} 상세 {ok}/{len(todo)}건 갱신 (캐시 {len(cache)})")
+    ERRORS[kind] = {"todo": len(todo), "ok": ok, "errors": list(LAST_ERRORS)}
     return cache, ok
+
+
+ERRORS = {}
 
 
 def _national_list():
@@ -129,7 +167,7 @@ def welfare():
         "local": {"list": loc, "detail": {k: v["item"] for k, v in loc_cache.items()}},
     }, gz=True)
     return {"welfare_national": len(nat), "welfare_local": {k: len(v) for k, v in loc.items()},
-            "welfare_detail_refreshed": nat_ok + loc_ok}
+            "welfare_detail_refreshed": nat_ok + loc_ok, "welfare_detail_status": dict(ERRORS)}
 
 
 def providers(rows=1000, workers=4):
@@ -155,3 +193,29 @@ def providers(rows=1000, workers=4):
     log(f"제공기관 받음 {len(allrows)}/{total}, 실패 쪽 {missing[:10]}")
     write_json(snap("providers"), {"total": total, "rows": allrows, "missing_pages": missing}, gz=True)
     return {"providers": len(allrows), "providers_total": total, "providers_missing_pages": len(missing)}
+
+
+def standard(rows=1000):
+    """표준데이터 API: 전국 전량을 받아 그대로 저장 (화성시 추림은 build에서)."""
+    out, status = {}, {}
+    for name, url in STANDARD.items():
+        allrows, total, page = [], None, 1
+        try:
+            while True:
+                body = json.loads(get(url, {"pageNo": page, "numOfRows": rows, "type": "json"}))
+                b = (body.get("response") or {}).get("body") or {}
+                items = b.get("items") or []
+                if isinstance(items, dict):
+                    items = items.get("item") or []
+                total = int(b.get("totalCount") or 0)
+                allrows += items
+                if not items or len(allrows) >= total or page > 50:
+                    break
+                page += 1
+            status[name] = {"rows": len(allrows), "total": total}
+        except (ApiError, ValueError) as e:
+            status[name] = {"error": str(e)[:200], "rows": len(allrows)}
+        out[name] = allrows
+        log(f"표준데이터 {name}: {status[name]}")
+    write_json(snap("standard"), out, gz=True)
+    return {"standard": status}
