@@ -1,0 +1,4628 @@
+[
+{
+"adminNm": "베스트메딕스 복지용구점",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000484",
+"longTermPeribRgtDt": "20200301",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20200301"
+},
+{
+"adminNm": "이원건강의료기 화성점",
+"adminPttnCd": "C06",
+"longTermAdminSym": "34159000426",
+"longTermPeribRgtDt": "20190227",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20190227"
+},
+{
+"adminNm": "(주)동부케어 향남점",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000423",
+"longTermPeribRgtDt": "20190129",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20190129"
+},
+{
+"adminNm": "향남로뎀재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000578",
+"longTermPeribRgtDt": "20220203",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20220203"
+},
+{
+"adminNm": "원광한가족노인요양공동생활가정",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000013",
+"longTermPeribRgtDt": "20080613",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20080331"
+},
+{
+"adminNm": "한사랑실버밸리주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000676",
+"longTermPeribRgtDt": "20230801",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20230801"
+},
+{
+"adminNm": "가나 재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000694",
+"longTermPeribRgtDt": "20231001",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20231001"
+},
+{
+"adminNm": "저스트케어",
+"adminPttnCd": "C06",
+"longTermAdminSym": "34159000371",
+"longTermPeribRgtDt": "20170912",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20170912"
+},
+{
+"adminNm": "1등복지용구센터",
+"adminPttnCd": "C06",
+"longTermAdminSym": "34159000244",
+"longTermPeribRgtDt": "20121030",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20121030"
+},
+{
+"adminNm": "(주)클리어뷰헬스케어",
+"adminPttnCd": "C06",
+"longTermAdminSym": "34159000177",
+"longTermPeribRgtDt": "20100628",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20100628"
+},
+{
+"adminNm": "인메디케어",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000602",
+"longTermPeribRgtDt": "20220701",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20220701"
+},
+{
+"adminNm": "원광한가족재가시설",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000012",
+"longTermPeribRgtDt": "20080613",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20080331"
+},
+{
+"adminNm": "(주)동부케어 향남점",
+"adminPttnCd": "B04",
+"longTermAdminSym": "24159000423",
+"longTermPeribRgtDt": "20190129",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20190129"
+},
+{
+"adminNm": "(주)나사",
+"adminPttnCd": "C06",
+"longTermAdminSym": "34159000277",
+"longTermPeribRgtDt": "20140707",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20140707"
+},
+{
+"adminNm": "한솔재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000753",
+"longTermPeribRgtDt": "20241201",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20241201"
+},
+{
+"adminNm": "한림보청기의료기",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000725",
+"longTermPeribRgtDt": "20240401",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20240401"
+},
+{
+"adminNm": "화성복지재가센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000178",
+"longTermPeribRgtDt": "20100628",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20100627"
+},
+{
+"adminNm": "(주)동부케어 향남점",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000423",
+"longTermPeribRgtDt": "20190129",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20190129"
+},
+{
+"adminNm": "성심케어",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000539",
+"longTermPeribRgtDt": "20210503",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20210503"
+},
+{
+"adminNm": "큰숲복지센타",
+"adminPttnCd": "B05",
+"longTermAdminSym": "24159000462",
+"longTermPeribRgtDt": "20191115",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20191115"
+},
+{
+"adminNm": "로뎀나무",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000286",
+"longTermPeribRgtDt": "20141007",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20141007"
+},
+{
+"adminNm": "보은의집",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000420",
+"longTermPeribRgtDt": "20190104",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20190104"
+},
+{
+"adminNm": "화성의료기",
+"adminPttnCd": "C06",
+"longTermAdminSym": "34159000101",
+"longTermPeribRgtDt": "20090514",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20090514"
+},
+{
+"adminNm": "마음봄 요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000594",
+"longTermPeribRgtDt": "20220503",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20220503"
+},
+{
+"adminNm": "동탄센트럴의료기",
+"adminPttnCd": "C06",
+"longTermAdminSym": "34159000381",
+"longTermPeribRgtDt": "20171228",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20171228"
+},
+{
+"adminNm": "동탄의료기 복지용구",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000658",
+"longTermPeribRgtDt": "20230401",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20230401"
+},
+{
+"adminNm": "동산재가노인복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000361",
+"longTermPeribRgtDt": "20170407",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20170407"
+},
+{
+"adminNm": "휴 주간보호",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000632",
+"longTermPeribRgtDt": "20221201",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20221201"
+},
+{
+"adminNm": "동탄중앙요양센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000304",
+"longTermPeribRgtDt": "20150609",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20150609"
+},
+{
+"adminNm": "방문요양센터 모두케어",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000506",
+"longTermPeribRgtDt": "20201027",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20201027"
+},
+{
+"adminNm": "화성복지재가센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000178",
+"longTermPeribRgtDt": "20100628",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20100627"
+},
+{
+"adminNm": "오월에노인복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000233",
+"longTermPeribRgtDt": "20120503",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20120503"
+},
+{
+"adminNm": "원광한가족재가시설",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000012",
+"longTermPeribRgtDt": "20080613",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20080331"
+},
+{
+"adminNm": "꿈담요양원 부설 재가복지센타",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000335",
+"longTermPeribRgtDt": "20160513",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20160513"
+},
+{
+"adminNm": "다인너싱홈",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000549",
+"longTermPeribRgtDt": "20210801",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20210801"
+},
+{
+"adminNm": "감천재가복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000096",
+"longTermPeribRgtDt": "20090410",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20090410"
+},
+{
+"adminNm": "오월에노인복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000233",
+"longTermPeribRgtDt": "20120503",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20120503"
+},
+{
+"adminNm": "가온메디케어",
+"adminPttnCd": "C06",
+"longTermAdminSym": "34159000300",
+"longTermPeribRgtDt": "20150423",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20150423"
+},
+{
+"adminNm": "감천재가복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000096",
+"longTermPeribRgtDt": "20090410",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20090410"
+},
+{
+"adminNm": "성심티엠",
+"adminPttnCd": "C06",
+"longTermAdminSym": "34159000254",
+"longTermPeribRgtDt": "20130902",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20130902"
+},
+{
+"adminNm": "오엠씨노인복지센터",
+"adminPttnCd": "C06",
+"longTermAdminSym": "34159000167",
+"longTermPeribRgtDt": "20100322",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20100322"
+},
+{
+"adminNm": "남양의료기",
+"adminPttnCd": "C06",
+"longTermAdminSym": "34159000421",
+"longTermPeribRgtDt": "20190110",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20190110"
+},
+{
+"adminNm": "향남의료기",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000742",
+"longTermPeribRgtDt": "20240701",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20240701"
+},
+{
+"adminNm": "가람방문요양센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000293",
+"longTermPeribRgtDt": "20150127",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20150127"
+},
+{
+"adminNm": "(주)동부케어 향남점",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000423",
+"longTermPeribRgtDt": "20190129",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20190129"
+},
+{
+"adminNm": "휴안요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000714",
+"longTermPeribRgtDt": "20240101",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20240101"
+},
+{
+"adminNm": "(주)동부케어 동탄점",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000380",
+"longTermPeribRgtDt": "20171222",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20171222"
+},
+{
+"adminNm": "바이오메디",
+"adminPttnCd": "C06",
+"longTermAdminSym": "34159000373",
+"longTermPeribRgtDt": "20171026",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20171026"
+},
+{
+"adminNm": "꿈담요양원 부설 재가복지센타",
+"adminPttnCd": "C03",
+"longTermAdminSym": "34159000335",
+"longTermPeribRgtDt": "20160513",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20160513"
+},
+{
+"adminNm": "(주)동부케어 동탄점",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000380",
+"longTermPeribRgtDt": "20171222",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20171222"
+},
+{
+"adminNm": "동산재가노인복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000361",
+"longTermPeribRgtDt": "20170407",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20170407"
+},
+{
+"adminNm": "한사랑 요양시설",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000105",
+"longTermPeribRgtDt": "20090618",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20090618"
+},
+{
+"adminNm": "꿈담요양원 부설 재가복지센타",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000335",
+"longTermPeribRgtDt": "20160513",
+"siDoCd": "41",
+"siGunGuCd": "590",
+"stpRptDt": "20160513"
+},
+{
+"adminNm": "조암신흥데이케어센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000793",
+"longTermPeribRgtDt": "20250901",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250901"
+},
+{
+"adminNm": "세종효요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000581",
+"longTermPeribRgtDt": "20220203",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20220203"
+},
+{
+"adminNm": "성민요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000546",
+"longTermPeribRgtDt": "20210614",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210614"
+},
+{
+"adminNm": "아름다운노인복지센터",
+"adminPttnCd": "B05",
+"longTermAdminSym": "24159000496",
+"longTermPeribRgtDt": "20200618",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20200618"
+},
+{
+"adminNm": "늘편한재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000290",
+"longTermPeribRgtDt": "20141216",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20141210"
+},
+{
+"adminNm": "다사랑 방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000784",
+"longTermPeribRgtDt": "20250701",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250701"
+},
+{
+"adminNm": "올바른너싱홈",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000617",
+"longTermPeribRgtDt": "20221001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20221001"
+},
+{
+"adminNm": "상락원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000024",
+"longTermPeribRgtDt": "20080613",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20061012"
+},
+{
+"adminNm": "송산효재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000509",
+"longTermPeribRgtDt": "20201201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20201201"
+},
+{
+"adminNm": "노인요양원 샬롬하우스",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000460",
+"longTermPeribRgtDt": "20191108",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20191108"
+},
+{
+"adminNm": "더편안요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000611",
+"longTermPeribRgtDt": "20220801",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20220801"
+},
+{
+"adminNm": "으뜸주간보호재가복지센터",
+"adminPttnCd": "C03",
+"longTermAdminSym": "34159000309",
+"longTermPeribRgtDt": "20150810",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20150810"
+},
+{
+"adminNm": "화성에이스요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000574",
+"longTermPeribRgtDt": "20211229",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20211229"
+},
+{
+"adminNm": "(주)케어링 방문요양센터 화성점",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000736",
+"longTermPeribRgtDt": "20240601",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20240601"
+},
+{
+"adminNm": "다온재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000653",
+"longTermPeribRgtDt": "20230301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20230301"
+},
+{
+"adminNm": "으뜸주간보호재가복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000309",
+"longTermPeribRgtDt": "20150810",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20150810"
+},
+{
+"adminNm": "남양재가복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000086",
+"longTermPeribRgtDt": "20090223",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20090223"
+},
+{
+"adminNm": "솔미재활주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000767",
+"longTermPeribRgtDt": "20250301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250301"
+},
+{
+"adminNm": "굿 남양재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000855",
+"longTermPeribRgtDt": "20260801",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260801"
+},
+{
+"adminNm": "가나안방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000806",
+"longTermPeribRgtDt": "20251201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20251201"
+},
+{
+"adminNm": "소망의 집",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000125",
+"longTermPeribRgtDt": "20090924",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20090924"
+},
+{
+"adminNm": "모든이 요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000780",
+"longTermPeribRgtDt": "20250501",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250501"
+},
+{
+"adminNm": "남양성심요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000637",
+"longTermPeribRgtDt": "20230102",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20230102"
+},
+{
+"adminNm": "다사랑 통합 재가 주야간보호센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000796",
+"longTermPeribRgtDt": "20251001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20251001"
+},
+{
+"adminNm": "은혜노인주야간보호센터(은빛사랑채)",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000037",
+"longTermPeribRgtDt": "20080624",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20070716"
+},
+{
+"adminNm": "행복마을 방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000699",
+"longTermPeribRgtDt": "20231101",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20231101"
+},
+{
+"adminNm": "(주)케어링 방문요양센터 화성점",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000736",
+"longTermPeribRgtDt": "20240601",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20240601"
+},
+{
+"adminNm": "화성베스트재활전문요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000718",
+"longTermPeribRgtDt": "20240201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20240201"
+},
+{
+"adminNm": "새봄재활주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000454",
+"longTermPeribRgtDt": "20191001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20191001"
+},
+{
+"adminNm": "건영실버요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000552",
+"longTermPeribRgtDt": "20210801",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210801"
+},
+{
+"adminNm": "노블힐요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000610",
+"longTermPeribRgtDt": "20220801",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20220801"
+},
+{
+"adminNm": "숲속장기요양재가방문센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000525",
+"longTermPeribRgtDt": "20210201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210201"
+},
+{
+"adminNm": "민들레요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000835",
+"longTermPeribRgtDt": "20260401",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260401"
+},
+{
+"adminNm": "우리방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000507",
+"longTermPeribRgtDt": "20201203",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20201203"
+},
+{
+"adminNm": "효나눔누리재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000720",
+"longTermPeribRgtDt": "20240301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20240301"
+},
+{
+"adminNm": "효드림 노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000719",
+"longTermPeribRgtDt": "20240301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20240301"
+},
+{
+"adminNm": "고은재가장기요양기관",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000445",
+"longTermPeribRgtDt": "20190724",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20190724"
+},
+{
+"adminNm": "사랑재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000543",
+"longTermPeribRgtDt": "20210610",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210610"
+},
+{
+"adminNm": "보은요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000663",
+"longTermPeribRgtDt": "20230501",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20230501"
+},
+{
+"adminNm": "정담케어남양",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000786",
+"longTermPeribRgtDt": "20250701",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250701"
+},
+{
+"adminNm": "온정재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000865",
+"longTermPeribRgtDt": "20261001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20261001"
+},
+{
+"adminNm": "상록요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000207",
+"longTermPeribRgtDt": "20110113",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20080916"
+},
+{
+"adminNm": "GMS 화성 요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000102",
+"longTermPeribRgtDt": "20090529",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20090529"
+},
+{
+"adminNm": "송산효재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000509",
+"longTermPeribRgtDt": "20201201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20201201"
+},
+{
+"adminNm": "고은재가장기요양기관",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000445",
+"longTermPeribRgtDt": "20190724",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20190724"
+},
+{
+"adminNm": "예요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000374",
+"longTermPeribRgtDt": "20171101",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20171101"
+},
+{
+"adminNm": "묘희원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000023",
+"longTermPeribRgtDt": "20080619",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20060801"
+},
+{
+"adminNm": "성민쉼터",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000211",
+"longTermPeribRgtDt": "20110325",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20110325"
+},
+{
+"adminNm": "화성너싱홈2",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000356",
+"longTermPeribRgtDt": "20170202",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20170202"
+},
+{
+"adminNm": "으뜸재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000821",
+"longTermPeribRgtDt": "20260301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260301"
+},
+{
+"adminNm": "가람효행타운",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000394",
+"longTermPeribRgtDt": "20180705",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20180705"
+},
+{
+"adminNm": "다사랑노인요양원",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000217",
+"longTermPeribRgtDt": "20110513",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20110513"
+},
+{
+"adminNm": "중앙노인복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000299",
+"longTermPeribRgtDt": "20150331",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20150331"
+},
+{
+"adminNm": "부모사랑 방문요양센터2호점",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000776",
+"longTermPeribRgtDt": "20250401",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250401"
+},
+{
+"adminNm": "남양튼튼데이케어센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000459",
+"longTermPeribRgtDt": "20191104",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20191104"
+},
+{
+"adminNm": "마더링재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000743",
+"longTermPeribRgtDt": "20240701",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20240701"
+},
+{
+"adminNm": "희망실버케어센터",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000477",
+"longTermPeribRgtDt": "20191231",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20191231"
+},
+{
+"adminNm": "사랑 주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000626",
+"longTermPeribRgtDt": "20221101",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20221101"
+},
+{
+"adminNm": "하늘정원 요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000088",
+"longTermPeribRgtDt": "20090227",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20090227"
+},
+{
+"adminNm": "다온재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000653",
+"longTermPeribRgtDt": "20230301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20230301"
+},
+{
+"adminNm": "화성노인재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000553",
+"longTermPeribRgtDt": "20210901",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210901"
+},
+{
+"adminNm": "평화재가방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000864",
+"longTermPeribRgtDt": "20261001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20261001"
+},
+{
+"adminNm": "사랑재가노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000543",
+"longTermPeribRgtDt": "20210610",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210610"
+},
+{
+"adminNm": "보훈섬김재가파견센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000093",
+"longTermPeribRgtDt": "20090406",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20090406"
+},
+{
+"adminNm": "(주)케어119 돌봄센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000248",
+"longTermPeribRgtDt": "20130114",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20130114"
+},
+{
+"adminNm": "정담재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000814",
+"longTermPeribRgtDt": "20260301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260301"
+},
+{
+"adminNm": "헤리티지골든케어",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000854",
+"longTermPeribRgtDt": "20260801",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260801"
+},
+{
+"adminNm": "중앙노인복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000299",
+"longTermPeribRgtDt": "20150331",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20150331"
+},
+{
+"adminNm": "한사랑 재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000710",
+"longTermPeribRgtDt": "20240101",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20240101"
+},
+{
+"adminNm": "으뜸주간보호재가복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000309",
+"longTermPeribRgtDt": "20150810",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20150810"
+},
+{
+"adminNm": "효나눔누리재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000720",
+"longTermPeribRgtDt": "20240301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20240301"
+},
+{
+"adminNm": "효마을365요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000764",
+"longTermPeribRgtDt": "20250101",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250101"
+},
+{
+"adminNm": "(주)함께향남실버케어센터",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000279",
+"longTermPeribRgtDt": "20140724",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20140724"
+},
+{
+"adminNm": "굿모닝재활전문요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000815",
+"longTermPeribRgtDt": "20260301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260301"
+},
+{
+"adminNm": "A플러스정다운방문요양목욕센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000861",
+"longTermPeribRgtDt": "20261001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20261001"
+},
+{
+"adminNm": "하나재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000773",
+"longTermPeribRgtDt": "20250301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250301"
+},
+{
+"adminNm": "A플러스정다운방문요양목욕센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000861",
+"longTermPeribRgtDt": "20261001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20261001"
+},
+{
+"adminNm": "남양재가복지센터",
+"adminPttnCd": "C05",
+"longTermAdminSym": "34159000086",
+"longTermPeribRgtDt": "20090223",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20090223"
+},
+{
+"adminNm": "효인주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000690",
+"longTermPeribRgtDt": "20231001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20231001"
+},
+{
+"adminNm": "굿 남양재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000855",
+"longTermPeribRgtDt": "20260801",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260801"
+},
+{
+"adminNm": "우정요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000639",
+"longTermPeribRgtDt": "20230101",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20230101"
+},
+{
+"adminNm": "혜온돌봄센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000860",
+"longTermPeribRgtDt": "20261001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20261001"
+},
+{
+"adminNm": "정문실로암방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000449",
+"longTermPeribRgtDt": "20190809",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20190809"
+},
+{
+"adminNm": "현대실버요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000550",
+"longTermPeribRgtDt": "20210801",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210801"
+},
+{
+"adminNm": "양감요양원",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000545",
+"longTermPeribRgtDt": "20210615",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210615"
+},
+{
+"adminNm": "화성 꽃피는요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000621",
+"longTermPeribRgtDt": "20221001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20221001"
+},
+{
+"adminNm": "화성카네이션너싱홈",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000633",
+"longTermPeribRgtDt": "20221201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20221201"
+},
+{
+"adminNm": "남양1재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000533",
+"longTermPeribRgtDt": "20210415",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210415"
+},
+{
+"adminNm": "부모사랑 방문요양센터2호점",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000776",
+"longTermPeribRgtDt": "20250401",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250401"
+},
+{
+"adminNm": "사랑 주야간보호센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000626",
+"longTermPeribRgtDt": "20221101",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20221101"
+},
+{
+"adminNm": "다사랑 통합 재가 주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000796",
+"longTermPeribRgtDt": "20251001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20251001"
+},
+{
+"adminNm": "가나안방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000806",
+"longTermPeribRgtDt": "20251201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20251201"
+},
+{
+"adminNm": "새소망요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000412",
+"longTermPeribRgtDt": "20181107",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20181107"
+},
+{
+"adminNm": "다원실버케어",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000588",
+"longTermPeribRgtDt": "20220401",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20220401"
+},
+{
+"adminNm": "화성요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000519",
+"longTermPeribRgtDt": "20210101",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210101"
+},
+{
+"adminNm": "엔자힘요양센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000497",
+"longTermPeribRgtDt": "20200803",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20200803"
+},
+{
+"adminNm": "화성재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000856",
+"longTermPeribRgtDt": "20260801",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260801"
+},
+{
+"adminNm": "남양재가복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000086",
+"longTermPeribRgtDt": "20090223",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20090223"
+},
+{
+"adminNm": "아름다운노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000496",
+"longTermPeribRgtDt": "20200618",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20200618"
+},
+{
+"adminNm": "향남노블케어",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000419",
+"longTermPeribRgtDt": "20181228",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20181228"
+},
+{
+"adminNm": "숲속장기요양재가방문센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000525",
+"longTermPeribRgtDt": "20210201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210201"
+},
+{
+"adminNm": "우리마을노인복지재가기관",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000295",
+"longTermPeribRgtDt": "20150202",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20150202"
+},
+{
+"adminNm": "한사랑실버밸리요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000679",
+"longTermPeribRgtDt": "20230801",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20230801"
+},
+{
+"adminNm": "GMS 화성복지센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000106",
+"longTermPeribRgtDt": "20090618",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20090618"
+},
+{
+"adminNm": "소망너싱홈",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000209",
+"longTermPeribRgtDt": "20110309",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20110309"
+},
+{
+"adminNm": "효마을365재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000831",
+"longTermPeribRgtDt": "20260401",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260401"
+},
+{
+"adminNm": "화성 사랑마루",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000243",
+"longTermPeribRgtDt": "20121030",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20121030"
+},
+{
+"adminNm": "화성플러스요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000813",
+"longTermPeribRgtDt": "20260201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260201"
+},
+{
+"adminNm": "효심재가복지센타",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000474",
+"longTermPeribRgtDt": "20200106",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20200106"
+},
+{
+"adminNm": "다사랑 방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000784",
+"longTermPeribRgtDt": "20250701",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250701"
+},
+{
+"adminNm": "은성 방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000848",
+"longTermPeribRgtDt": "20260601",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260601"
+},
+{
+"adminNm": "효드림 노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000719",
+"longTermPeribRgtDt": "20240301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20240301"
+},
+{
+"adminNm": "건영실버요양원 병설 건영주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000606",
+"longTermPeribRgtDt": "20220801",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20220801"
+},
+{
+"adminNm": "가담비시니어케어",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000665",
+"longTermPeribRgtDt": "20230501",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20230501"
+},
+{
+"adminNm": "늘편한재가노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000290",
+"longTermPeribRgtDt": "20141216",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20141210"
+},
+{
+"adminNm": "솔미재활주야간보호센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000767",
+"longTermPeribRgtDt": "20250301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250301"
+},
+{
+"adminNm": "아름다운노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000496",
+"longTermPeribRgtDt": "20200618",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20200618"
+},
+{
+"adminNm": "새소망요양원",
+"adminPttnCd": "M31",
+"longTermAdminSym": "14159000412",
+"longTermPeribRgtDt": "20181107",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20181107"
+},
+{
+"adminNm": "아름다운동행",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000822",
+"longTermPeribRgtDt": "20260301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260301"
+},
+{
+"adminNm": "늘푸른너싱홈",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000009",
+"longTermPeribRgtDt": "20080603",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20050118"
+},
+{
+"adminNm": "혜온돌봄센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000860",
+"longTermPeribRgtDt": "20261001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20261001"
+},
+{
+"adminNm": "마도힐링 주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000595",
+"longTermPeribRgtDt": "20220601",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20220601"
+},
+{
+"adminNm": "(주)케어119돌봄센터 향남점",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000393",
+"longTermPeribRgtDt": "20180618",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20180618"
+},
+{
+"adminNm": "화성베스트재활전문요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000862",
+"longTermPeribRgtDt": "20261001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20261001"
+},
+{
+"adminNm": "정문실로암방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000449",
+"longTermPeribRgtDt": "20190809",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20190809"
+},
+{
+"adminNm": "미리내재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000267",
+"longTermPeribRgtDt": "20140401",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20140401"
+},
+{
+"adminNm": "행복드림재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000618",
+"longTermPeribRgtDt": "20221001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20221001"
+},
+{
+"adminNm": "경기사랑요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000372",
+"longTermPeribRgtDt": "20171020",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20171020"
+},
+{
+"adminNm": "평화재가방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000864",
+"longTermPeribRgtDt": "20261001",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20261001"
+},
+{
+"adminNm": "화성너싱홈",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000323",
+"longTermPeribRgtDt": "20160201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20160201"
+},
+{
+"adminNm": "믿음의집",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000435",
+"longTermPeribRgtDt": "20190415",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20190415"
+},
+{
+"adminNm": "화성성광재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000668",
+"longTermPeribRgtDt": "20230601",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20230601"
+},
+{
+"adminNm": "정문실로암요양원",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000448",
+"longTermPeribRgtDt": "20190809",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20190809"
+},
+{
+"adminNm": "보배로운 요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000253",
+"longTermPeribRgtDt": "20130822",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20130819"
+},
+{
+"adminNm": "(주)케어119 돌봄센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000248",
+"longTermPeribRgtDt": "20130114",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20130114"
+},
+{
+"adminNm": "화성나리재가방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000727",
+"longTermPeribRgtDt": "20240401",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20240401"
+},
+{
+"adminNm": "화성참사랑요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000844",
+"longTermPeribRgtDt": "20260501",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260501"
+},
+{
+"adminNm": "스마일요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000842",
+"longTermPeribRgtDt": "20260501",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260501"
+},
+{
+"adminNm": "골든네스트요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000644",
+"longTermPeribRgtDt": "20230201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20230201"
+},
+{
+"adminNm": "화성시남부노인복지관주간보호센타",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000066",
+"longTermPeribRgtDt": "20081118",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20081118"
+},
+{
+"adminNm": "화성나눔재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000740",
+"longTermPeribRgtDt": "20240701",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20240701"
+},
+{
+"adminNm": "우리마을노인복지재가기관",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000295",
+"longTermPeribRgtDt": "20150202",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20150202"
+},
+{
+"adminNm": "그린힐재활실버케어",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000852",
+"longTermPeribRgtDt": "20260801",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260801"
+},
+{
+"adminNm": "아름다운동행",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000822",
+"longTermPeribRgtDt": "20260301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260301"
+},
+{
+"adminNm": "효심재가복지센타",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000474",
+"longTermPeribRgtDt": "20200106",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20200106"
+},
+{
+"adminNm": "백세요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000794",
+"longTermPeribRgtDt": "20250901",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250901"
+},
+{
+"adminNm": "길 남양재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000754",
+"longTermPeribRgtDt": "20241201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20241201"
+},
+{
+"adminNm": "송산그린재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000833",
+"longTermPeribRgtDt": "20260401",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260401"
+},
+{
+"adminNm": "염광노인요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000077",
+"longTermPeribRgtDt": "20090213",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20090213"
+},
+{
+"adminNm": "가정재가복지",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000521",
+"longTermPeribRgtDt": "20201231",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20201231"
+},
+{
+"adminNm": "남양1재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000533",
+"longTermPeribRgtDt": "20210415",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210415"
+},
+{
+"adminNm": "사랑 주야간보호센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000626",
+"longTermPeribRgtDt": "20221101",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20221101"
+},
+{
+"adminNm": "신흥노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000197",
+"longTermPeribRgtDt": "20101109",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20080305"
+},
+{
+"adminNm": "에버그린요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000834",
+"longTermPeribRgtDt": "20260401",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260401"
+},
+{
+"adminNm": "남양효나눔요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000586",
+"longTermPeribRgtDt": "20220401",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20220401"
+},
+{
+"adminNm": "나온재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000812",
+"longTermPeribRgtDt": "20260101",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260101"
+},
+{
+"adminNm": "송산 참사랑 주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000443",
+"longTermPeribRgtDt": "20190715",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20190715"
+},
+{
+"adminNm": "팔탄숲속요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000517",
+"longTermPeribRgtDt": "20210101",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20210101"
+},
+{
+"adminNm": "한사랑 재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000710",
+"longTermPeribRgtDt": "20240101",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20240101"
+},
+{
+"adminNm": "효메디케어요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000598",
+"longTermPeribRgtDt": "20220603",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20220603"
+},
+{
+"adminNm": "빌리프케어",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000816",
+"longTermPeribRgtDt": "20260301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260301"
+},
+{
+"adminNm": "(주)케어119 돌봄센터",
+"adminPttnCd": "C03",
+"longTermAdminSym": "34159000248",
+"longTermPeribRgtDt": "20130114",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20130114"
+},
+{
+"adminNm": "효사랑노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000857",
+"longTermPeribRgtDt": "20260901",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260901"
+},
+{
+"adminNm": "미리내재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000267",
+"longTermPeribRgtDt": "20140401",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20140401"
+},
+{
+"adminNm": "부모사랑 방문요양센터2호점",
+"adminPttnCd": "B05",
+"longTermAdminSym": "24159000776",
+"longTermPeribRgtDt": "20250401",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20250401"
+},
+{
+"adminNm": "보훈섬김재가파견센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000093",
+"longTermPeribRgtDt": "20090406",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20090406"
+},
+{
+"adminNm": "정담재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000814",
+"longTermPeribRgtDt": "20260301",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260301"
+},
+{
+"adminNm": "신흥노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000197",
+"longTermPeribRgtDt": "20101109",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20080305"
+},
+{
+"adminNm": "효앤재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000843",
+"longTermPeribRgtDt": "20260501",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260501"
+},
+{
+"adminNm": "효사랑노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000857",
+"longTermPeribRgtDt": "20260901",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260901"
+},
+{
+"adminNm": "행복동행재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000850",
+"longTermPeribRgtDt": "20260701",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20260701"
+},
+{
+"adminNm": "그린너싱홈",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000628",
+"longTermPeribRgtDt": "20221201",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20221201"
+},
+{
+"adminNm": "가재울재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000664",
+"longTermPeribRgtDt": "20230501",
+"siDoCd": "41",
+"siGunGuCd": "591",
+"stpRptDt": "20230501"
+},
+{
+"adminNm": "행복플러스요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000575",
+"longTermPeribRgtDt": "20211223",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20211223"
+},
+{
+"adminNm": "다정요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000646",
+"longTermPeribRgtDt": "20230201",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230201"
+},
+{
+"adminNm": "민들레재가복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000348",
+"longTermPeribRgtDt": "20160921",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20160921"
+},
+{
+"adminNm": "가온재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000532",
+"longTermPeribRgtDt": "20210415",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20210415"
+},
+{
+"adminNm": "참편한재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000576",
+"longTermPeribRgtDt": "20220203",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20220203"
+},
+{
+"adminNm": "한마음재가노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000061",
+"longTermPeribRgtDt": "20081016",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20081016"
+},
+{
+"adminNm": "재원요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000407",
+"longTermPeribRgtDt": "20180920",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20180920"
+},
+{
+"adminNm": "삼성의료기",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000721",
+"longTermPeribRgtDt": "20240301",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20240301"
+},
+{
+"adminNm": "더아름복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000755",
+"longTermPeribRgtDt": "20241201",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20241201"
+},
+{
+"adminNm": "가람효행재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000439",
+"longTermPeribRgtDt": "20190513",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20190513"
+},
+{
+"adminNm": "화성노인전문요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000008",
+"longTermPeribRgtDt": "20080603",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20051005"
+},
+{
+"adminNm": "우리주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000803",
+"longTermPeribRgtDt": "20251101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20251101"
+},
+{
+"adminNm": "봉담중앙요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000607",
+"longTermPeribRgtDt": "20220801",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20220801"
+},
+{
+"adminNm": "청담요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000698",
+"longTermPeribRgtDt": "20231101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20231101"
+},
+{
+"adminNm": "부모사랑 주·야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000686",
+"longTermPeribRgtDt": "20230901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230901"
+},
+{
+"adminNm": "라인메디케어",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000501",
+"longTermPeribRgtDt": "20200919",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20200919"
+},
+{
+"adminNm": "희망재활재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000779",
+"longTermPeribRgtDt": "20250501",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20250501"
+},
+{
+"adminNm": "우리요양원",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000802",
+"longTermPeribRgtDt": "20251101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20251101"
+},
+{
+"adminNm": "부모사랑 실버하우스",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000688",
+"longTermPeribRgtDt": "20230901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230901"
+},
+{
+"adminNm": "시온방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000494",
+"longTermPeribRgtDt": "20200520",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20200520"
+},
+{
+"adminNm": "매송사랑마을요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000476",
+"longTermPeribRgtDt": "20200101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20200101"
+},
+{
+"adminNm": "이솔재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000739",
+"longTermPeribRgtDt": "20240701",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20240701"
+},
+{
+"adminNm": "매송노인재가센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000281",
+"longTermPeribRgtDt": "20140903",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20140903"
+},
+{
+"adminNm": "서해시니어타운",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000792",
+"longTermPeribRgtDt": "20250901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20250901"
+},
+{
+"adminNm": "오아시스요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000647",
+"longTermPeribRgtDt": "20230201",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230201"
+},
+{
+"adminNm": "엘너싱홈",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000681",
+"longTermPeribRgtDt": "20230801",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230801"
+},
+{
+"adminNm": "소풍재활주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000601",
+"longTermPeribRgtDt": "20220701",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20220701"
+},
+{
+"adminNm": "미선노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000319",
+"longTermPeribRgtDt": "20151221",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20151221"
+},
+{
+"adminNm": "시온방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000494",
+"longTermPeribRgtDt": "20200520",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20200520"
+},
+{
+"adminNm": "경희재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000826",
+"longTermPeribRgtDt": "20260401",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20260401"
+},
+{
+"adminNm": "비봉푸른재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000790",
+"longTermPeribRgtDt": "20250901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20250901"
+},
+{
+"adminNm": "더조은재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000744",
+"longTermPeribRgtDt": "20240701",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20240701"
+},
+{
+"adminNm": "정남노인복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000316",
+"longTermPeribRgtDt": "20151021",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20151021"
+},
+{
+"adminNm": "한마음재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000061",
+"longTermPeribRgtDt": "20081016",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20081016"
+},
+{
+"adminNm": "민들레재가복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000348",
+"longTermPeribRgtDt": "20160921",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20160921"
+},
+{
+"adminNm": "희망재활재가노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000779",
+"longTermPeribRgtDt": "20250501",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20250501"
+},
+{
+"adminNm": "예사랑 실버케어",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000555",
+"longTermPeribRgtDt": "20210901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20210901"
+},
+{
+"adminNm": "마리아방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000827",
+"longTermPeribRgtDt": "20260401",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20260401"
+},
+{
+"adminNm": "다정재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000652",
+"longTermPeribRgtDt": "20230302",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230301"
+},
+{
+"adminNm": "따뜻한실버케어",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000819",
+"longTermPeribRgtDt": "20260301",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20260301"
+},
+{
+"adminNm": "행복이 가득한 주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000387",
+"longTermPeribRgtDt": "20180402",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20180402"
+},
+{
+"adminNm": "365이음재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000612",
+"longTermPeribRgtDt": "20220901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20220901"
+},
+{
+"adminNm": "포레스트요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000638",
+"longTermPeribRgtDt": "20230101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230101"
+},
+{
+"adminNm": "부모사랑 주·야간보호센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000686",
+"longTermPeribRgtDt": "20230901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230901"
+},
+{
+"adminNm": "해뜨는마을",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000007",
+"longTermPeribRgtDt": "20080603",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "19981101"
+},
+{
+"adminNm": "사랑샘재가노인복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000312",
+"longTermPeribRgtDt": "20150915",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20150915"
+},
+{
+"adminNm": "봄날요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000645",
+"longTermPeribRgtDt": "20230201",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230201"
+},
+{
+"adminNm": "스마트방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000787",
+"longTermPeribRgtDt": "20250801",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20250801"
+},
+{
+"adminNm": "가람효행재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000439",
+"longTermPeribRgtDt": "20190513",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20190513"
+},
+{
+"adminNm": "더화성재가노인복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000282",
+"longTermPeribRgtDt": "20140915",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20140915"
+},
+{
+"adminNm": "봉담사랑 주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000741",
+"longTermPeribRgtDt": "20240722",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20240722"
+},
+{
+"adminNm": "희망노인전문요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000434",
+"longTermPeribRgtDt": "20190411",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20190411"
+},
+{
+"adminNm": "비봉골든케어재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000634",
+"longTermPeribRgtDt": "20221201",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20221201"
+},
+{
+"adminNm": "나이스방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000592",
+"longTermPeribRgtDt": "20220501",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20220501"
+},
+{
+"adminNm": "온맘터치 봉담중부점",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000734",
+"longTermPeribRgtDt": "20240601",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20240601"
+},
+{
+"adminNm": "새봄요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000691",
+"longTermPeribRgtDt": "20231001",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20231001"
+},
+{
+"adminNm": "나래동행재가복지센타",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000851",
+"longTermPeribRgtDt": "20260701",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20260701"
+},
+{
+"adminNm": "더베스트요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000623",
+"longTermPeribRgtDt": "20221001",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20221001"
+},
+{
+"adminNm": "보은주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000473",
+"longTermPeribRgtDt": "20200103",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20200103"
+},
+{
+"adminNm": "연세재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000582",
+"longTermPeribRgtDt": "20220302",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20220302"
+},
+{
+"adminNm": "비봉요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000364",
+"longTermPeribRgtDt": "20170515",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20170515"
+},
+{
+"adminNm": "영진요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000799",
+"longTermPeribRgtDt": "20251001",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20251001"
+},
+{
+"adminNm": "더화성재가노인복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000282",
+"longTermPeribRgtDt": "20140915",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20140915"
+},
+{
+"adminNm": "늘~함께 재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000675",
+"longTermPeribRgtDt": "20230801",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230801"
+},
+{
+"adminNm": "온맘터치 봉담점",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000565",
+"longTermPeribRgtDt": "20211201",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20211201"
+},
+{
+"adminNm": "행복이 가득한 주야간보호센터",
+"adminPttnCd": "B05",
+"longTermAdminSym": "24159000387",
+"longTermPeribRgtDt": "20180402",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20180402"
+},
+{
+"adminNm": "다산재가복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000150",
+"longTermPeribRgtDt": "20091224",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20091224"
+},
+{
+"adminNm": "미선노인복지센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000319",
+"longTermPeribRgtDt": "20151221",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20151221"
+},
+{
+"adminNm": "행복이 가득한 주야간보호센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000387",
+"longTermPeribRgtDt": "20180402",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20180402"
+},
+{
+"adminNm": "나래동행재가복지센타",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000851",
+"longTermPeribRgtDt": "20260701",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20260701"
+},
+{
+"adminNm": "사랑샘재가노인복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000312",
+"longTermPeribRgtDt": "20150915",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20150915"
+},
+{
+"adminNm": "다사랑주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000425",
+"longTermPeribRgtDt": "20190221",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20190221"
+},
+{
+"adminNm": "봉담효가요양원 병설 효가 주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000700",
+"longTermPeribRgtDt": "20231101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20231101"
+},
+{
+"adminNm": "행복손재가방문요양방문목욕센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000783",
+"longTermPeribRgtDt": "20250701",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20250701"
+},
+{
+"adminNm": "한빛 주간보호센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000702",
+"longTermPeribRgtDt": "20231201",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20231201"
+},
+{
+"adminNm": "희망재활재가노인복지센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000779",
+"longTermPeribRgtDt": "20250501",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20250501"
+},
+{
+"adminNm": "한솔너싱홈",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000748",
+"longTermPeribRgtDt": "20240901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20240901"
+},
+{
+"adminNm": "다함재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000778",
+"longTermPeribRgtDt": "20250501",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20250501"
+},
+{
+"adminNm": "찬스케어 화성방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000752",
+"longTermPeribRgtDt": "20241101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20241101"
+},
+{
+"adminNm": "행복한어르신주간보호센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000613",
+"longTermPeribRgtDt": "20220901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20220901"
+},
+{
+"adminNm": "비봉재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000510",
+"longTermPeribRgtDt": "20201201",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20201201"
+},
+{
+"adminNm": "이솔재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000739",
+"longTermPeribRgtDt": "20240701",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20240701"
+},
+{
+"adminNm": "상리요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000701",
+"longTermPeribRgtDt": "20231101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20231101"
+},
+{
+"adminNm": "행복이 가득한 주야간보호센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000387",
+"longTermPeribRgtDt": "20180402",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20180402"
+},
+{
+"adminNm": "케어플랜복지용구사업소",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000828",
+"longTermPeribRgtDt": "20260401",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20260401"
+},
+{
+"adminNm": "봉담효행요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000830",
+"longTermPeribRgtDt": "20260401",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20260401"
+},
+{
+"adminNm": "햇살좋은방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000810",
+"longTermPeribRgtDt": "20260101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20260101"
+},
+{
+"adminNm": "행복한어르신주간보호센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000613",
+"longTermPeribRgtDt": "20220901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20220901"
+},
+{
+"adminNm": "섬김나눔복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000829",
+"longTermPeribRgtDt": "20260401",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20260401"
+},
+{
+"adminNm": "한빛 주간보호센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000702",
+"longTermPeribRgtDt": "20231201",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20231201"
+},
+{
+"adminNm": "부모사랑 주·야간보호센터",
+"adminPttnCd": "B05",
+"longTermAdminSym": "24159000686",
+"longTermPeribRgtDt": "20230901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230901"
+},
+{
+"adminNm": "늘~함께 재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000675",
+"longTermPeribRgtDt": "20230801",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230801"
+},
+{
+"adminNm": "복있는사람노인재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000220",
+"longTermPeribRgtDt": "20110715",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20110715"
+},
+{
+"adminNm": "소라빛 재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000687",
+"longTermPeribRgtDt": "20230901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230901"
+},
+{
+"adminNm": "케어링데이케어 화성비봉점",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000858",
+"longTermPeribRgtDt": "20260901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20260901"
+},
+{
+"adminNm": "재원요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000407",
+"longTermPeribRgtDt": "20180920",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20180920"
+},
+{
+"adminNm": "가온재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000532",
+"longTermPeribRgtDt": "20210415",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20210415"
+},
+{
+"adminNm": "한빛 주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000702",
+"longTermPeribRgtDt": "20231201",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20231201"
+},
+{
+"adminNm": "다정재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000652",
+"longTermPeribRgtDt": "20230302",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230301"
+},
+{
+"adminNm": "매송노인재가센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000281",
+"longTermPeribRgtDt": "20140903",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20140903"
+},
+{
+"adminNm": "행복한어르신주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000613",
+"longTermPeribRgtDt": "20220901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20220901"
+},
+{
+"adminNm": "임마누엘요양원",
+"adminPttnCd": "A04",
+"longTermAdminSym": "14159000187",
+"longTermPeribRgtDt": "20100920",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20100920"
+},
+{
+"adminNm": "더아름복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000755",
+"longTermPeribRgtDt": "20241201",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20241201"
+},
+{
+"adminNm": "행복손재가방문요양방문목욕센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000783",
+"longTermPeribRgtDt": "20250701",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20250701"
+},
+{
+"adminNm": "정다운재가노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000804",
+"longTermPeribRgtDt": "20251101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20251101"
+},
+{
+"adminNm": "다사랑주간보호센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000425",
+"longTermPeribRgtDt": "20190221",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20190221"
+},
+{
+"adminNm": "꿈담숲요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000531",
+"longTermPeribRgtDt": "20210301",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20210301"
+},
+{
+"adminNm": "부모사랑 주·야간보호센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000686",
+"longTermPeribRgtDt": "20230901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20230901"
+},
+{
+"adminNm": "찬스케어 화성방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000752",
+"longTermPeribRgtDt": "20241101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20241101"
+},
+{
+"adminNm": "햇살좋은방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000810",
+"longTermPeribRgtDt": "20260101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20260101"
+},
+{
+"adminNm": "365이음재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000612",
+"longTermPeribRgtDt": "20220901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20220901"
+},
+{
+"adminNm": "가람효행재가복지센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000439",
+"longTermPeribRgtDt": "20190513",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20190513"
+},
+{
+"adminNm": "정남노인복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000316",
+"longTermPeribRgtDt": "20151021",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20151021"
+},
+{
+"adminNm": "나이스방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000592",
+"longTermPeribRgtDt": "20220501",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20220501"
+},
+{
+"adminNm": "사랑방이음터 복지용구사업소",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000859",
+"longTermPeribRgtDt": "20260901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20260901"
+},
+{
+"adminNm": "다함재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000778",
+"longTermPeribRgtDt": "20250501",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20250501"
+},
+{
+"adminNm": "효사랑요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000536",
+"longTermPeribRgtDt": "20210406",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20210406"
+},
+{
+"adminNm": "다산재가복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000150",
+"longTermPeribRgtDt": "20091224",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20091224"
+},
+{
+"adminNm": "복있는사람노인재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000220",
+"longTermPeribRgtDt": "20110715",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20110715"
+},
+{
+"adminNm": "예사랑 실버케어",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000555",
+"longTermPeribRgtDt": "20210901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20210901"
+},
+{
+"adminNm": "꿈담요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000333",
+"longTermPeribRgtDt": "20160504",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20160504"
+},
+{
+"adminNm": "온맘터치 봉담중부점",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000734",
+"longTermPeribRgtDt": "20240601",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20240601"
+},
+{
+"adminNm": "비봉푸른재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000790",
+"longTermPeribRgtDt": "20250901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20250901"
+},
+{
+"adminNm": "정다운재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000804",
+"longTermPeribRgtDt": "20251101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20251101"
+},
+{
+"adminNm": "연세노블재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000749",
+"longTermPeribRgtDt": "20240901",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20240901"
+},
+{
+"adminNm": "동화요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000515",
+"longTermPeribRgtDt": "20210101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20210101"
+},
+{
+"adminNm": "봉담효가요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000230",
+"longTermPeribRgtDt": "20120301",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20101014"
+},
+{
+"adminNm": "소망의동산 실로원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000121",
+"longTermPeribRgtDt": "20090817",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20090817"
+},
+{
+"adminNm": "동원요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000715",
+"longTermPeribRgtDt": "20240101",
+"siDoCd": "41",
+"siGunGuCd": "593",
+"stpRptDt": "20240101"
+},
+{
+"adminNm": "사랑방재가복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000141",
+"longTermPeribRgtDt": "20091217",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20091217"
+},
+{
+"adminNm": "온맘터치 한우리점",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000708",
+"longTermPeribRgtDt": "20240101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240101"
+},
+{
+"adminNm": "더사랑 주야간보호센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000367",
+"longTermPeribRgtDt": "20170725",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20170725"
+},
+{
+"adminNm": "경기 다정한방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000726",
+"longTermPeribRgtDt": "20240401",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240401"
+},
+{
+"adminNm": "The더기쁨요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000377",
+"longTermPeribRgtDt": "20171124",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20171124"
+},
+{
+"adminNm": "늘사랑 주야간보호방문요양",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000605",
+"longTermPeribRgtDt": "20220801",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20220801"
+},
+{
+"adminNm": "케어링 데이케어 레이크점",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000770",
+"longTermPeribRgtDt": "20250301",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250301"
+},
+{
+"adminNm": "효사랑재활복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000711",
+"longTermPeribRgtDt": "20240101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240101"
+},
+{
+"adminNm": "봄빛 방문간호 요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000729",
+"longTermPeribRgtDt": "20240501",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240501"
+},
+{
+"adminNm": "효사랑재활복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000711",
+"longTermPeribRgtDt": "20240101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240101"
+},
+{
+"adminNm": "화성병점노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000463",
+"longTermPeribRgtDt": "20191125",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20191125"
+},
+{
+"adminNm": "참빛요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000785",
+"longTermPeribRgtDt": "20250701",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250701"
+},
+{
+"adminNm": "마음뜰방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000808",
+"longTermPeribRgtDt": "20260101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260101"
+},
+{
+"adminNm": "청춘만세 재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000853",
+"longTermPeribRgtDt": "20260701",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260701"
+},
+{
+"adminNm": "미소요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000840",
+"longTermPeribRgtDt": "20260501",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260501"
+},
+{
+"adminNm": "푸른마음재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000498",
+"longTermPeribRgtDt": "20200901",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20200901"
+},
+{
+"adminNm": "경기이화노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000512",
+"longTermPeribRgtDt": "20201201",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20201201"
+},
+{
+"adminNm": "소담재가노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000738",
+"longTermPeribRgtDt": "20240601",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240601"
+},
+{
+"adminNm": "해바라기주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000409",
+"longTermPeribRgtDt": "20181030",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20181030"
+},
+{
+"adminNm": "병점효사랑요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000713",
+"longTermPeribRgtDt": "20240101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240101"
+},
+{
+"adminNm": "해피하우스 요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000518",
+"longTermPeribRgtDt": "20210101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20210101"
+},
+{
+"adminNm": "지안실버홈",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000788",
+"longTermPeribRgtDt": "20250801",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250801"
+},
+{
+"adminNm": "사랑방재가복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000141",
+"longTermPeribRgtDt": "20091217",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20091217"
+},
+{
+"adminNm": "두리 방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000763",
+"longTermPeribRgtDt": "20250101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250101"
+},
+{
+"adminNm": "빌리브 데이케어센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000667",
+"longTermPeribRgtDt": "20230601",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20230601"
+},
+{
+"adminNm": "길재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000508",
+"longTermPeribRgtDt": "20201201",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20201201"
+},
+{
+"adminNm": "하늘노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000455",
+"longTermPeribRgtDt": "20190930",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20190930"
+},
+{
+"adminNm": "더사랑 주야간보호센터",
+"adminPttnCd": "C03",
+"longTermAdminSym": "34159000367",
+"longTermPeribRgtDt": "20170725",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20170725"
+},
+{
+"adminNm": "행복플러스 주간보호센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000824",
+"longTermPeribRgtDt": "20260401",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260401"
+},
+{
+"adminNm": "화성효마을노인복지센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000570",
+"longTermPeribRgtDt": "20220101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20220101"
+},
+{
+"adminNm": "경기이화노인복지센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000512",
+"longTermPeribRgtDt": "20201201",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20201201"
+},
+{
+"adminNm": "해온방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000809",
+"longTermPeribRgtDt": "20260101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260101"
+},
+{
+"adminNm": "온맘터치 한우리점",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000708",
+"longTermPeribRgtDt": "20240101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240101"
+},
+{
+"adminNm": "정담노인돌봄센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000760",
+"longTermPeribRgtDt": "20250101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250101"
+},
+{
+"adminNm": "행복플러스 주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000824",
+"longTermPeribRgtDt": "20260401",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260401"
+},
+{
+"adminNm": "새빛 노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000630",
+"longTermPeribRgtDt": "20221201",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20221201"
+},
+{
+"adminNm": "신창노인방문요양센타",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000124",
+"longTermPeribRgtDt": "20090917",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20090917"
+},
+{
+"adminNm": "사랑채 재가노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000458",
+"longTermPeribRgtDt": "20191101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20191101"
+},
+{
+"adminNm": "화성재가복지센터 효담채",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000414",
+"longTermPeribRgtDt": "20181205",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20181205"
+},
+{
+"adminNm": "새롬재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000528",
+"longTermPeribRgtDt": "20210301",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20210301"
+},
+{
+"adminNm": "청춘만세 재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000853",
+"longTermPeribRgtDt": "20260701",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260701"
+},
+{
+"adminNm": "(A)비지팅엔젤스 화성방문요양지점",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000845",
+"longTermPeribRgtDt": "20260601",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260601"
+},
+{
+"adminNm": "푸른마음재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000498",
+"longTermPeribRgtDt": "20200901",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20200901"
+},
+{
+"adminNm": "행복한재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000757",
+"longTermPeribRgtDt": "20241201",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20241201"
+},
+{
+"adminNm": "은혜재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000746",
+"longTermPeribRgtDt": "20240801",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240801"
+},
+{
+"adminNm": "온사랑방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000800",
+"longTermPeribRgtDt": "20251101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20251101"
+},
+{
+"adminNm": "(A)비지팅엔젤스 화성방문요양지점",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000845",
+"longTermPeribRgtDt": "20260601",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260601"
+},
+{
+"adminNm": "화성병점노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000463",
+"longTermPeribRgtDt": "20191125",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20191125"
+},
+{
+"adminNm": "혜윰재가노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000782",
+"longTermPeribRgtDt": "20250601",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250601"
+},
+{
+"adminNm": "온사랑방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000800",
+"longTermPeribRgtDt": "20251101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20251101"
+},
+{
+"adminNm": "김은숙 인지재활 주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000836",
+"longTermPeribRgtDt": "20260501",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260501"
+},
+{
+"adminNm": "봄빛 방문간호 요양센터",
+"adminPttnCd": "B05",
+"longTermAdminSym": "24159000729",
+"longTermPeribRgtDt": "20240501",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240501"
+},
+{
+"adminNm": "미소드림요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000551",
+"longTermPeribRgtDt": "20210801",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20210801"
+},
+{
+"adminNm": "효돌봄 요양복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000759",
+"longTermPeribRgtDt": "20250101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250101"
+},
+{
+"adminNm": "봄빛 방문간호 요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000729",
+"longTermPeribRgtDt": "20240501",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240501"
+},
+{
+"adminNm": "고은재활주야간보호센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000651",
+"longTermPeribRgtDt": "20230301",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20230301"
+},
+{
+"adminNm": "길재가노인복지센터",
+"adminPttnCd": "B05",
+"longTermAdminSym": "24159000508",
+"longTermPeribRgtDt": "20201201",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20201201"
+},
+{
+"adminNm": "고은재활주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000651",
+"longTermPeribRgtDt": "20230301",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20230301"
+},
+{
+"adminNm": "늘사랑요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000609",
+"longTermPeribRgtDt": "20220801",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20220801"
+},
+{
+"adminNm": "더드림재활데이케어센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000751",
+"longTermPeribRgtDt": "20241101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20241101"
+},
+{
+"adminNm": "화성효나눔노인복지센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000846",
+"longTermPeribRgtDt": "20260601",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260601"
+},
+{
+"adminNm": "새빛 노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000630",
+"longTermPeribRgtDt": "20221201",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20221201"
+},
+{
+"adminNm": "더사랑 주야간보호센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000367",
+"longTermPeribRgtDt": "20170725",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20170725"
+},
+{
+"adminNm": "오엠씨노인복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000148",
+"longTermPeribRgtDt": "20091224",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20091224"
+},
+{
+"adminNm": "효돌봄 요양복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000759",
+"longTermPeribRgtDt": "20250101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250101"
+},
+{
+"adminNm": "동탄해오름노인요양센터",
+"adminPttnCd": "C03",
+"longTermAdminSym": "34159000397",
+"longTermPeribRgtDt": "20180720",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20180720"
+},
+{
+"adminNm": "두리 방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000763",
+"longTermPeribRgtDt": "20250101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250101"
+},
+{
+"adminNm": "빌리브 데이케어센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000667",
+"longTermPeribRgtDt": "20230601",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20230601"
+},
+{
+"adminNm": "경기 다정한방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000726",
+"longTermPeribRgtDt": "20240401",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240401"
+},
+{
+"adminNm": "늘사랑 주야간보호방문요양",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000605",
+"longTermPeribRgtDt": "20220801",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20220801"
+},
+{
+"adminNm": "더섬김재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000491",
+"longTermPeribRgtDt": "20200504",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20200504"
+},
+{
+"adminNm": "효사랑재활복지센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000711",
+"longTermPeribRgtDt": "20240101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240101"
+},
+{
+"adminNm": "하늘노인복지센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000455",
+"longTermPeribRgtDt": "20190930",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20190930"
+},
+{
+"adminNm": "효지킴재가노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000499",
+"longTermPeribRgtDt": "20200921",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20200921"
+},
+{
+"adminNm": "밀알희망재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000569",
+"longTermPeribRgtDt": "20220101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20220101"
+},
+{
+"adminNm": "정담노인돌봄센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000760",
+"longTermPeribRgtDt": "20250101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250101"
+},
+{
+"adminNm": "대교뉴이프 데이케어센터 동탄센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000697",
+"longTermPeribRgtDt": "20231101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20231101"
+},
+{
+"adminNm": "원광시니어센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000758",
+"longTermPeribRgtDt": "20250101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250101"
+},
+{
+"adminNm": "사랑채 재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000458",
+"longTermPeribRgtDt": "20191101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20191101"
+},
+{
+"adminNm": "동탄요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000705",
+"longTermPeribRgtDt": "20231201",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20231201"
+},
+{
+"adminNm": "신창노인방문요양센타",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000124",
+"longTermPeribRgtDt": "20090917",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20090917"
+},
+{
+"adminNm": "오엠씨노인복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000148",
+"longTermPeribRgtDt": "20091224",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20091224"
+},
+{
+"adminNm": "돌보인방문요양센터 화성점",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000231",
+"longTermPeribRgtDt": "20120320",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20120320"
+},
+{
+"adminNm": "늘사랑 주야간보호방문요양",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000605",
+"longTermPeribRgtDt": "20220801",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20220801"
+},
+{
+"adminNm": "기쁨케어복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000297",
+"longTermPeribRgtDt": "20150305",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20150305"
+},
+{
+"adminNm": "원광시니어센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000758",
+"longTermPeribRgtDt": "20250101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250101"
+},
+{
+"adminNm": "기쁨케어복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000297",
+"longTermPeribRgtDt": "20150305",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20150305"
+},
+{
+"adminNm": "오엠씨노인복지센터",
+"adminPttnCd": "C05",
+"longTermAdminSym": "34159000148",
+"longTermPeribRgtDt": "20091224",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20091224"
+},
+{
+"adminNm": "더섬김재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000491",
+"longTermPeribRgtDt": "20200504",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20200504"
+},
+{
+"adminNm": "소담재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000738",
+"longTermPeribRgtDt": "20240601",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240601"
+},
+{
+"adminNm": "화성재가복지센터 효담채",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000414",
+"longTermPeribRgtDt": "20181205",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20181205"
+},
+{
+"adminNm": "가람 방문요양방문목욕",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000841",
+"longTermPeribRgtDt": "20260501",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260501"
+},
+{
+"adminNm": "밀알희망재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000569",
+"longTermPeribRgtDt": "20220101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20220101"
+},
+{
+"adminNm": "정담요양원",
+"adminPttnCd": "S41",
+"longTermAdminSym": "14159000761",
+"longTermPeribRgtDt": "20250101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250101"
+},
+{
+"adminNm": "은혜재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000746",
+"longTermPeribRgtDt": "20240801",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20240801"
+},
+{
+"adminNm": "혜윰재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000782",
+"longTermPeribRgtDt": "20250601",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250601"
+},
+{
+"adminNm": "가람 방문요양방문목욕",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000841",
+"longTermPeribRgtDt": "20260501",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260501"
+},
+{
+"adminNm": "효지킴재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000499",
+"longTermPeribRgtDt": "20200921",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20200921"
+},
+{
+"adminNm": "마음뜰방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000808",
+"longTermPeribRgtDt": "20260101",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20260101"
+},
+{
+"adminNm": "그린실버홈",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000791",
+"longTermPeribRgtDt": "20250901",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20250901"
+},
+{
+"adminNm": "늘사랑 주야간보호방문요양",
+"adminPttnCd": "H31",
+"longTermAdminSym": "24159000605",
+"longTermPeribRgtDt": "20220801",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20220801"
+},
+{
+"adminNm": "마실요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000604",
+"longTermPeribRgtDt": "20220701",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20220701"
+},
+{
+"adminNm": "경기이화노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000512",
+"longTermPeribRgtDt": "20201201",
+"siDoCd": "41",
+"siGunGuCd": "595",
+"stpRptDt": "20201201"
+},
+{
+"adminNm": "은빛노인복지센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000520",
+"longTermPeribRgtDt": "20210101",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20210101"
+},
+{
+"adminNm": "천사 방문간호재가노인복지센터",
+"adminPttnCd": "C05",
+"longTermAdminSym": "34159000478",
+"longTermPeribRgtDt": "20200101",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20200101"
+},
+{
+"adminNm": "위드케어재가방문센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000614",
+"longTermPeribRgtDt": "20220912",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20220912"
+},
+{
+"adminNm": "이웃재가복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000353",
+"longTermPeribRgtDt": "20170101",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20170101"
+},
+{
+"adminNm": "위드케어 복지용구센터",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000789",
+"longTermPeribRgtDt": "20250801",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20250801"
+},
+{
+"adminNm": "은빛노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000520",
+"longTermPeribRgtDt": "20210101",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20210101"
+},
+{
+"adminNm": "온맘터치 동탄선한점",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000001",
+"longTermPeribRgtDt": "20080519",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20080519"
+},
+{
+"adminNm": "케이엘트레이딩",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000825",
+"longTermPeribRgtDt": "20260401",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20260401"
+},
+{
+"adminNm": "이웃재가복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000353",
+"longTermPeribRgtDt": "20170101",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20170101"
+},
+{
+"adminNm": "봄봄방문요양재가복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000631",
+"longTermPeribRgtDt": "20221201",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20221201"
+},
+{
+"adminNm": "희망재가복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000418",
+"longTermPeribRgtDt": "20190103",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20190103"
+},
+{
+"adminNm": "봄봄방문요양재가복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000631",
+"longTermPeribRgtDt": "20221201",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20221201"
+},
+{
+"adminNm": "대교뉴이프 방문요양센터 동탄센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000771",
+"longTermPeribRgtDt": "20250301",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20250301"
+},
+{
+"adminNm": "경기참사랑재가복지센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000369",
+"longTermPeribRgtDt": "20170731",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20170731"
+},
+{
+"adminNm": "효녀심청 주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000696",
+"longTermPeribRgtDt": "20231101",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20231101"
+},
+{
+"adminNm": "우리함께요양원(동탄점)",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000629",
+"longTermPeribRgtDt": "20221108",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20221108"
+},
+{
+"adminNm": "다솜재가복지방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000641",
+"longTermPeribRgtDt": "20230201",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20230201"
+},
+{
+"adminNm": "동탄방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000625",
+"longTermPeribRgtDt": "20221101",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20221101"
+},
+{
+"adminNm": "동탄효드림주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000728",
+"longTermPeribRgtDt": "20240501",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20240501"
+},
+{
+"adminNm": "동탄효드림요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000616",
+"longTermPeribRgtDt": "20220901",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20220901"
+},
+{
+"adminNm": "사랑으로 실버케어",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000693",
+"longTermPeribRgtDt": "20231002",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20231002"
+},
+{
+"adminNm": "더편한방문간호요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000589",
+"longTermPeribRgtDt": "20220502",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20220502"
+},
+{
+"adminNm": "즐거운 재가간호 요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000567",
+"longTermPeribRgtDt": "20220301",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20220301"
+},
+{
+"adminNm": "사랑으로 실버케어",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000693",
+"longTermPeribRgtDt": "20231002",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20231002"
+},
+{
+"adminNm": "즐거운 재가간호 요양센터",
+"adminPttnCd": "B05",
+"longTermAdminSym": "24159000567",
+"longTermPeribRgtDt": "20220301",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20220301"
+},
+{
+"adminNm": "노인요양원 다정마을",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000073",
+"longTermPeribRgtDt": "20090209",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20090209"
+},
+{
+"adminNm": "동탄행복주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000642",
+"longTermPeribRgtDt": "20230201",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20230201"
+},
+{
+"adminNm": "참좋은효도원",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000432",
+"longTermPeribRgtDt": "20190403",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20190403"
+},
+{
+"adminNm": "다솜재가복지방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000641",
+"longTermPeribRgtDt": "20230201",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20230201"
+},
+{
+"adminNm": "가까운방문요양센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000428",
+"longTermPeribRgtDt": "20190228",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20190228"
+},
+{
+"adminNm": "참좋은효도원",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000432",
+"longTermPeribRgtDt": "20190403",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20190403"
+},
+{
+"adminNm": "대교뉴이프 방문요양센터 동탄센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000771",
+"longTermPeribRgtDt": "20250301",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20250301"
+},
+{
+"adminNm": "유더리코",
+"adminPttnCd": "B06",
+"longTermAdminSym": "24159000563",
+"longTermPeribRgtDt": "20211201",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20211201"
+},
+{
+"adminNm": "동탄주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000437",
+"longTermPeribRgtDt": "20190429",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20190429"
+},
+{
+"adminNm": "온맘터치 동탄선한점",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000001",
+"longTermPeribRgtDt": "20080519",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20080519"
+},
+{
+"adminNm": "즐거운 재가간호 요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000567",
+"longTermPeribRgtDt": "20220301",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20220301"
+},
+{
+"adminNm": "굿모닝재활주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000750",
+"longTermPeribRgtDt": "20241001",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20241001"
+},
+{
+"adminNm": "동탄엘림주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000464",
+"longTermPeribRgtDt": "20191127",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20191127"
+},
+{
+"adminNm": "경기참사랑재가복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000369",
+"longTermPeribRgtDt": "20170731",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20170731"
+},
+{
+"adminNm": "다정마을 부설노인주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000185",
+"longTermPeribRgtDt": "20100819",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20100819"
+},
+{
+"adminNm": "동탄재활요양원",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000559",
+"longTermPeribRgtDt": "20211001",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20211001"
+},
+{
+"adminNm": "하늘나무실버케어",
+"adminPttnCd": "A03",
+"longTermAdminSym": "14159000680",
+"longTermPeribRgtDt": "20230801",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20230801"
+},
+{
+"adminNm": "희망재가복지센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000418",
+"longTermPeribRgtDt": "20190103",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20190103"
+},
+{
+"adminNm": "휴주간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000777",
+"longTermPeribRgtDt": "20250401",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20250401"
+},
+{
+"adminNm": "더편한방문간호요양센터",
+"adminPttnCd": "B05",
+"longTermAdminSym": "24159000589",
+"longTermPeribRgtDt": "20220502",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20220502"
+},
+{
+"adminNm": "도우누리화성 재가노인복지센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000619",
+"longTermPeribRgtDt": "20221001",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20221001"
+},
+{
+"adminNm": "동탄동행주야간보호센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000689",
+"longTermPeribRgtDt": "20231001",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20231001"
+},
+{
+"adminNm": "고은빛 방문요양센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000756",
+"longTermPeribRgtDt": "20241201",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20241201"
+},
+{
+"adminNm": "동탄사랑방문요양센터",
+"adminPttnCd": "C02",
+"longTermAdminSym": "34159000339",
+"longTermPeribRgtDt": "20160524",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20160524"
+},
+{
+"adminNm": "더편한방문간호요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000589",
+"longTermPeribRgtDt": "20220502",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20220502"
+},
+{
+"adminNm": "다원방문요양노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000683",
+"longTermPeribRgtDt": "20230901",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20230901"
+},
+{
+"adminNm": "도우누리화성 재가노인복지센터",
+"adminPttnCd": "B01",
+"longTermAdminSym": "24159000619",
+"longTermPeribRgtDt": "20221001",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20221001"
+},
+{
+"adminNm": "동탄동행주야간보호센터",
+"adminPttnCd": "B03",
+"longTermAdminSym": "24159000689",
+"longTermPeribRgtDt": "20231001",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20231001"
+},
+{
+"adminNm": "동탄사랑방문요양센터",
+"adminPttnCd": "C01",
+"longTermAdminSym": "34159000339",
+"longTermPeribRgtDt": "20160524",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20160524"
+},
+{
+"adminNm": "동탄방문요양센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000625",
+"longTermPeribRgtDt": "20221101",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20221101"
+},
+{
+"adminNm": "위드케어재가방문센터",
+"adminPttnCd": "B02",
+"longTermAdminSym": "24159000614",
+"longTermPeribRgtDt": "20220912",
+"siDoCd": "41",
+"siGunGuCd": "597",
+"stpRptDt": "20220912"
+}
+]

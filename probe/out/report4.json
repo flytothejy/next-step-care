@@ -1,0 +1,1988 @@
+{
+ "ltc_by_code": {
+  "590": {
+   "total": 53,
+   "got": 53,
+   "errors": [],
+   "types": [
+    [
+     "C06",
+     12
+    ],
+    [
+     "B01",
+     7
+    ],
+    [
+     "C01",
+     7
+    ],
+    [
+     "B06",
+     6
+    ],
+    [
+     "A04",
+     5
+    ],
+    [
+     "C02",
+     5
+    ],
+    [
+     "B03",
+     4
+    ],
+    [
+     "B02",
+     2
+    ],
+    [
+     "A03",
+     2
+    ],
+    [
+     "B04",
+     1
+    ],
+    [
+     "B05",
+     1
+    ],
+    [
+     "C03",
+     1
+    ]
+   ]
+  },
+  "591": {
+   "total": 173,
+   "got": 173,
+   "errors": [],
+   "types": [
+    [
+     "A03",
+     61
+    ],
+    [
+     "B01",
+     43
+    ],
+    [
+     "B02",
+     26
+    ],
+    [
+     "B03",
+     16
+    ],
+    [
+     "A04",
+     8
+    ],
+    [
+     "C01",
+     6
+    ],
+    [
+     "C02",
+     6
+    ],
+    [
+     "B05",
+     2
+    ],
+    [
+     "C03",
+     2
+    ],
+    [
+     "C05",
+     1
+    ],
+    [
+     "M31",
+     1
+    ],
+    [
+     "B06",
+     1
+    ]
+   ]
+  },
+  "592": {
+   "total": 0,
+   "got": 0,
+   "errors": [],
+   "types": []
+  },
+  "593": {
+   "total": 129,
+   "got": 129,
+   "errors": [],
+   "types": [
+    [
+     "B01",
+     35
+    ],
+    [
+     "A03",
+     33
+    ],
+    [
+     "B02",
+     25
+    ],
+    [
+     "B03",
+     15
+    ],
+    [
+     "C02",
+     6
+    ],
+    [
+     "C01",
+     6
+    ],
+    [
+     "B06",
+     4
+    ],
+    [
+     "A04",
+     3
+    ],
+    [
+     "B05",
+     2
+    ]
+   ]
+  },
+  "594": {
+   "total": 0,
+   "got": 0,
+   "errors": [],
+   "types": []
+  },
+  "595": {
+   "total": 103,
+   "got": 103,
+   "errors": [],
+   "types": [
+    [
+     "B01",
+     33
+    ],
+    [
+     "B02",
+     26
+    ],
+    [
+     "B03",
+     14
+    ],
+    [
+     "A03",
+     12
+    ],
+    [
+     "C01",
+     6
+    ],
+    [
+     "C02",
+     5
+    ],
+    [
+     "C03",
+     2
+    ],
+    [
+     "B05",
+     2
+    ],
+    [
+     "C05",
+     1
+    ],
+    [
+     "S41",
+     1
+    ],
+    [
+     "H31",
+     1
+    ]
+   ]
+  },
+  "596": {
+   "total": 0,
+   "got": 0,
+   "errors": [],
+   "types": []
+  },
+  "597": {
+   "total": 56,
+   "got": 56,
+   "errors": [],
+   "types": [
+    [
+     "B01",
+     15
+    ],
+    [
+     "B03",
+     11
+    ],
+    [
+     "B02",
+     10
+    ],
+    [
+     "C01",
+     5
+    ],
+    [
+     "A03",
+     5
+    ],
+    [
+     "C02",
+     4
+    ],
+    [
+     "B06",
+     3
+    ],
+    [
+     "B05",
+     2
+    ],
+    [
+     "C05",
+     1
+    ]
+   ]
+  }
+ },
+ "ltc_detail_try": {
+  "getGeneralSttusDetailInfoItem02": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminFdatType>4</adminFdatType><adminNm>베스트메딕스 복지용구점</adminNm><adminPttnCd>B06</adminPttnCd><BDongCd>256</BDongCd><fl>2</fl><gunmulMlno>35</gunmulMlno><gunmulSlno>0</gunmulSlno><HDongCd>256</HDongCd><hmPostNo>18279</hmPostNo><locTelNo_1>070</locTelNo_1><locTelNo_2>8181</locTelNo_2><locTelNo_3>0226</locTelNo_3><longTermAdminSym>24159000484</longTermAdminSym><longTermPeribRgtDt>20200301</longTermPeribRgtDt><riCd>27</riCd><roadNmCd>415914431358</roadNmCd><siDoCd>41</siDoCd><siGunGuCd>591</siGunGuCd><stpRptDt>20200301</stpRptDt></item></body></response>"
+  },
+  "getConvInsttDetailInfoList02": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>10</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "getLtcInsttDetailInfoItem02": {
+   "status": 400,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<OpenAPI_ServiceResponse>\n<cmmMsgHeader>\n  <errMsg>NO_OPENAPI_SERVICE_ERROR</errMsg>\n  <returnAuthMsg>해당 오픈API 서비스가 없거나 폐기됨</returnAuthMsg>\n  <returnReasonCode>12</returnReasonCode>\n</cmmMsgHeader>\n</OpenAPI_ServiceResponse>\n"
+  }
+ },
+ "local_welfare_hwaseong": [],
+ "national_search": {
+  "발달재활": {
+   "total": 3,
+   "list": [
+    {
+     "servId": "WLF00000064",
+     "servNm": "발달장애인 부모상담지원사업",
+     "jurOrgNm": "장애인서비스과",
+     "lifeArray": "영유아,아동",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003195",
+     "servNm": "발달재활서비스",
+     "jurOrgNm": "장애인건강과",
+     "lifeArray": "영유아,아동,청소년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00005853",
+     "servNm": "장애인 개인예산제 운영",
+     "jurOrgNm": "장애인정책과",
+     "lifeArray": null,
+     "lastModYmd": null
+    }
+   ]
+  },
+  "노인맞춤돌봄": {
+   "total": 1,
+   "list": [
+    {
+     "servId": "WLF00003191",
+     "servNm": "노인맞춤돌봄서비스",
+     "jurOrgNm": "노인정책과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    }
+   ]
+  },
+  "장기요양": {
+   "total": 14,
+   "list": [
+    {
+     "servId": "WLF00005442",
+     "servNm": "긴급돌봄 지원사업",
+     "jurOrgNm": "사회서비스사업과",
+     "lifeArray": "영유아,아동,청소년,청년,중장년,노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00005411",
+     "servNm": "일상돌봄 서비스 사업",
+     "jurOrgNm": "사회서비스사업과",
+     "lifeArray": "청소년,청년,중장년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001155",
+     "servNm": "노인일자리 및 사회활동 지원사업",
+     "jurOrgNm": "노인지원과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001087",
+     "servNm": "가사·간병 방문 지원사업",
+     "jurOrgNm": "사회서비스사업과",
+     "lifeArray": null,
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003260",
+     "servNm": "장애인활동지원",
+     "jurOrgNm": "장애인서비스과",
+     "lifeArray": "아동,청소년,청년,중장년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003192",
+     "servNm": "다문화가족 방문교육 서비스",
+     "jurOrgNm": "다문화가족과",
+     "lifeArray": "영유아,아동,청소년,청년,중장년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003191",
+     "servNm": "노인맞춤돌봄서비스",
+     "jurOrgNm": "노인정책과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001170",
+     "servNm": "장기요양급여 이용지원",
+     "jurOrgNm": "복지서비스과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00000103",
+     "servNm": "노인장기요양보험 복지용구 급여",
+     "jurOrgNm": "요양보험제도과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001177",
+     "servNm": "장기요양 본인부담금 감경",
+     "jurOrgNm": "요양보험제도과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001086",
+     "servNm": "특별현금급여(가족요양비)",
+     "jurOrgNm": "요양보험제도과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001080",
+     "servNm": "산재근로자 생활안정자금융자",
+     "jurOrgNm": "산재보상정책과",
+     "lifeArray": null,
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003248",
+     "servNm": "재가급여",
+     "jurOrgNm": "요양보험제도과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003194",
+     "servNm": "시설급여",
+     "jurOrgNm": "요양보험제도과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    }
+   ]
+  },
+  "활동지원": {
+   "total": 13,
+   "list": [
+    {
+     "servId": "WLF00003262",
+     "servNm": "장애아가족양육지원",
+     "jurOrgNm": "장애인서비스과",
+     "lifeArray": "영유아,아동,청소년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00005442",
+     "servNm": "긴급돌봄 지원사업",
+     "jurOrgNm": "사회서비스사업과",
+     "lifeArray": "영유아,아동,청소년,청년,중장년,노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001155",
+     "servNm": "노인일자리 및 사회활동 지원사업",
+     "jurOrgNm": "노인지원과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001089",
+     "servNm": "교육급여(맞춤형 급여)",
+     "jurOrgNm": "학생지원총괄과",
+     "lifeArray": "아동,청소년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001087",
+     "servNm": "가사·간병 방문 지원사업",
+     "jurOrgNm": "사회서비스사업과",
+     "lifeArray": null,
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00000078",
+     "servNm": "청소년특별지원",
+     "jurOrgNm": "학교밖청소년지원과",
+     "lifeArray": "아동,청소년,청년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003260",
+     "servNm": "장애인활동지원",
+     "jurOrgNm": "장애인서비스과",
+     "lifeArray": "아동,청소년,청년,중장년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003191",
+     "servNm": "노인맞춤돌봄서비스",
+     "jurOrgNm": "노인정책과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00006237",
+     "servNm": "안부살핌 우편서비스 사업",
+     "jurOrgNm": "복지자원연계팀",
+     "lifeArray": "청년,중장년,노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001093",
+     "servNm": "독거노인·장애인 응급안전안심서비스",
+     "jurOrgNm": "노인정책과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00006245",
+     "servNm": "어업활동지원",
+     "jurOrgNm": "소득복지과",
+     "lifeArray": "청년,중장년,노년,임신 · 출산",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00005853",
+     "servNm": "장애인 개인예산제 운영",
+     "jurOrgNm": "장애인정책과",
+     "lifeArray": null,
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00005024",
+     "servNm": "장애인 자립지원 시범사업",
+     "jurOrgNm": "장애인정책과",
+     "lifeArray": "청년,중장년",
+     "lastModYmd": null
+    }
+   ]
+  },
+  "발달": {
+   "total": 24,
+   "list": [
+    {
+     "servId": "WLF00003283",
+     "servNm": "아동통합서비스지원(드림스타트사업)",
+     "jurOrgNm": "아동보호자립과",
+     "lifeArray": "영유아,아동",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003282",
+     "servNm": "다문화가족 자녀 언어발달지원서비스",
+     "jurOrgNm": "다문화가족과",
+     "lifeArray": "영유아,아동,청소년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001178",
+     "servNm": "청소년 발달장애인 방과후활동서비스",
+     "jurOrgNm": "장애인서비스과",
+     "lifeArray": "아동,청소년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001165",
+     "servNm": "발달장애인 주간활동서비스",
+     "jurOrgNm": "장애인서비스과",
+     "lifeArray": "청소년,청년,중장년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00000064",
+     "servNm": "발달장애인 부모상담지원사업",
+     "jurOrgNm": "장애인서비스과",
+     "lifeArray": "영유아,아동",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003279",
+     "servNm": "언어발달지원사업",
+     "jurOrgNm": "장애인서비스과",
+     "lifeArray": "아동",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003258",
+     "servNm": "아동발달지원계좌(디딤씨앗통장)지원",
+     "jurOrgNm": "아동보호자립과",
+     "lifeArray": "아동,청소년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003195",
+     "servNm": "발달재활서비스",
+     "jurOrgNm": "장애인건강과",
+     "lifeArray": "영유아,아동,청소년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003192",
+     "servNm": "다문화가족 방문교육 서비스",
+     "jurOrgNm": "다문화가족과",
+     "lifeArray": "영유아,아동,청소년,청년,중장년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00005031",
+     "servNm": "발달장애인 긴급돌봄사업",
+     "jurOrgNm": "장애인서비스과",
+     "lifeArray": "청소년,청년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00000065",
+     "servNm": "발달장애인 공공후견지원 사업",
+     "jurOrgNm": "장애인서비스과",
+     "lifeArray": "청소년,청년,중장년,노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00000025",
+     "servNm": "장애인일자리지원",
+     "jurOrgNm": "장애인자립기반과",
+     "lifeArray": "청년,중장년,노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00000837",
+     "servNm": "다문화가족 지원사업",
+     "jurOrgNm": "다문화가족과",
+     "lifeArray": null,
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001113",
+     "servNm": "(특수교육대상자) 치료지원서비스",
+     "jurOrgNm": "특수교육정책과",
+     "lifeArray": "영유아,아동,청소년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00000028",
+     "servNm": "공동육아나눔터 운영",
+     "jurOrgNm": "가족친화서비스과",
+     "lifeArray": "영유아,아동",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001150",
+     "servNm": "발달장애인 가족휴식지원사업",
+     "jurOrgNm": "장애인서비스과",
+     "lifeArray": null,
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001075",
+     "servNm": "장애학생 정보격차 해소 지원",
+     "jurOrgNm": "디지털교육지원과",
+     "lifeArray": "영유아,아동,청소년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001061",
+     "servNm": "지역사회서비스 투자사업",
+     "jurOrgNm": "사회서비스사업과",
+     "lifeArray": "임신 · 출산",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001185",
+     "servNm": "의료급여수급권자 영유아건강검진비 지원",
+     "jurOrgNm": "건강증진과",
+     "lifeArray": "영유아",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00004654",
+     "servNm": "장애인인턴제",
+     "jurOrgNm": "장애인고용과",
+     "lifeArray": null,
+     "lastModYmd": null
+    }
+   ]
+  },
+  "치매": {
+   "total": 8,
+   "list": [
+    {
+     "servId": "WLF00006333",
+     "servNm": "건강보험 산정특례",
+     "jurOrgNm": "보험급여과",
+     "lifeArray": null,
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001087",
+     "servNm": "가사·간병 방문 지원사업",
+     "jurOrgNm": "사회서비스사업과",
+     "lifeArray": null,
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00006303",
+     "servNm": "치매안심재산관리서비스 시범사업",
+     "jurOrgNm": "노인건강과",
+     "lifeArray": "중장년,노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00000098",
+     "servNm": "국가유공자재가복지지원",
+     "jurOrgNm": "복지서비스과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001086",
+     "servNm": "특별현금급여(가족요양비)",
+     "jurOrgNm": "요양보험제도과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003248",
+     "servNm": "재가급여",
+     "jurOrgNm": "요양보험제도과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003194",
+     "servNm": "시설급여",
+     "jurOrgNm": "요양보험제도과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00005004",
+     "servNm": "치매검사비 지원",
+     "jurOrgNm": "노인건강과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    }
+   ]
+  },
+  "통합돌봄": {
+   "total": 1,
+   "list": [
+    {
+     "servId": "WLF00001093",
+     "servNm": "독거노인·장애인 응급안전안심서비스",
+     "jurOrgNm": "노인정책과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    }
+   ]
+  },
+  "퇴원": {
+   "total": 9,
+   "list": [
+    {
+     "servId": "WLF00003256",
+     "servNm": "외국인근로자 등 의료지원",
+     "jurOrgNm": "공공의료정책과",
+     "lifeArray": null,
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00005442",
+     "servNm": "긴급돌봄 지원사업",
+     "jurOrgNm": "사회서비스사업과",
+     "lifeArray": "영유아,아동,청소년,청년,중장년,노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00001087",
+     "servNm": "가사·간병 방문 지원사업",
+     "jurOrgNm": "사회서비스사업과",
+     "lifeArray": null,
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003260",
+     "servNm": "장애인활동지원",
+     "jurOrgNm": "장애인서비스과",
+     "lifeArray": "아동,청소년,청년,중장년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00006241",
+     "servNm": "정신질환자 치료비 지원 사업",
+     "jurOrgNm": "정신건강정책과",
+     "lifeArray": "청소년,청년,중장년,노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00000098",
+     "servNm": "국가유공자재가복지지원",
+     "jurOrgNm": "복지서비스과",
+     "lifeArray": "노년",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003237",
+     "servNm": "미숙아 및 선천성이상아 의료비 지원",
+     "jurOrgNm": "출산정책과",
+     "lifeArray": "영유아",
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003206",
+     "servNm": "(북한이탈주민) 의료비 지원",
+     "jurOrgNm": "자립지원과",
+     "lifeArray": null,
+     "lastModYmd": null
+    },
+    {
+     "servId": "WLF00003179",
+     "servNm": "긴급복지 의료지원",
+     "jurOrgNm": "기초생활보장과",
+     "lifeArray": null,
+     "lastModYmd": null
+    }
+   ]
+  }
+ },
+ "national_detail_sample": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><wantedDtl><servId>WLF00003195</servId><servNm>발달재활서비스</servNm><jurMnofNm>보건복지부 장애인건강과</jurMnofNm><tgtrDtlCn>18세 미만 장애아동을 대상으로 합니다.&#13;(소득기준) 기준중위소득 180% 이하&#13;(기타요건) 장애인복지법상 등록장애아동(뇌병변, 지적, 자폐성, 청각, 언어, 시각장애) * 등록이 안된 경우 읍면동에서 등록 가능&#13;- 단, 9세 미만의 경우 발달재활서비스 의뢰서와 검사자료로 대체 가능&#13;- 시각 장애아동(중복 장애 제외)의 경우 발달재활서비스가 필요한 대상인지 여부를 별도로 판단&#13;</tgtrDtlCn><slctCritCn>지원대상의 내용을 참고해주시기 바랍니다.&#13;</slctCritCn><alwServCn>발달재활서비스에 소요되는 비용을 아래와 같이 차등 지원합니다. &#13;기초생활수급자: 월 26만원 지원(본인부담금 면제)&#13;차상위계층: 월 24만원(본인부담금 2만원)&#13;기준중위소득 65% 이하: 월 22만원(본인부담금 4만원)&#13;기준중위소득 120% 이하: 월 20만원(본인부담금 6만원)&#13;기준중위소득 180% 이하: 월 18만원(본인부담금 8만원)&#13;언어·청능·미술심리재활·음악재활·행동·놀이심리·재활심리·감각발달재활·운동발달재활·심리운동 등 발달재활서비스를 제공합니다. * 단, 의료행위인 물리치료와 작업치료 등 의료기관에서 행해지는 의료지원 불가&#13;</alwServCn><crtrYr>2026</crtrYr><rprsCtadr>1566-3232</rprsCtadr><wlfareInfoOutlCn>성장기 정신적, 감각적 장애아동의 인지, 의사소통, 적응행동, 감각, 운동 등의 기능향상과 행동발달을 위한 재활서비스를 지원하고, 관련 정보를 제공합니다.</wlfareInfoOutlCn><sprtCycNm>월</sprtCycNm><srvPvsnNm>전자바우처(바우처)</srvPvsnNm><lifeArray>아동, 영유아, 청소년</lifeArray><trgterIndvdlArray>장애인</trgterIndvdlArray><intrsThemaArray>교육, 정신건강, 신체건강</intrsThemaArray><applmetList><servSeCode>070</servSeCode><servSeDetailLink>담당 시/군/구청 또는 서비스 제공기관에서 대상자에게 서비스 제공</servSeDetailLink><servSeDetailNm>지급기관연락처목록 </servSeDetailNm></applmetList><applmetList><servSeCode>070</servSeCode><servSeDetailLink>거주지 읍/면/동 주민센터, 읍면동 또는 복지로 웹사이트(PC/모바일앱)에서 ‘서비스 신청’</servSeDetailLink><servSeDetailNm>신청기관연락처목록</servSeDetailNm></applmetList><applmetList><servSeCode>070</servSeCode><servSeDetailLink>담당 시/군/구청 또는 읍면동에서 조사 및 심사</servSeDetailLink><servSeDetailNm>조사기관연락처목록</servSeDetailNm></applmetList><applmetList><servSeCode>070</servSeCode><servSeDetailLink>담당 시/군/구청 또는 읍면동에서 보장 결정</servSeDetailLink><servSeDetailNm>결정기관연락처목록 </servSeDetailNm></applmetList><applmetList><servSeCode>070</servSeCode><servSeDetailLink>담당 시/군/구청 또는 읍면동에서 서비스 제공 이후 대상자의 상황 관리</servSeDetailLink><servSeDetailNm>사후관리기관목록</servSeDetailNm></applmetList><inqplCtadrList><servSeCode>010</servSeCode><servSeDetailLink>1566-3232</servSeDetailLink><servSeDetailNm>사회서비스전자바우처</servSeDetailNm></inqplCtadrList><inqplCtadrList><servSeCode>010</servSeCode><servSeDetailLink>129</servSeDetailLink><servSeDetailNm>보건복지상담센터</servSeDetailNm></inqplCtadrList><inqplHmpgReldList><servSeCode>020</servSeCode><servSeDetailLink>https://www.socialservice.or.kr:444/</servSeDetailLink><servSeDetailNm>사회서비스전자바우처</servSeDetailNm></inqplHmpgReldList><inqplHmpgReldList><servSeCode>020</servSeCode><servSeDetailLink>http://www.mohw.go.kr</servSeDetailLink><servSeDetailNm>보건복지부</servSeDetailNm></inqplHmpgReldList><inqplHmpgReldList><servSeCode>020</servSeCode><servSeDetailLink>http://www.129.go.kr</servSeDetailLink><servSeDetailNm>보건복지상담센터</servSeDetailNm></inqplHmpgReldList><basfrmList><servSeCode>040</servSeCode><servSeDetailLink>https://bokjiro.go.kr/ssis-tbu/CmmFileUtil/getDownload.do?atcflId=20230224UUWBM1509000023340990&amp;atcflSn=1</servSeDetailLink><servSeDetailNm>사회서비스 전용 국민행복카드 발급을 위한 법정대리인 동의서.hwp</servSeDetailNm></basfrmList><basfrmList><servSeCode>040</servSeCode><servSeDetailLink>https://bokjiro.go.kr/ssis-tbu/CmmFileUtil/getDownload.do?atcflId=20230224UUWBM1513590023342234&amp;atcflSn=1</servSeDetailLink><servSeDetailNm>발달재활서비스 의뢰서.hwp</servSeDetailNm></basfrmList><basfrmList><servSeCode>040</servSeCode><servSeDetailLink>https://bokjiro.go.kr/ssis-tbu/CmmFileUtil/getDownload.do?atcflId=20230224UUWBM1510260023341352&amp;atcflSn=1</servSeDetailLink><servSeDetailNm>국민행복카드 상담전화를 위한 개인정보 제공동의서.hwp</servSeDetailNm></basfrmList><basfrmList><servSeCode>040</servSeCode><servSeDetailLink>https://bokjiro.go.kr/ssis-tbu/CmmFileUtil/getDownload.do?atcflId=20230224UUWBM1504220023339740&amp;atcflSn=1</servSeDetailLink><servSeDetailNm>사회보장급여(사회서비스이용권) 신청(변경)서.hwp</servSeDetailNm></basfrmList><basfrmList><servSeCode>040</servSeCode><servSeDetailLink>https://bokjiro.go.kr/ssis-tbu/CmmFileUtil/getDownload.do?atcflId=20250224UUWBM2044270125453146&amp;atcflSn=1</servSeDetailLink><servSeDetailNm>2024년 장애아동가족지원 사업안내.pdf</servSeDetailNm></basfrmList><basfrmList><servSeCode>040</servSeCode><servSeDetailLink>https://bokjiro.go.kr/ssis-tbu/CmmFileUtil/getDownload.do?atcflId=20230224UUWBM1512180023341825&amp;atcflSn=1</servSeDetailLink><servSeDetailNm>개인정보 수집･이용 및 제3자 제공 동의서.hwp</servSeDetailNm></basfrmList><baslawList><servSeCode>030</servSeCode><servSeDetailNm>장애아동복지지원법</servSeDetailNm></baslawList><resultCode>0</resultCode><resultMessage>SUCCESS</resultMessage></wantedDtl>",
+ "service_types": [
+  {
+   "serviceTypeCode": "1000",
+   "serviceTypeName": "노인돌봄종합서비스"
+  },
+  {
+   "serviceTypeCode": "3000",
+   "serviceTypeName": "산모신생아건강관리지원"
+  },
+  {
+   "serviceTypeCode": "4000",
+   "serviceTypeName": "지역사회서비스투자"
+  },
+  {
+   "serviceTypeCode": "6000",
+   "serviceTypeName": "가사간병방문지원"
+  },
+  {
+   "serviceTypeCode": "8000",
+   "serviceTypeName": "장애아동가족지원"
+  },
+  {
+   "serviceTypeCode": "HW01",
+   "serviceTypeName": "장애인활동지원"
+  },
+  {
+   "serviceTypeCode": "2000",
+   "serviceTypeName": "장애인활동보조"
+  },
+  {
+   "serviceTypeCode": "GH01",
+   "serviceTypeName": "물품지원"
+  },
+  {
+   "serviceTypeCode": "7000",
+   "serviceTypeName": "임신지원"
+  },
+  {
+   "serviceTypeCode": "HW02",
+   "serviceTypeName": "시범 통합바우처지원조정사업"
+  },
+  {
+   "serviceTypeCode": "GE01",
+   "serviceTypeName": "여성청소년 생리용품지원"
+  },
+  {
+   "serviceTypeCode": "CM01",
+   "serviceTypeName": "지역이음바우처"
+  },
+  {
+   "serviceTypeCode": "EC01",
+   "serviceTypeName": "긴급돌봄지원"
+  },
+  {
+   "serviceTypeCode": "HW03",
+   "serviceTypeName": "장애인개인예산제"
+  },
+  {
+   "serviceTypeCode": "FE01",
+   "serviceTypeName": "첫만남이용권"
+  },
+  {
+   "serviceTypeCode": "TI01",
+   "serviceTypeName": "에너지바우처"
+  },
+  {
+   "serviceTypeCode": "MT01",
+   "serviceTypeName": "정신건강 심리상담 바우처"
+  },
+  {
+   "serviceTypeCode": "5000",
+   "serviceTypeName": "일상돌봄서비스"
+  },
+  {
+   "serviceTypeCode": "BD01",
+   "serviceTypeName": "발달장애인지원"
+  }
+ ],
+ "providers": {
+  "노인돌봄종합서비스": {
+   "total": 154115,
+   "got": 30000,
+   "hwaseong": 830,
+   "errors": [],
+   "services": [
+    [
+     "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     552
+    ],
+    [
+     "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     102
+    ],
+    [
+     "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     62
+    ],
+    [
+     "경기화성시추가지원",
+     16
+    ],
+    [
+     "산모·신생아",
+     15
+    ],
+    [
+     "발달재활",
+     14
+    ],
+    [
+     "우리아이심리지원서비스",
+     12
+    ],
+    [
+     "우리가족 통합 심리지원서비스",
+     9
+    ],
+    [
+     "성인심리지원 서비스",
+     6
+    ],
+    [
+     "아동비전형성서비스",
+     6
+    ],
+    [
+     "장애인맞춤형운동서비스",
+     5
+    ],
+    [
+     "경기도추가지원",
+     4
+    ],
+    [
+     "청소년 발달장애인 방과후활동서비스",
+     4
+    ],
+    [
+     "기본 서비스 B형(24시간)",
+     3
+    ],
+    [
+     "병원 동행 서비스",
+     3
+    ]
+   ],
+   "with_tel": 830,
+   "sample": [
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    }
+   ]
+  },
+  "가사간병방문지원": {
+   "total": 154115,
+   "got": 30000,
+   "hwaseong": 830,
+   "errors": [],
+   "services": [
+    [
+     "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     552
+    ],
+    [
+     "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     102
+    ],
+    [
+     "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     62
+    ],
+    [
+     "경기화성시추가지원",
+     16
+    ],
+    [
+     "산모·신생아",
+     15
+    ],
+    [
+     "발달재활",
+     14
+    ],
+    [
+     "우리아이심리지원서비스",
+     12
+    ],
+    [
+     "우리가족 통합 심리지원서비스",
+     9
+    ],
+    [
+     "성인심리지원 서비스",
+     6
+    ],
+    [
+     "아동비전형성서비스",
+     6
+    ],
+    [
+     "장애인맞춤형운동서비스",
+     5
+    ],
+    [
+     "경기도추가지원",
+     4
+    ],
+    [
+     "청소년 발달장애인 방과후활동서비스",
+     4
+    ],
+    [
+     "기본 서비스 B형(24시간)",
+     3
+    ],
+    [
+     "병원 동행 서비스",
+     3
+    ]
+   ],
+   "with_tel": 830,
+   "sample": [
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    }
+   ]
+  },
+  "장애아동가족지원": {
+   "total": 154116,
+   "got": 30000,
+   "hwaseong": 830,
+   "errors": [],
+   "services": [
+    [
+     "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     552
+    ],
+    [
+     "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     102
+    ],
+    [
+     "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     62
+    ],
+    [
+     "경기화성시추가지원",
+     16
+    ],
+    [
+     "산모·신생아",
+     15
+    ],
+    [
+     "발달재활",
+     14
+    ],
+    [
+     "우리아이심리지원서비스",
+     12
+    ],
+    [
+     "우리가족 통합 심리지원서비스",
+     9
+    ],
+    [
+     "성인심리지원 서비스",
+     6
+    ],
+    [
+     "아동비전형성서비스",
+     6
+    ],
+    [
+     "장애인맞춤형운동서비스",
+     5
+    ],
+    [
+     "경기도추가지원",
+     4
+    ],
+    [
+     "청소년 발달장애인 방과후활동서비스",
+     4
+    ],
+    [
+     "기본 서비스 B형(24시간)",
+     3
+    ],
+    [
+     "병원 동행 서비스",
+     3
+    ]
+   ],
+   "with_tel": 830,
+   "sample": [
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    }
+   ]
+  },
+  "장애인활동지원": {
+   "total": 154116,
+   "got": 30000,
+   "hwaseong": 830,
+   "errors": [],
+   "services": [
+    [
+     "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     552
+    ],
+    [
+     "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     102
+    ],
+    [
+     "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     62
+    ],
+    [
+     "경기화성시추가지원",
+     16
+    ],
+    [
+     "산모·신생아",
+     15
+    ],
+    [
+     "발달재활",
+     14
+    ],
+    [
+     "우리아이심리지원서비스",
+     12
+    ],
+    [
+     "우리가족 통합 심리지원서비스",
+     9
+    ],
+    [
+     "성인심리지원 서비스",
+     6
+    ],
+    [
+     "아동비전형성서비스",
+     6
+    ],
+    [
+     "장애인맞춤형운동서비스",
+     5
+    ],
+    [
+     "경기도추가지원",
+     4
+    ],
+    [
+     "청소년 발달장애인 방과후활동서비스",
+     4
+    ],
+    [
+     "기본 서비스 B형(24시간)",
+     3
+    ],
+    [
+     "병원 동행 서비스",
+     3
+    ]
+   ],
+   "with_tel": 830,
+   "sample": [
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    }
+   ]
+  },
+  "장애인활동보조": {
+   "total": 154116,
+   "got": 30000,
+   "hwaseong": 830,
+   "errors": [],
+   "services": [
+    [
+     "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     552
+    ],
+    [
+     "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     102
+    ],
+    [
+     "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     62
+    ],
+    [
+     "경기화성시추가지원",
+     16
+    ],
+    [
+     "산모·신생아",
+     15
+    ],
+    [
+     "발달재활",
+     14
+    ],
+    [
+     "우리아이심리지원서비스",
+     12
+    ],
+    [
+     "우리가족 통합 심리지원서비스",
+     9
+    ],
+    [
+     "성인심리지원 서비스",
+     6
+    ],
+    [
+     "아동비전형성서비스",
+     6
+    ],
+    [
+     "장애인맞춤형운동서비스",
+     5
+    ],
+    [
+     "경기도추가지원",
+     4
+    ],
+    [
+     "청소년 발달장애인 방과후활동서비스",
+     4
+    ],
+    [
+     "기본 서비스 B형(24시간)",
+     3
+    ],
+    [
+     "병원 동행 서비스",
+     3
+    ]
+   ],
+   "with_tel": 830,
+   "sample": [
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    }
+   ]
+  },
+  "긴급돌봄지원": {
+   "total": 154116,
+   "got": 30000,
+   "hwaseong": 830,
+   "errors": [],
+   "services": [
+    [
+     "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     552
+    ],
+    [
+     "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     102
+    ],
+    [
+     "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     62
+    ],
+    [
+     "경기화성시추가지원",
+     16
+    ],
+    [
+     "산모·신생아",
+     15
+    ],
+    [
+     "발달재활",
+     14
+    ],
+    [
+     "우리아이심리지원서비스",
+     12
+    ],
+    [
+     "우리가족 통합 심리지원서비스",
+     9
+    ],
+    [
+     "성인심리지원 서비스",
+     6
+    ],
+    [
+     "아동비전형성서비스",
+     6
+    ],
+    [
+     "장애인맞춤형운동서비스",
+     5
+    ],
+    [
+     "경기도추가지원",
+     4
+    ],
+    [
+     "청소년 발달장애인 방과후활동서비스",
+     4
+    ],
+    [
+     "기본 서비스 B형(24시간)",
+     3
+    ],
+    [
+     "병원 동행 서비스",
+     3
+    ]
+   ],
+   "with_tel": 830,
+   "sample": [
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    }
+   ]
+  },
+  "장애인개인예산제": {
+   "total": 154116,
+   "got": 30000,
+   "hwaseong": 830,
+   "errors": [],
+   "services": [
+    [
+     "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     552
+    ],
+    [
+     "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     102
+    ],
+    [
+     "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     62
+    ],
+    [
+     "경기화성시추가지원",
+     16
+    ],
+    [
+     "산모·신생아",
+     15
+    ],
+    [
+     "발달재활",
+     14
+    ],
+    [
+     "우리아이심리지원서비스",
+     12
+    ],
+    [
+     "우리가족 통합 심리지원서비스",
+     9
+    ],
+    [
+     "성인심리지원 서비스",
+     6
+    ],
+    [
+     "아동비전형성서비스",
+     6
+    ],
+    [
+     "장애인맞춤형운동서비스",
+     5
+    ],
+    [
+     "경기도추가지원",
+     4
+    ],
+    [
+     "청소년 발달장애인 방과후활동서비스",
+     4
+    ],
+    [
+     "기본 서비스 B형(24시간)",
+     3
+    ],
+    [
+     "병원 동행 서비스",
+     3
+    ]
+   ],
+   "with_tel": 830,
+   "sample": [
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    }
+   ]
+  },
+  "일상돌봄서비스": {
+   "total": 154116,
+   "got": 30000,
+   "hwaseong": 830,
+   "errors": [],
+   "services": [
+    [
+     "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     552
+    ],
+    [
+     "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     102
+    ],
+    [
+     "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     62
+    ],
+    [
+     "경기화성시추가지원",
+     16
+    ],
+    [
+     "산모·신생아",
+     15
+    ],
+    [
+     "발달재활",
+     14
+    ],
+    [
+     "우리아이심리지원서비스",
+     12
+    ],
+    [
+     "우리가족 통합 심리지원서비스",
+     9
+    ],
+    [
+     "성인심리지원 서비스",
+     6
+    ],
+    [
+     "아동비전형성서비스",
+     6
+    ],
+    [
+     "장애인맞춤형운동서비스",
+     5
+    ],
+    [
+     "경기도추가지원",
+     4
+    ],
+    [
+     "청소년 발달장애인 방과후활동서비스",
+     4
+    ],
+    [
+     "기본 서비스 B형(24시간)",
+     3
+    ],
+    [
+     "병원 동행 서비스",
+     3
+    ]
+   ],
+   "with_tel": 830,
+   "sample": [
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    }
+   ]
+  },
+  "발달장애인지원": {
+   "total": 154116,
+   "got": 30000,
+   "hwaseong": 830,
+   "errors": [],
+   "services": [
+    [
+     "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     552
+    ],
+    [
+     "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     102
+    ],
+    [
+     "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     62
+    ],
+    [
+     "경기화성시추가지원",
+     16
+    ],
+    [
+     "산모·신생아",
+     15
+    ],
+    [
+     "발달재활",
+     14
+    ],
+    [
+     "우리아이심리지원서비스",
+     12
+    ],
+    [
+     "우리가족 통합 심리지원서비스",
+     9
+    ],
+    [
+     "성인심리지원 서비스",
+     6
+    ],
+    [
+     "아동비전형성서비스",
+     6
+    ],
+    [
+     "장애인맞춤형운동서비스",
+     5
+    ],
+    [
+     "경기도추가지원",
+     4
+    ],
+    [
+     "청소년 발달장애인 방과후활동서비스",
+     4
+    ],
+    [
+     "기본 서비스 B형(24시간)",
+     3
+    ],
+    [
+     "병원 동행 서비스",
+     3
+    ]
+   ],
+   "with_tel": 830,
+   "sample": [
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]영천시-여성청소년 생리용품 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]춘천시_여성청소년 생리용품 바우처 보편지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    },
+    {
+     "address": "경기도 화성시 효행구 봉담읍",
+     "addressDetail": "수영로 61-7, 제상가동 104,105,106호(우방아이유쉘 2단지)",
+     "email": "",
+     "loadAddress": "",
+     "loadAddressDetail": "",
+     "loadZip": "",
+     "ownerName": "",
+     "providerId": "0326101600000006",
+     "providerName": "지에스25 봉담아이유",
+     "serviceName": "[지역이음바우처]부안군-부안형 저소득층 기저귀·조제분유 지원",
+     "serviceTypeName": "지역이음바우처",
+     "sidoName": "경기도",
+     "signguName": "경기도 화성시 효행구",
+     "telNumber": "031-000-0000",
+     "zip": "18297"
+    }
+   ]
+  }
+ }
+}
