@@ -1,0 +1,232 @@
+<title>다음걸음 퇴원 후 돌봄</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: 한 장짜리 안내문 — 화면에선 한 줄 흐름, 인쇄(A4)에선 단계 3개를 왼쪽, 보조 상자를 오른쪽에 둔 2단 */
+:root {
+  --paper: #f6f8f7;
+  --ink: #1b2826;
+  --muted: #4c5d59;
+  --line: #cbd8d4;
+  --care: #1d6b5b;
+  --care-soft: #e2efeb;
+  --urgent: #9a4b08;
+  --urgent-soft: #fbeedd;
+  --display: "Gowun Batang", "Nanum Myeongjo", "Apple SD Gothic Neo", serif;
+  --body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #141c1b; --ink: #e5eeeb; --muted: #a7b8b3; --line: #2f3f3c;
+    --care: #6cc2ac; --care-soft: #1c2e2a; --urgent: #f0a65c; --urgent-soft: #33261a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #141c1b; --ink: #e5eeeb; --muted: #a7b8b3; --line: #2f3f3c;
+  --care: #6cc2ac; --care-soft: #1c2e2a; --urgent: #f0a65c; --urgent-soft: #33261a;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.sheet {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding-block: 2rem 3rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: 1.75rem;
+}
+
+/* 머리 */
+header { display: grid; gap: .6rem; border-bottom: 2px solid var(--ink); padding-bottom: 1.1rem; }
+.meta { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-size: .9rem; color: var(--muted); }
+.meta b { color: var(--care); font-weight: 700; letter-spacing: .02em; }
+h1 {
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  line-height: 1.25;
+  margin: 0;
+  text-wrap: balance;
+}
+.lead { margin: 0; max-width: 40em; font-size: 1.15rem; }
+
+/* 본문 2단 */
+.cols { display: grid; gap: 1.75rem; align-items: start; }
+@media (min-width: 52rem) { .cols { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); align-items: start; } }
+
+/* 단계 — 실제 순서라 번호를 붙임 */
+ol.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem; counter-reset: step; align-content: start; }
+.step { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: .9rem; counter-increment: step; }
+.step::before {
+  content: counter(step);
+  width: 2.6rem; height: 2.6rem;
+  border-radius: 50%;
+  background: var(--care);
+  color: var(--paper);
+  font-weight: 700; font-size: 1.25rem;
+  display: grid; place-items: center;
+}
+.step h2 { margin: 0 0 .15rem; font-size: 1.3rem; line-height: 1.4; text-wrap: balance; }
+.when { display: block; font-size: .85rem; font-weight: 700; color: var(--care); letter-spacing: .04em; }
+.step p { margin: .4rem 0 0; }
+.step ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+.step li + li { margin-top: .15rem; }
+.say {
+  margin-top: .5rem;
+  padding: .6rem .85rem;
+  border-left: 3px solid var(--care);
+  background: var(--care-soft);
+  font-weight: 500;
+}
+.small { font-size: .92rem; color: var(--muted); }
+.hospitals { font-size: .9rem; color: var(--muted); margin-top: .35rem; }
+
+/* 오른쪽 상자 */
+aside { display: grid; gap: 1.1rem; }
+.box { padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 6px; display: grid; gap: .45rem; }
+.box h3 { margin: 0; font-size: 1.1rem; line-height: 1.4; }
+.box p, .box ul { margin: 0; }
+.box ul { padding-left: 1.1rem; }
+.box.urgent { background: var(--urgent-soft); border-color: transparent; }
+.box.urgent h3 { color: var(--urgent); }
+.tag { font-size: .8rem; font-weight: 700; letter-spacing: .06em; color: var(--urgent); }
+
+.check { list-style: none; padding-left: 0 !important; display: grid; gap: .3rem; }
+.check li { display: grid; grid-template-columns: 1.2rem minmax(0, 1fr); gap: .5rem; }
+.check li::before { content: ""; width: .95rem; height: .95rem; margin-top: .38rem; border: 1.5px solid var(--muted); border-radius: 2px; }
+
+dl.phones { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .35rem 1rem; }
+dl.phones dt { color: var(--ink); }
+dl.phones dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; user-select: all; }
+
+footer { border-top: 1px solid var(--line); padding-top: 1rem; display: grid; gap: .5rem; font-size: .85rem; color: var(--muted); }
+footer p { margin: 0; }
+.ask { font-size: 1rem; color: var(--ink); font-weight: 500; }
+footer a { color: var(--care); }
+a:focus-visible { outline: 2px solid var(--care); outline-offset: 2px; }
+
+/* A4 한 장 인쇄 */
+@page { size: A4; margin: 11mm 12mm; }
+@media print {
+  :root { --paper: #fff; --ink: #111; --muted: #3d4b48; --line: #b9c7c3; --care: #155b4c; --care-soft: #e8f2ef; --urgent: #8a4100; --urgent-soft: #fbefe0; color-scheme: light; }
+  body { font-size: 10.3pt; line-height: 1.5; background: #fff; }
+  .sheet { padding: 0; max-width: none; gap: 3.5mm; }
+  header { gap: 1.5mm; padding-bottom: 2.5mm; }
+  h1 { font-size: 19pt; }
+  .lead { font-size: 10pt; }
+  .cols { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 5mm; }
+  ol.steps { gap: 5mm; }
+  .step { grid-template-columns: 7mm minmax(0, 1fr); gap: 2.5mm; }
+  .step::before { width: 7mm; height: 7mm; font-size: 10pt; }
+  .step h2 { font-size: 11pt; }
+  .step p, .step ul { margin-top: 1mm; }
+  .say { padding: 1.5mm 2.5mm; margin-top: 1.5mm; }
+  aside { gap: 2.5mm; }
+  .box { padding: 2.5mm 3mm; gap: 1mm; }
+  .box h3 { font-size: 10pt; }
+  .hospitals, .small { font-size: 8.4pt; }
+  footer { font-size: 7.6pt; padding-top: 2mm; gap: 1mm; }
+  .ask { font-size: 9pt; }
+  footer a { color: inherit; text-decoration: none; }
+}
+</style>
+
+<main class="sheet">
+  <header>
+    <div class="meta"><b>다음걸음</b><span>화성시</span><span>2026년 10월 21일 기준</span></div>
+    <h1>퇴원 후, 집에서 돌봄이 필요할 때</h1>
+    <p class="lead">가족이나 본인이 곧 퇴원하는데 집에서 혼자 지내기 어렵다면, 아래 순서대로 해 보세요. 퇴원 전에 시작할수록 수월합니다.</p>
+  </header>
+
+  <div class="cols">
+    <ol class="steps">
+      <li class="step">
+        <div>
+          <span class="when">퇴원 전, 지금</span>
+          <h2>병원 사회복지사나 퇴원 담당 간호사에게 물어보세요</h2>
+          <div class="say">“퇴원 후 돌봄이 걱정돼요. 통합돌봄으로 연계해 주실 수 있나요?”</div>
+          <p>화성시 협력병원은 입원 중에 돌봄이 필요한지 살펴서 시청에 직접 연결해 줍니다.</p>
+          <p class="hospitals">협력병원 12곳: 한림대동탄성심병원, 화성중앙종합병원, 원광종합병원, 화성유일병원, 동탄시티병원, 에이비씨병원, 화성디에스병원, 튼튼병원, 바르다임병원, 희망찬병원, 수앤수병원, 향남스마트병원</p>
+          <p class="small">다른 병원이라면 2번으로 가세요.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div>
+          <span class="when">이번 주</span>
+          <h2>행정복지센터에 통합돌봄을 신청하세요</h2>
+          <p>본인이나 가족이 <strong>주소지 읍·면·동 행정복지센터</strong>에 신청합니다.</p>
+          <p>그다음에는 담당자가 상황을 확인하고 집으로 찾아와 살펴본 뒤, 필요한 도움을 묶은 지원계획을 세웁니다.</p>
+          <p>받을 수 있는 도움의 예: 방문진료(의과·한의과), 방문재활, 방문약물관리, 일상돌봄, 주거환경 개선, 케어안심주택. 실제 서비스는 상황에 따라 정해집니다.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div>
+          <span class="when">오래 돌봄이 필요할 것 같으면</span>
+          <h2>장기요양 등급을 신청하세요</h2>
+          <p>65세 이상이거나, 65세 미만이라도 치매·뇌혈관질환 같은 노인성 질병이 있고 6개월 넘게 혼자 생활하기 어려운 경우입니다.</p>
+          <ul>
+            <li>국민건강보험공단 지사 방문, 우편·팩스, 인터넷으로 신청. 가족이 대신 신청할 수 있어요.</li>
+            <li>신청 후 30일 안에 판정이 나옵니다 (부득이하면 늦어질 수 있어요).</li>
+            <li>등급을 받으면 방문요양, 주야간보호 같은 서비스를 이용할 수 있어요.</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+
+    <aside>
+      <section class="box urgent" aria-labelledby="urgent-h">
+        <span class="tag">급할 때</span>
+        <h3 id="urgent-h">퇴원한 지 14일이 안 됐다면</h3>
+        <p>65세 이상이고 기초생활수급·차상위이거나, 기초연금을 받으며 혼자 사시거나 고령 부부라면 <strong>퇴원환자 단기집중서비스</strong>를 행정복지센터에 바로 신청하세요.</p>
+        <p>보통 3~7일 안에 시작해서 한 달 동안(44시간) 식사·가사·병원 동행을 도와줍니다.</p>
+      </section>
+
+      <section class="box" aria-labelledby="dis-h">
+        <h3 id="dis-h">장애가 있는 분이라면</h3>
+        <p>화성시 퇴원환자 연계 지원은 장애인 퇴원환자도 대상입니다. 통합돌봄을 신청할 때 장애인 활동지원도 함께 물어보세요.</p>
+      </section>
+
+      <section class="box" aria-labelledby="note-h">
+        <h3 id="note-h">신청 전에 적어 두세요</h3>
+        <ul class="check">
+          <li>퇴원 예정일과 병원 이름</li>
+          <li>혼자 하기 어려운 일 (식사, 화장실, 이동, 약 챙기기)</li>
+          <li>함께 사는 사람, 낮에 돌봐 줄 사람이 있는지</li>
+          <li>기초연금·기초생활수급을 받는지</li>
+          <li>장애 등록이 되어 있는지</li>
+        </ul>
+      </section>
+
+      <section class="box" aria-labelledby="tel-h">
+        <h3 id="tel-h">전화할 곳</h3>
+        <dl class="phones">
+          <dt>화성시청 통합돌봄과</dt><dd>031-5189-6151</dd>
+          <dt></dt><dd>031-5189-6112</dd>
+          <dt>보건복지상담센터</dt><dd>129</dd>
+          <dt>국민건강보험공단</dt><dd>1577-1000</dd>
+        </dl>
+        <p class="small">가까운 읍·면·동 행정복지센터에서도 상담할 수 있어요.</p>
+      </section>
+    </aside>
+  </div>
+
+  <footer>
+    <p class="ask">이 안내를 퇴원 전에 받았다면 덜 헤매셨을까요? 빠지거나 헷갈리는 내용을 알려 주세요.</p>
+    <p>‘다음걸음’ 검증용 시안입니다. 2026년 10월 21일 공개 자료로 만들었으며, 정확한 대상과 절차는 창구에서 확인하세요.</p>
+    <p>출처: <a href="https://www.hscity.go.kr/www/partInfo/femaleFamily/Welfare8/Welfare8_10.jsp">화성시 통합돌봄 안내</a> · <a href="https://view.asiae.co.kr/article/2026051118015416209">화성시 협력병원 확대(아시아경제, 2026.5.11)</a> · <a href="https://www.bokjiro.go.kr/ssis-tbu/cms/pc/news/promotion/1309483_1118.html">복지로 퇴원환자 통합돌봄</a> · <a href="https://mobile.newsis.com/view/NISX20260722_0003718303">퇴원환자 단기집중서비스 긴급지원(뉴시스, 2026.7.22)</a> · <a href="https://www.nhis.or.kr/static/alim/paper/oldpaper/202205/sub/17.html">국민건강보험공단 장기요양 인정신청</a></p>
+  </footer>
+</main>
