@@ -27,7 +27,7 @@ jobs:
           python-version: "3.12"
       - run: pip install -q -r requirements.txt
       - run: python -m nsc sync pull
-      - run: python -m nsc collect welfare standard files
+      - run: python -m nsc collect standard files
         timeout-minutes: 70
         continue-on-error: true
       - run: python -m nsc build
@@ -60,7 +60,9 @@ jobs:
           if (p / "institutions.json").exists():
               inst = json.loads((p / "institutions.json").read_text())
               ltc = [x for x in inst if x["source"] == "장기요양기관"]
-              out["sample_ltc_full"] = [x for x in ltc if x.get("capacity")][:2]
+              out["sample_ltc_full"] = [x for x in ltc if x.get("evaluations") and x.get("dementia_services")][:2]
+              out["eval_grades"] = dict(collections.Counter(((x.get("evaluations") or [{}])[-1] or {}).get("등급") for x in ltc))
+              out["sample_rehab"] = [x for x in inst if x.get("lat")][:2]
               out["sample_dementia"] = [x for x in inst if x["source"] == "치매안심센터"][:2]
               out["capacity_waiting_total"] = sum((x.get("capacity") or {}).get("대기") or 0 for x in ltc)
               out["with_waiting"] = sum(1 for x in ltc if ((x.get("capacity") or {}).get("대기") or 0) > 0)

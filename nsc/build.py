@@ -221,10 +221,45 @@ def dementia_centers(rows, region_name, table):
             "name": pick_key(r, r"cnterNm$", r"Nm$"), "services": ["치매 상담·검사"],
             "gu": g, "gu_from": how, "address": addr or None,
             "tel": tel(pick_key(r, r"operInstt.*Telno", r"Telno", r"phone")),
+            "staff": {k: num(r.get(f)) for k, f in (("의사", "doctrCo"), ("간호사", "nurseCo"), ("사회복지사", "scrcsCo")) if num(r.get(f))} or None,
             "programs": [p.strip() for p in re.split(r"[,\n/]+", pick_key(r, r"Prgm", r"prgrm") or "") if p.strip()] or None,
             "lat": pick_key(r, r"^latitude$", r"lat"), "lng": pick_key(r, r"^longitude$", r"lo?ng"),
         })
     return out
+
+
+def enrich_ltc_files(ltc, files):
+    """평가결과(가장 최근 평가)와 치매 관련 급여 제공 여부를 기관 기호로 붙인다."""
+    evals = defaultdict(list)
+    for r in (files or {}).get("ltc_eval") or []:
+        evals[(r.get("장기요양기관기호") or "").strip()].append(r)
+    dementia = {(r.get("장기요양기관기호") or "").strip(): r for r in (files or {}).get("dementia_ltc") or []}
+    for x in ltc:
+        sym = x["id"].split(":", 1)[1]
+        ev = sorted(evals.get(sym, []), key=lambda r: r.get("평가일자") or "")
+        x["evaluations"] = [{"급여종류": r.get("급여종류"), "평가일자": r.get("평가일자"), "등급": r.get("평가등급"),
+                             "총점": r.get("평가총점")} for r in ev[-3:]] or None
+        d = dementia.get(sym)
+        x["dementia_services"] = [k for k, v in (d or {}).items()
+                                  if k not in ("연번", "장기요양기관기호", "기관명", "주소") and str(v).strip() not in ("", "0", "N", "-")] or None
+        if d and d.get("주소") and not x.get("address"):
+            x["address"] = d["주소"]
+
+
+def enrich_dev_rehab(prov, rows, region_name):
+    """발달재활 표준데이터의 좌표·전화를 이름이 같은 제공기관에 붙인다."""
+    by = {}
+    for r in rows or []:
+        if region_name in (r.get("sggNm") or "") + (r.get("lctnRoadNmAddr") or ""):
+            by[norm_name(r.get("instNm"))] = r
+    hit = 0
+    for x in prov:
+        r = by.get(norm_name(x["name"]))
+        if r:
+            x["lat"], x["lng"] = r.get("lat"), r.get("lot")
+            x["tel"] = x.get("tel") or tel(r.get("telno"))
+            hit += 1
+    return {"화성시 표준데이터": len(by), "좌표 붙음": hit}
 
 
 def ltc_gu_from_names(ltc, providers):
@@ -316,6 +351,12 @@ def main():
         prov = provider_institutions(prov_rows, prefix, table, zips)
         dmc = dementia_centers((std_s or {}).get("dementia_center"), r["name"], table)
         code_gu = ltc_gu_from_names(ltc, prov)
+        files_s, files_d = latest("files")
+        enrich_ltc_files(ltc, files_s)
+        rehab = enrich_dev_rehab(prov, (std_s or {}).get("dev_rehab"), r["name"])
+        for x in ltc:                      # 치매급여 파일의 주소로 구를 한 번 더
+            if not x.get("gu") and x.get("address"):
+                x["gu"], x["gu_from"] = guess_gu(x["address"], table)
         inst = ltc + prov + dmc
 
         progs = []
@@ -331,15 +372,16 @@ def main():
         write_json(out / "programs.json", progs)
         meta = {
             "region": r["name"], "built": today(),
-            "sources": {"장기요양기관": ltc_d, "사회서비스 제공기관": prov_d, "복지서비스": wel_d, "표준데이터": std_d},
+            "sources": {"장기요양기관": ltc_d, "사회서비스 제공기관": prov_d, "복지서비스": wel_d, "표준데이터": std_d, "파일": files_d},
             "counts": {"institutions": len(inst), "programs": len(progs),
                        **Counter(x["source"] for x in inst), "구": dict(Counter(x.get("gu") or "모름" for x in inst))},
             "fill": {
-                "장기요양기관": fill(ltc, ("tel", "gu", "capacity", "fees", "programs", "staff", "rooms", "homepage", "transport", "parking", "floor")),
-                "사회서비스 제공기관": fill(prov, ("tel", "gu", "address")),
+                "장기요양기관": fill(ltc, ("tel", "gu", "address", "capacity", "fees", "programs", "staff", "rooms", "homepage", "transport", "parking", "floor", "evaluations", "dementia_services")),
+                "사회서비스 제공기관": fill(prov, ("tel", "gu", "address", "lat")),
                 "치매안심센터": fill(dmc, ("tel", "gu", "address", "programs")),
                 "제도": fill(progs, ("has_detail", "target", "criteria", "benefit", "apply", "contact", "year", "provider_count")),
             },
+            "dev_rehab": rehab,
             "learned": {"구 사전 토큰 수": len(table), "우편번호→구": len(zips), "장기요양 지역코드→구": code_gu},
             "standard_fields": {k: sorted((v or [{}])[0].keys()) for k, v in (std_s or {}).items()},
         }

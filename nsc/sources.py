@@ -217,7 +217,7 @@ def standard(rows=1000):
                 if page == 1:
                     status[name] = {"sample": raw[:400]}
                 body = json.loads(raw)
-                b = (body.get("response") or {}).get("body") or {}
+                b = (body.get("response") or {}).get("body") or body.get("body") or {}
                 items = b.get("items") or []
                 if isinstance(items, dict):
                     items = items.get("item") or []
