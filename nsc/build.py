@@ -230,18 +230,23 @@ def dementia_centers(rows, region_name, table):
 
 def enrich_ltc_files(ltc, files):
     """평가결과(가장 최근 평가)와 치매 관련 급여 제공 여부를 기관 기호로 붙인다."""
+    sym_of = lambda r: re.sub(r"\D", "", r.get("장기요양기관기호") or "")  # "2-41590-00605" → "24159000605"  # noqa: E731
     evals = defaultdict(list)
     for r in (files or {}).get("ltc_eval") or []:
-        evals[(r.get("장기요양기관기호") or "").strip()].append(r)
-    dementia = {(r.get("장기요양기관기호") or "").strip(): r for r in (files or {}).get("dementia_ltc") or []}
+        evals[sym_of(r)].append(r)
+    dementia = {sym_of(r): r for r in (files or {}).get("dementia_ltc") or []}
     for x in ltc:
         sym = x["id"].split(":", 1)[1]
-        ev = sorted(evals.get(sym, []), key=lambda r: r.get("평가일자") or "")
-        x["evaluations"] = [{"급여종류": r.get("급여종류"), "평가일자": r.get("평가일자"), "등급": r.get("평가등급"),
-                             "총점": r.get("평가총점")} for r in ev[-3:]] or None
+        latest_by_kind = {}
+        for r in sorted(evals.get(sym, []), key=lambda r: r.get("평가일자") or ""):
+            latest_by_kind[r.get("급여종류")] = r          # 급여종류별 가장 최근 평가
+        x["evaluations"] = [{"급여종류": re.sub(r"^\d+\.", "", r.get("급여종류") or ""), "평가구분": r.get("평가구분"),
+                             "평가일자": r.get("평가일자"), "등급": r.get("평가등급"), "총점": r.get("평가총점")}
+                            for r in latest_by_kind.values()] or None
         d = dementia.get(sym)
+        # 값 1 = 제공, 2 = 미제공
         x["dementia_services"] = [k for k, v in (d or {}).items()
-                                  if k not in ("연번", "장기요양기관기호", "기관명", "주소") and str(v).strip() not in ("", "0", "N", "-")] or None
+                                  if k not in ("연번", "장기요양기관기호", "기관명", "주소") and str(v).strip() == "1"] or None
         if d and d.get("주소") and not x.get("address"):
             x["address"] = d["주소"]
 
