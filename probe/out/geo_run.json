@@ -1,0 +1,173 @@
+{
+ "summary": {
+  "calls": 440,
+  "keys": {
+   "search": true,
+   "coord": false
+  },
+  "errors": {},
+  "roads": 264,
+  "how": {
+   "구 바로잡음": 5,
+   "주소: 검색": 518,
+   "주소: 도로명코드": 121,
+   "좌표: 없음": 795,
+   "좌표: 원천": 4
+  },
+  "cache": 440
+ },
+ "장기요양기관": {
+  "n": 514,
+  "address": 354,
+  "road_address": 354,
+  "gu": 514,
+  "lat": 0,
+  "address_from": {
+   "null": 393,
+   "도로명코드": 121
+  }
+ },
+ "사회서비스 제공기관": {
+  "n": 281,
+  "address": 281,
+  "road_address": 281,
+  "gu": 153,
+  "lat": 0,
+  "address_from": {
+   "null": 281
+  }
+ },
+ "치매안심센터": {
+  "n": 4,
+  "address": 4,
+  "road_address": 4,
+  "gu": 4,
+  "lat": 4,
+  "address_from": {
+   "null": 4
+  }
+ },
+ "samples": [
+  {
+   "name": "이원건강의료기 화성점",
+   "address": "경기도 화성시 병점구 병점동로 78",
+   "road_address": "경기도 화성시 병점구 병점동로 78",
+   "address_from": "도로명코드",
+   "gu": "병점구",
+   "addr_codes": {
+    "roadNmCd": "415953210050",
+    "gunmulMlno": "78",
+    "gunmulSlno": "0",
+    "hmPostNo": "18403",
+    "BDongCd": "102",
+    "HDongCd": "530"
+   }
+  },
+  {
+   "name": "향남로뎀재가복지센터",
+   "address": "경기도 화성시 만세구 향남읍 상신하길로298번길 11",
+   "road_address": "경기도 화성시 만세구 향남읍 상신하길로298번길 11",
+   "address_from": "도로명코드",
+   "gu": "만세구",
+   "addr_codes": {
+    "roadNmCd": "415914848211",
+    "gunmulMlno": "11",
+    "gunmulSlno": "0",
+    "hmPostNo": "18611",
+    "BDongCd": "253",
+    "HDongCd": "253"
+   }
+  },
+  {
+   "name": "보은의집",
+   "address": "경기도 화성시 효행구 봉담읍 복만터길 29-22",
+   "road_address": "경기도 화성시 효행구 봉담읍 복만터길 29-22",
+   "address_from": "도로명코드",
+   "gu": "효행구",
+   "addr_codes": {
+    "roadNmCd": "415934430583",
+    "gunmulMlno": "29",
+    "gunmulSlno": "22",
+    "hmPostNo": "18335",
+    "BDongCd": "250",
+    "HDongCd": "250"
+   }
+  },
+  {
+   "name": "화성의료기",
+   "address": "경기도 화성시 병점구 병점중앙로170번길 23",
+   "road_address": "경기도 화성시 병점구 병점중앙로170번길 23",
+   "address_from": "도로명코드",
+   "gu": "병점구",
+   "addr_codes": {
+    "roadNmCd": "415954430571",
+    "gunmulMlno": "23",
+    "gunmulSlno": "0",
+    "hmPostNo": "18399",
+    "BDongCd": "101",
+    "HDongCd": "510"
+   }
+  },
+  {
+   "name": "동탄센트럴의료기",
+   "address": "경기도 화성시 동탄구 동탄지성로 112",
+   "road_address": "경기도 화성시 동탄구 동탄지성로 112",
+   "address_from": "도로명코드",
+   "gu": "동탄구",
+   "addr_codes": {
+    "roadNmCd": "415973177017",
+    "gunmulMlno": "112",
+    "gunmulSlno": "0",
+    "hmPostNo": "18434",
+    "BDongCd": "102",
+    "HDongCd": "510"
+   }
+  },
+  {
+   "name": "동탄의료기 복지용구",
+   "address": "경기도 화성시 동탄구 동탄공원로 21-41",
+   "road_address": "경기도 화성시 동탄구 동탄공원로 21-41",
+   "address_from": "도로명코드",
+   "gu": "동탄구",
+   "addr_codes": {
+    "roadNmCd": "415973210162",
+    "gunmulMlno": "21",
+    "gunmulSlno": "41",
+    "hmPostNo": "18429",
+    "BDongCd": "101",
+    "HDongCd": "530"
+   }
+  },
+  {
+   "name": "휴 주간보호",
+   "address": "경기도 화성시 동탄구 동탄순환대로 715",
+   "road_address": "경기도 화성시 동탄구 동탄순환대로 715",
+   "address_from": "도로명코드",
+   "gu": "동탄구",
+   "addr_codes": {
+    "roadNmCd": "415972348101",
+    "gunmulMlno": "715",
+    "gunmulSlno": "0",
+    "hmPostNo": "18472",
+    "BDongCd": "106",
+    "HDongCd": "550"
+   }
+  },
+  {
+   "name": "방문요양센터 모두케어",
+   "address": "경기도 화성시 만세구 향남읍 행정중앙2로 63-34",
+   "road_address": "경기도 화성시 만세구 향남읍 행정중앙2로 63-34",
+   "address_from": "도로명코드",
+   "gu": "만세구",
+   "addr_codes": {
+    "roadNmCd": "415913210120",
+    "gunmulMlno": "63",
+    "gunmulSlno": "34",
+    "hmPostNo": "18600",
+    "BDongCd": "253",
+    "HDongCd": "253"
+   }
+  }
+ ],
+ "unknown_road_codes": 100
+}
