@@ -1,0 +1,58 @@
+name: first-run
+# 임시: feat/collector 브랜치에서 전체 수집을 한 번 돌리고, 요약(데이터 아님)만 브랜치에 커밋한다. 병합 전에 삭제.
+on:
+  push:
+    branches: ["feat/collector"]
+    paths: ["nsc/**", ".github/workflows/first-run.yml"]
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - run: python -m nsc sync pull
+      - run: python -m nsc collect ltc welfare providers
+        continue-on-error: true
+      - run: python -m nsc build
+        continue-on-error: true
+      - run: python -m nsc sync push
+        continue-on-error: true
+      - name: 요약만 커밋
+        if: always()
+        run: |
+          mkdir -p firstrun
+          cp data/nsc/runs/*.json firstrun/ 2>/dev/null || true
+          cp data/nsc/site/data/hwaseong/meta.json firstrun/ 2>/dev/null || true
+          python - <<'EOF'
+          import json, collections, pathlib
+          p = pathlib.Path("data/nsc/site/data/hwaseong")
+          out = {}
+          if (p / "institutions.json").exists():
+              inst = json.loads((p / "institutions.json").read_text())
+              out["by_source"] = collections.Counter(x["source"] for x in inst)
+              out["by_gu"] = collections.Counter(str(x.get("gu")) for x in inst)
+              out["ltc_kind"] = collections.Counter(str(x.get("kind_code")) for x in inst if x["source"] == "장기요양기관")
+              out["services_top"] = collections.Counter(s for x in inst for s in x.get("services", [])).most_common(40)
+              out["sample_ltc"] = [x for x in inst if x["source"] == "장기요양기관"][:3]
+          if (p / "programs.json").exists():
+              pr = json.loads((p / "programs.json").read_text())
+              out["programs"] = len(pr)
+              out["program_fill"] = {k: sum(1 for x in pr if x.get(k)) for k in ("target", "criteria", "benefit", "apply", "contact", "year")}
+              out["program_sample"] = [x for x in pr if "발달재활" in (x.get("name") or "")][:1]
+          pathlib.Path("firstrun/summary.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
+          EOF
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add firstrun && git commit -m "first-run 요약" && git push || true

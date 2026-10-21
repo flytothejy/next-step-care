@@ -1,0 +1,56 @@
+name: collect
+
+# 공공데이터 수집 → 화면 데이터 가공 → R2 저장. 수집 결과는 저장소에 커밋하지 않는다.
+#   매일 06:40(한국)  장기요양기관 + 복지서비스
+#   일요일 05:10      + 사회서비스 제공기관 전국 전량 (지역 필터가 없어 오래 걸림)
+on:
+  schedule:
+    - cron: "40 21 * * *"
+    - cron: "10 20 * * 6"
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "수집할 원천 (공백 구분: ltc welfare providers)"
+        default: "ltc welfare"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - run: pip install -q -r requirements.txt
+      - name: 수집 대상 정하기
+        id: src
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then s="${{ inputs.sources }}"
+          elif [ "${{ github.event.schedule }}" = "10 20 * * 6" ]; then s="ltc welfare providers"
+          else s="ltc welfare"; fi
+          echo "list=$s" >> "$GITHUB_OUTPUT"; echo "수집: $s"
+      - name: pull state from R2
+        run: python -m nsc sync pull
+      - name: collect
+        run: python -m nsc collect ${{ steps.src.outputs.list }}
+      - name: build
+        run: python -m nsc build
+      - name: push to R2
+        if: always()
+        run: python -m nsc sync push
