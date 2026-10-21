@@ -4,7 +4,11 @@
   "사회서비스 제공기관": 281
  },
  "by_gu": {
-  "None": 795
+  "None": 780,
+  "병점구": 3,
+  "동탄구": 9,
+  "만세구": 1,
+  "효행구": 2
  },
  "ltc_kind": {
   "B06": 14,
@@ -269,7 +273,7 @@
    "service_types": [
     "지역사회서비스투자"
    ],
-   "gu": null,
+   "gu": "병점구",
    "address": "경기도 화성시 병점구 영통로60번길 7, 209,210호 (반월동)",
    "zip": "18379",
    "tel": "010-8174-9092"
@@ -286,7 +290,7 @@
    "service_types": [
     "지역사회서비스투자"
    ],
-   "gu": null,
+   "gu": "동탄구",
    "address": "경기도 화성시 동탄구 노작로3길 21, 1층 101호 (동탄1동)",
    "zip": "18459",
    "tel": "010-2261-8278"
@@ -303,7 +307,7 @@
    "service_types": [
     "장애인활동지원"
    ],
-   "gu": null,
+   "gu": "만세구",
    "address": "경기도 화성시 만세구 향남읍 발안로 6, 203호",
    "zip": "18597",
    "tel": "031-353-7012"
@@ -319,7 +323,7 @@
    "service_types": [
     "발달장애인지원"
    ],
-   "gu": null,
+   "gu": "동탄구",
    "address": "경기도 화성시 동탄구 동탄장지천5길 30-5, 301~307호 (동탄8동)",
    "zip": "18508",
    "tel": "031-8055-8672"
@@ -335,13 +339,13 @@
    "service_types": [
     "지역사회서비스투자"
    ],
-   "gu": null,
+   "gu": "동탄구",
    "address": "경기도 화성시 동탄구 동탄순환대로 617, 2층 205호 (동탄4동)",
    "zip": "18476",
    "tel": "031-375-0208"
   }
  ],
- "programs": 23,
+ "programs": 318,
  "program_fill": {
   "target": 23,
   "criteria": 23,
@@ -350,7 +354,26 @@
   "contact": 0,
   "year": 0
  },
- "program_sample": [],
+ "program_sample": [
+  {
+   "id": "WLF00003195",
+   "scope": "national",
+   "name": "발달재활서비스",
+   "dept": "장애인건강과",
+   "summary": null,
+   "target": null,
+   "criteria": null,
+   "benefit": null,
+   "apply": null,
+   "contact": null,
+   "year": null,
+   "life": "영유아,아동,청소년",
+   "targets": null,
+   "themes": null,
+   "last_modified": null,
+   "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003195&wlfareInfoReldBztpCd=01"
+  }
+ ],
  "raw_provider_signgu": [
   [
    "경기도 화성시",
