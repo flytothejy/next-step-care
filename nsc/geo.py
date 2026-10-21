@@ -145,7 +145,7 @@ class Geo:
             if not rows:
                 return None
             j = rows[0]
-            return {k: j.get(k) for k in ("roadAddrPart1", "roadAddr", "jibunAddr", "zipNo", "admCd", "rnMgtSn", "rn",
+            return {k: j.get(k) for k in ("roadAddrPart1", "roadAddr", "jibunAddr", "zipNo", "admCd", "rnMgtSn", "rn", "siNm",
                                          "udrtYn", "buldMnnm", "buldSlno", "sggNm", "emdNm", "bdNm")}
         return self._cached(f"s:{a}", ask)
 
@@ -195,6 +195,7 @@ def apply(inst, region, gu_re):
     g = Geo()
     gu_codes = region.get("gu_codes", {})
     prefix = region["provider_signgu_prefix"]
+    city = region["name"]
     how = Counter()
     roads = {}          # rnMgtSn → (admCd, 도로 이름, 시군구 이름)
 
@@ -204,7 +205,11 @@ def apply(inst, region, gu_re):
         if not x.get("address"):
             x["address"], x["address_from"] = r.get("roadAddrPart1"), src
         x["_juso"] = (r.get("admCd"), r.get("rnMgtSn"), r.get("udrtYn"), r.get("buldMnnm"), r.get("buldSlno"))
-        if not x.get("gu"):
+        if city not in (r.get("roadAddrPart1") or ""):
+            # 화성시에서 서비스하지만 사무실은 다른 지역 (방문형 서비스에 많다)
+            x["office_outside"] = " ".join(p for p in (r.get("siNm"), r.get("sggNm")) if p) or True
+            how["사무실 다른 지역"] += 1
+        elif not x.get("gu"):
             gu = gu_of(r.get("sggNm"), gu_re) or gu_of(r.get("roadAddrPart1"), gu_re)
             if gu:
                 x["gu"], x["gu_from"] = gu, "주소 검색"

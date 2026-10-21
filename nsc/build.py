@@ -383,8 +383,8 @@ def main():
             "counts": {"institutions": len(inst), "programs": len(progs),
                        **Counter(x["source"] for x in inst), "구": dict(Counter(x.get("gu") or "모름" for x in inst))},
             "fill": {
-                "장기요양기관": fill(ltc, ("tel", "gu", "address", "lat", "capacity", "fees", "programs", "staff", "rooms", "homepage", "transport", "parking", "floor", "evaluations", "dementia_services")),
-                "사회서비스 제공기관": fill(prov, ("tel", "gu", "address", "lat")),
+                "장기요양기관": fill(ltc, ("tel", "gu", "address", "road_address", "lat", "capacity", "fees", "programs", "staff", "rooms", "homepage", "transport", "parking", "floor", "evaluations", "dementia_services")),
+                "사회서비스 제공기관": fill(prov, ("tel", "gu", "address", "road_address", "office_outside", "lat")),
                 "치매안심센터": fill(dmc, ("tel", "gu", "address", "lat", "programs")),
                 "제도": fill(progs, ("has_detail", "target", "criteria", "benefit", "apply", "contact", "year", "provider_count")),
             },
