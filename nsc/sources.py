@@ -242,7 +242,7 @@ FILES = {
 }
 
 
-def _portal(url, data=None, timeout=60):
+def _portal(url, data=None, timeout=120):
     import urllib.parse
     import urllib.request
     body = urllib.parse.urlencode(data).encode() if data else None
@@ -294,7 +294,7 @@ def files():
                 except Exception as e:  # noqa: BLE001
                     st.setdefault("tries", []).append(str(e)[:120])
             if raw is None:
-                continue
+                raise RuntimeError("내려받기 실패")
             (DATA / "snap" / today()).mkdir(parents=True, exist_ok=True)
             (DATA / "snap" / today() / f"file_{name}.bin").write_bytes(raw)
             rows = _decode_table(raw)
@@ -304,6 +304,12 @@ def files():
             out[name] = rows or []
         except Exception as e:  # noqa: BLE001
             st["error"] = str(e)[:200]
+            prev = sorted((DATA / "snap").glob(f"*/file_{name}.bin"))
+            if prev:                       # 포털이 응답하지 않으면 지난번 받은 파일을 그대로 쓴다
+                rows = _decode_table(prev[-1].read_bytes())
+                out[name] = rows or []
+                st["fallback"] = prev[-1].parent.name
+                st["rows"] = len(rows or [])
         log(f"파일 {name}: {st}")
     write_json(snap("files"), out, gz=True)
     return {"files": status}
