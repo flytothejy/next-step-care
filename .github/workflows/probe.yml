@@ -20,7 +20,8 @@ jobs:
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          VWORLD_KEY: ${{ secrets.VWORLD_KEY }}
+          JUSO_KEY: ${{ secrets.JUSO_KEY }}
+          JUSO_COORD_KEY: ${{ secrets.JUSO_COORD_KEY }}
         run: |
           for f in probe/*.py; do echo "== $f"; python "$f" || true; done
       - name: Commit results
