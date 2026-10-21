@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>다음걸음 데이터 상태</title>
+<style>
+:root { --bg: #f6f8f7; --fg: #1b2826; --muted: #4c5d59; --line: #cbd8d4; --care: #1d6b5b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #141c1b; --fg: #e5eeeb; --muted: #a7b8b3; --line: #2f3f3c; --care: #6cc2ac; color-scheme: dark; } }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+main { max-width: 46rem; margin: 0 auto; padding: 2rem 16px 3rem; display: grid; gap: 1.5rem; }
+h1 { margin: 0; font-size: 1.6rem; }
+p { margin: 0; color: var(--muted); }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: .45rem .3rem; border-bottom: 1px solid var(--line); }
+td.n { text-align: right; }
+a { color: var(--care); }
+ul { margin: 0; padding-left: 1.2rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>다음걸음 데이터 상태</h1>
+    <p>공공데이터에서 매일 모은 화성시 돌봄 기관·제도 데이터입니다.</p>
+  </header>
+  <section id="meta"><p>불러오는 중…</p></section>
+  <section>
+    <h2>데이터 파일</h2>
+    <ul>
+      <li><a href="data/hwaseong/institutions.json">기관 (institutions.json)</a></li>
+      <li><a href="data/hwaseong/programs.json">제도 (programs.json)</a></li>
+      <li><a href="data/hwaseong/meta.json">요약 (meta.json)</a></li>
+      <li><a href="data/events-latest.json">최근 변경 (events-latest.json)</a></li>
+    </ul>
+  </section>
+  <section>
+    <h2>검증용 안내문</h2>
+    <ul>
+      <li><a href="prototype/f0-discharge/">퇴원 후, 집에서 돌봄이 필요할 때</a></li>
+      <li><a href="prototype/s2-child-development/">아이 발달이 늦다는 말을 들었을 때</a></li>
+    </ul>
+  </section>
+</main>
+<script>
+fetch("data/hwaseong/meta.json").then(r => r.json()).then(m => {
+  const rows = Object.entries(m.counts).map(([k, v]) => `<tr><td>${k}</td><td class="n">${v.toLocaleString("ko-KR")}</td></tr>`).join("");
+  const src = Object.entries(m.sources).map(([k, v]) => `${k} ${v || "없음"}`).join(" · ");
+  document.getElementById("meta").innerHTML =
+    `<h2>${m.region} · ${m.built} 기준</h2><p>수집일: ${src}</p><table>${rows}</table>`;
+}).catch(() => { document.getElementById("meta").innerHTML = "<p>아직 가공된 데이터가 없습니다.</p>"; });
+</script>
+</body>
+</html>

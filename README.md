@@ -15,6 +15,21 @@
 | [`docs/DATA_TOOL_FEATURE.md`](docs/DATA_TOOL_FEATURE.md) | 데이터 → 툴 → 기능 구조, 기능 목록(탑다운), 첫 단계 |
 | [`docs/DIAGNOSIS.md`](docs/DIAGNOSIS.md) | 자가 진단과 방향 수정 |
 | [`registry/datasets.csv`](registry/datasets.csv) | 원천 데이터 목록 (계층·대상·우선순위) |
+| [`docs/DATA_STATUS.md`](docs/DATA_STATUS.md) | 수집 중인 데이터와 채움 현황 |
+
+## 데이터 수집
+
+```
+python -m nsc sync pull                       # R2에서 상태·최근 수집본 받기
+python -m nsc collect ltc welfare             # 매일: 장기요양기관(+상세), 복지서비스
+python -m nsc collect providers standard files  # 매주: 사회서비스 제공기관, 표준데이터, 포털 파일
+python -m nsc build                           # 화성시 화면 데이터(site/data/hwaseong) + 변경 기록
+python -m nsc sync push                       # R2에 올리기
+```
+
+GitHub Actions `collect`가 매일 06:40, 일요일 05:10(한국)에 돌고, `pages`가 결과를 GitHub Pages에 배포합니다.
+필요한 Secrets: `DATA_GO_KR_KEY`, `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET`.
+사용자 입력은 저장하지 않습니다.
 
 ## 출발점
 
