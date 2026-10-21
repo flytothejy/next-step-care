@@ -3,7 +3,7 @@ name: probe
 on:
   push:
     branches: ["probe/**"]
-    paths: ["probe/*.py", ".github/workflows/probe.yml"]
+    paths: ["probe/*.py", "nsc/**", ".github/workflows/probe.yml"]
 permissions:
   contents: write
 jobs:

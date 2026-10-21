@@ -1,8 +1,26 @@
 {
   "hwaseong": {
     "name": "화성시",
-    "ltc": {"siDoCd": "41", "siGunGuCd": ["590", "591", "593", "595", "597"]},
+    "ltc": {
+      "siDoCd": "41",
+      "siGunGuCd": [
+        "590",
+        "591",
+        "593",
+        "595",
+        "597"
+      ]
+    },
     "provider_signgu_prefix": "경기도 화성시",
-    "local_welfare": {"ctpvNm": "경기도", "sggNm": "화성시"}
+    "local_welfare": {
+      "ctpvNm": "경기도",
+      "sggNm": "화성시"
+    },
+    "gu_codes": {
+      "41591": "만세구",
+      "41593": "효행구",
+      "41595": "병점구",
+      "41597": "동탄구"
+    }
   }
 }
