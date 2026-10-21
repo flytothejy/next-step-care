@@ -1,0 +1,54 @@
+{
+ "meta": {
+  "key_set": true,
+  "key_len": 64
+ },
+ "calls": [
+  {
+   "label": "키 확인: 공공데이터 목록 검색",
+   "url": "https://apis.data.go.kr/AAAAAAA/GetSearchDataList/v2/search",
+   "params": {
+    "page": 1,
+    "perPage": 1,
+    "keyword": "장기요양"
+   },
+   "status": 200,
+   "body": "{\"result\":{\"data\":[{\"firstBrmName\":\"사회복지\",\"extension\":\"CSV\",\"updateDate\":\"2025-05-15 16:15:55\",\"keywords\":\"[장기요양, 요양, 장기요양기관]\",\"columns\":null,\"dataType\":\"FILE\",\"dataProvisionType\":\"다운로드\",\"coreData\":\"false\",\"dataName\":\"경상남도 하동군_장기요양기관 현황\",\"institutionType\":\"자치행정기관\",\"detailPageUrl\":\"https://data.go.kr/data/15086621/fileData.do\",\"secondBrmName\":\"노인·청소년\",\"useScopeCode\":\"이용허락범위 제한 없음\",\"organization\":\"경상남도 하동군\",\"reqCo\":\"398\",\"corpApi\":\"false\",\"dataDescription\":\"경상남도 하동군에 있는 장기요양기관 현황 (연번, 기관종류, 기관 및 시설명, 읍면, 소재지, 전화번호)의 정보를 제공하고 있습니다.\",\"coreDataName\":null}],\"sum\":134,\"dataCount\":1}}"
+  },
+  {
+   "label": "장기요양기관 상세(주소 발견분)",
+   "url": "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/getConvInsttDetailInfoList02",
+   "params": {
+    "pageNo": 1,
+    "numOfRows": 3
+   },
+   "status": 403,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<OpenAPI_ServiceResponse>\n<cmmMsgHeader>\n  <errMsg>SERVICE_KEY_IS_NOT_REGISTERED_ERROR</errMsg>\n  <returnAuthMsg>등록되지 않은 서비스키</returnAuthMsg>\n  <returnReasonCode>30</returnReasonCode>\n</cmmMsgHeader>\n</OpenAPI_ServiceResponse>\n"
+  },
+  {
+   "label": "중앙부처 목록(발달재활)",
+   "url": "https://apis.data.go.kr/B554287/NationalWelfareInformationsV001/NationalWelfarelistV001",
+   "params": {
+    "callTp": "L",
+    "pageNo": 1,
+    "numOfRows": 5,
+    "srchKeyCode": "003",
+    "searchWrd": "발달재활"
+   },
+   "status": 403,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<OpenAPI_ServiceResponse>\n<cmmMsgHeader>\n  <errMsg>SERVICE_KEY_IS_NOT_REGISTERED_ERROR</errMsg>\n  <returnAuthMsg>등록되지 않은 서비스키</returnAuthMsg>\n  <returnReasonCode>30</returnReasonCode>\n</cmmMsgHeader>\n</OpenAPI_ServiceResponse>\n"
+  },
+  {
+   "label": "지자체 목록(화성시)",
+   "url": "https://apis.data.go.kr/B554287/LocalGovernmentWelfareInformations/LcgvWelfarelist",
+   "params": {
+    "pageNo": 1,
+    "numOfRows": 10,
+    "ctpvNm": "경기도",
+    "sggNm": "화성시"
+   },
+   "status": 403,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<OpenAPI_ServiceResponse>\n<cmmMsgHeader>\n  <errMsg>SERVICE_KEY_IS_NOT_REGISTERED_ERROR</errMsg>\n  <returnAuthMsg>등록되지 않은 서비스키</returnAuthMsg>\n  <returnReasonCode>30</returnReasonCode>\n</cmmMsgHeader>\n</OpenAPI_ServiceResponse>\n"
+  }
+ ]
+}
