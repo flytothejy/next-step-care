@@ -1,12 +1,10 @@
 {
- "has_key": true,
- "addr_ltc": "EXC RemoteDisconnected: Remote end closed connection without response",
- "addr_ltc_domain": "EXC RemoteDisconnected: Remote end closed connection without response",
- "addr_prov": "EXC HTTPError: HTTP Error 502: Bad Gateway",
- "addr_eup": "EXC HTTPError: HTTP Error 502: Bad Gateway",
- "bld_newsig": "EXC HTTPError: HTTP Error 502: Bad Gateway",
- "bld_oldsig": "EXC HTTPError: HTTP Error 502: Bad Gateway",
- "bld_rnonly": "EXC RemoteDisconnected: Remote end closed connection without response",
- "place": "EXC RemoteDisconnected: Remote end closed connection without response",
- "road_search": "EXC HTTPError: HTTP Error 502: Bad Gateway"
+ "runner_ip": "{\n  \"ip\": \"52.176.138.181\",\n  \"city\": \"Des Moines\",\n  \"region\": \"Iowa\",\n  \"country\": \"US\",\n  \"loc\": \"41.6005,-93.6091\",\n  \"org\": \"AS8075 Microsoft Corporation\",\n  \"postal\": \"50309\",\n  \"timezone\": \"America/Chicago\",\n  \"readme\": \"https://ipinfo.io/missingauth\"\n}",
+ "vworld_http": "EXC RemoteDisconnected: Remote end closed connection without response",
+ "vworld_https": "EXC RemoteDisconnected: Remote end closed connection without response",
+ "juso_search_nokey": "200 {\"results\":{\"common\":{\"countPerPage\":\"1\",\"errorMessage\":\"승인되지 않은 KEY 입니다.\",\"errorCode\":\"E0001\",\"totalCount\":\"0\",\"currentPage\":\"1\"},\"juso\":null}}",
+ "juso_coord_nokey": "200 {\"results\":{\"common\":{\"errorMessage\":\"승인되지 않은 KEY 입니다.\",\"errorCode\":\"E0001\",\"totalCount\":\"0\"},\"juso\":null}}",
+ "juso_home": "200 <!DOCTYPE html>\n<html lang=\"ko\">\n  <head>\n    <!-- 퍼블.250722 --------------------------------------------->\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=1248\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n    <meta content=\"text/html; charset=UTF-8; X-Content-Type-Options=nosniff\" http-equiv=\"Content-Type\">\n    <meta name=\"format-detection\" content=\"telephone=no\">\n    <meta name=\"author\" content=\"\">\n    <meta name=\"description\" content=\"\">\n    <meta property=\"og:image\" content=\"\">\n    <meta property=\"og:title\" content=\"\">\n    <meta property=\"og:descripti",
+ "kakao_nokey": "HTTP 401 {\"errorType\":\"AccessDeniedError\",\"message\":\"cannot find Authorization : KakaoAK header\"}",
+ "naver_nokey": "HTTP 401 {\"error\":{\"errorCode\":\"200\",\"message\":\"Authentication Failed\",\"details\":\"Authentication information are missing.\"}}"
 }
