@@ -24,7 +24,7 @@ def redact(s):
     return re.sub(r"(serviceKey=)[^&\"' ]+", r"\1***", s)
 
 
-def fetch(url, timeout=60):
+def fetch(url, timeout=30):
     req = urllib.request.Request(url, headers=UA)
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:
@@ -50,7 +50,7 @@ def items(xml_text, tag="item"):
     return rows, int(tc) if tc and tc.isdigit() else None
 
 
-def page_all(base, params, tag="item", rows=1000, max_pages=60):
+def page_all(base, params, tag="item", rows=1000, max_pages=30):
     allrows, total, errors = [], None, []
     for p in range(1, max_pages + 1):
         st, body = api(base, {**params, "pageNo": p, "numOfRows": rows})
@@ -63,6 +63,29 @@ def page_all(base, params, tag="item", rows=1000, max_pages=60):
         if not got or (total is not None and len(allrows) >= total):
             break
     return allrows, total, errors
+
+
+def welfare(rep):
+    rows, total, _ = page_all("https://apis.data.go.kr/B554287/LocalGovernmentWelfareInformations/LcgvWelfarelist",
+                              {"ctpvNm": "경기도", "sggNm": "화성시"}, tag="servList", rows=100)
+    rep["local_welfare_hwaseong"] = [{k: r.get(k) for k in ("servId", "servNm", "lifeNmArray", "trgterIndvdlNmArray", "intrsThemaNmArray", "bizChrDeptNm", "lastModYmd")} for r in rows]
+    nat = {}
+    for w in ("발달재활", "노인맞춤돌봄", "장기요양", "활동지원", "발달", "치매", "통합돌봄", "퇴원"):
+        st, body = api("https://apis.data.go.kr/B554287/NationalWelfareInformationsV001/NationalWelfarelistV001",
+                       {"callTp": "L", "pageNo": 1, "numOfRows": 20, "srchKeyCode": "003", "searchWrd": w})
+        r, tc = items(body, "servList")
+        nat[w] = {"total": tc, "list": [{k: x.get(k) for k in ("servId", "servNm", "jurOrgNm", "lifeArray", "lastModYmd")} for x in (r or [])]}
+    rep["national_search"] = nat
+    sid = next((x["servId"] for x in nat["발달재활"]["list"] if "발달재활" in (x.get("servNm") or "")), None)
+    if sid:
+        st, body = api("https://apis.data.go.kr/B554287/NationalWelfareInformationsV001/NationalWelfaredetailedV001",
+                       {"callTp": "D", "servId": sid})
+        rep["national_detail_sample"] = redact(body[:8000])
+
+
+
+def save(rep):
+    (OUT / "report4.json").write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
 def main():
@@ -78,6 +101,8 @@ def main():
         ltc_rows += rows
     (OUT / "ltc_hwaseong.json").write_text(json.dumps(ltc_rows, ensure_ascii=False, indent=0), encoding="utf-8")
 
+    save(rep)
+
     # 2) 장기요양기관 상세: 페이지에서 명세를 찾아 저장 + 알려진 주소로 시험
     st, html = fetch("https://www.data.go.kr/data/15058856/openapi.do")
     (OUT / "page_15058856.html").write_text(redact(html), encoding="utf-8")
@@ -87,6 +112,12 @@ def main():
             st, body = api(f"https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/{op}",
                            {"longTermAdminSym": sym, "adminPttnCd": ltc_rows[0].get("adminPttnCd", "")})
             rep.setdefault("ltc_detail_try", {})[op] = {"status": st, "body": redact(body[:1500])}
+
+    save(rep)
+
+    # 4) 복지서비스 (빠른 것 먼저)
+    welfare(rep)
+    save(rep)
 
     # 3) 사회서비스 제공기관: 사업구분 → 화성시만
     st, body = api("https://apis.data.go.kr/B554287/common/serviceType", {})
@@ -103,24 +134,8 @@ def main():
                       "with_tel": sum(1 for r in hw if r.get("telNumber")), "sample": hw[:3]}
         (OUT / f"provider_{re.sub(r'[^0-9A-Za-z가-힣]', '_', name)}_hwaseong.json").write_text(
             json.dumps(hw, ensure_ascii=False, indent=0), encoding="utf-8")
-    rep["providers"] = prov
-
-    # 4) 복지서비스: 화성시 지자체 전체 + 관련 중앙부처 상세
-    rows, total, _ = page_all("https://apis.data.go.kr/B554287/LocalGovernmentWelfareInformations/LcgvWelfarelist",
-                              {"ctpvNm": "경기도", "sggNm": "화성시"}, tag="servList", rows=100)
-    rep["local_welfare_hwaseong"] = [{k: r.get(k) for k in ("servId", "servNm", "lifeNmArray", "trgterIndvdlNmArray", "intrsThemaNmArray", "bizChrDeptNm", "lastModYmd")} for r in rows]
-    nat = {}
-    for w in ("발달재활", "노인맞춤돌봄", "장기요양", "활동지원", "발달", "치매", "통합돌봄", "퇴원"):
-        st, body = api("https://apis.data.go.kr/B554287/NationalWelfareInformationsV001/NationalWelfarelistV001",
-                       {"callTp": "L", "pageNo": 1, "numOfRows": 20, "srchKeyCode": "003", "searchWrd": w})
-        r, tc = items(body, "servList")
-        nat[w] = {"total": tc, "list": [{k: x.get(k) for k in ("servId", "servNm", "jurOrgNm", "lifeArray", "lastModYmd")} for x in (r or [])]}
-    rep["national_search"] = nat
-    sid = next((x["servId"] for x in nat["발달재활"]["list"] if "발달재활" in (x.get("servNm") or "")), None)
-    if sid:
-        st, body = api("https://apis.data.go.kr/B554287/NationalWelfareInformationsV001/NationalWelfaredetailedV001",
-                       {"callTp": "D", "servId": sid})
-        rep["national_detail_sample"] = redact(body[:8000])
+        rep["providers"] = prov
+        save(rep)
 
     # 5) 표준데이터 페이지 저장 (호출 주소 확인용)
     for pk in ("15155702", "15021138"):
