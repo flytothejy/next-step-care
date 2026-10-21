@@ -1,3 +1,147 @@
-fn_fileDataDown 없음, 길이 0
+ailInfo.do'
+        }, fileDetailObj.fn_fileDataDetailCb)
+    },
+
+    fn_fileDataDetailCb: function(data) {
+        $("#layer_data_infomation").append(data)
+    },
+
+    /**
+     * 파일 다운로드
+     */
+    fn_fileDataDown: function(publicDataPk, publicDataDetailPk, atchFileId, fileDetailSn, publicDataHistSn) {
+        if(publicDataHistSn > 1) {
+            fileDetailObj.fn_checkUpdtDt();
+        } else {
+            fileDetailObj.fn_checkRegistFile();
+        }
+
+        fileDetailObj.fn_cmmnAjax({
+            publicDataDetailPk: publicDataDetailPk,
+            publicDataPk: publicDataPk,
+            atchFileId: atchFileId,
+            fileDetailSn: fileDetailSn,
+            publicDataTyCode: 'PR0051',
+            url: '/tcs/dss/selectFileDataDownload.do'
+        }, fileDetailObj.fn_fileDataDownCb);
+
+        $(".recommend-after-download").slideDown();
+    },
+
+    fn_fileDataDownCb: function(data) {
+        let jsonObj = JSON.parse(data);
+
+        if (jsonObj.status === true) {
+            var dataType = jsonObj.dataSetFileDetailInfo.publicDataTyDetailCode;
+            if (dataType == 'DATY05') {
+		        fn_fileDataDownload(jsonObj.atchFileId, jsonObj.fileDetailSn, jsonObj.dataSetFileDetailInfo.publicDataSj);
+            } else {
+		        fn_fileDataDownload(jsonObj.atchFileId, jsonObj.fileDetailSn, jsonObj.dataSetFileDetailInfo.dataNm);
+            }
+        } else {
+            if (jsonObj.error) {
+                alert(jsonObj.error);
+            } else {
+                alert("파일 다운로드에 실패했습니다.");
+            }
+        }
+    },
+
+    /**
+     * 샘플 파일
+     */
+    fn_sampleFileDown: function(publicDataPk) {
+
+        fileDetailObj.fn_cmmnAjax({
+            publicDataPk: publicDataPk,
+            url: '/tcs/dss/selectSampleFileDownload.do'
+        }, fileDetailObj.fn_fileDataDownCb)
+
+        $(".recommend-after-download").slideDown();
+    },
+
+    fn_parseDateTime: function (value) {
+        if (!value) {
+            return null;
+        }
+
+        let matched = String(value).trim()
+            .match(/^(\d{4})[-\/.]?(\d{2})[-\/.]?(\d{2})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?/);
+
+        if (matched === null) {
+            return null;
+        }
+
+        let parsed = new Date(Number(matched[1]), Number(matched[2]) - 1, Number(matched[3]),
+            Number(matched[4] || 0), Number(matched[5] || 0), Number(matched[6] || 0));
+
+        return isNaN(parsed.getTime()) ? null : parsed;
+    },
+
+    /**
+     * 수정일 체크 (90일 이내 변경 알림)
+     */
+    fn_checkUpdtDt: function () {
+        let updt = fileDetailObj.fn_parseDateTime($('#updtDt').val());
+
+        if (updt === null) {
+            return;
+        }
+
+        let now = new Date();
+        let different = (now.getTime() - updt.getTime()) / (24 * 60 * 60 * 1000);
+
+        if(90 >= different) {
+            alert(updt.getFullYear() + '년 ' + (updt.getMonth() + 1) + '월 ' + updt.getDate() + '일에 변경된 데이터입니다.');
+        }
+    },
+
+    /**
+     * 등록 파일 체크
+     */
+    fn_checkRegistFile: function () {
+        $.ajax({
+            url: '/tcs/dss/checkFileType.do',
+            data: {publicDataPk: $('#publicDataPk').val()},
+            async: false ,
+            success	: function(data) {
+                let parse = JSON.parse(data);
+                if(parse.result) {
+                    if(parse.count > 1) {
+                        fileDetailObj.fn_checkUpdtDt();
+                    }
+                }
+            }
+        });
+    },
+
+    // 데이터 미리보기
+    fn_histAndCsvData	: function(pk, detailPk) {
+        $("#section_04").children().remove();
+
+        var dataObj = {
+            "publicDataPk": pk,
+            "publicDataDetailPk": detailPk,
+            "url": '/tcs/dss/selectHistAndCsvData.do'
+        };
+
+  
 
 == 주소들
+/iim/dps/idm/updateInterestData.json
+/tcs/dss/addApiLinkPrcuse.do
+/tcs/dss/callRecommendData.json
+/tcs/dss/checkFileType.do
+/tcs/dss/fileDataApplyReqChck.do
+/tcs/dss/personalRecommendData.json
+/tcs/dss/saveAttention.do
+/tcs/dss/saveHate.do
+/tcs/dss/saveLike.do
+/tcs/dss/selectApiLinkUrl.do
+/tcs/dss/selectDpkDetailInfo.do
+/tcs/dss/selectFileDataApplyReqForm.do
+/tcs/dss/selectFileDataDownload.do
+/tcs/dss/selectHistAndCsvData.do
+/tcs/dss/selectLinkUrl.do
+/tcs/dss/selectSampleFileDownload.do
+/uim/login/loginView.do
