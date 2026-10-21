@@ -1,0 +1,53 @@
+name: pages
+
+# 화면 배포 — web/ + R2의 site/(가공 데이터)
+# 저장소 Settings → Pages → Source 를 "GitHub Actions"로 바꿔야 동작
+on:
+  workflow_run:
+    workflows: ["collect"]
+    types: [completed]
+  push:
+    branches: [main]
+    paths: ["web/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.d.outputs.page_url }}
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - run: python -m nsc sync pull-site
+      - name: assemble
+        run: |
+          rm -rf _site && mkdir -p _site
+          cp -r web/. _site/
+          cp -r data/nsc/site/. _site/ 2>/dev/null || true
+          mkdir -p _site/prototype && cp -r prototype/. _site/prototype/ 2>/dev/null || true
+          touch _site/.nojekyll
+          du -sh _site; find _site -type f | head -50
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - id: d
+        uses: actions/deploy-pages@v4
