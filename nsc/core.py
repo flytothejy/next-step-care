@@ -95,13 +95,18 @@ def parse(body, tag):
     return [to_dict(x) for x in root.iter(tag)], (int(tc) if tc and tc.strip().isdigit() else None)
 
 
-def page_all(url, params, tag="item", rows=100, max_pages=500):
-    out, total = [], None
+def page_all(url, params, tag="item", rows=100, max_pages=200):
+    """쪽을 넘겨 가며 모두 받는다. 마지막 쪽을 넘어 같은 결과가 반복되면 멈춘다."""
+    out, total, prev = [], None, None
     for p in range(1, max_pages + 1):
         got, tc = parse(get(url, {**params, "pageNo": p, "numOfRows": rows}), tag)
         total = tc if tc is not None else total
+        sig = json.dumps(got[:1], ensure_ascii=False, sort_keys=True)
+        if not got or sig == prev:
+            break
+        prev = sig
         out += got
-        if not got or (total is not None and len(out) >= total):
+        if (total is not None and len(out) >= total) or len(got) < rows:
             break
     return out, total
 

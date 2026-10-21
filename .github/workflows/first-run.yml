@@ -6,6 +6,9 @@ on:
     paths: ["nsc/**", ".github/workflows/first-run.yml"]
 permissions:
   contents: write
+concurrency:
+  group: first-run
+  cancel-in-progress: true
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -24,6 +27,7 @@ jobs:
       - run: pip install -q -r requirements.txt
       - run: python -m nsc sync pull
       - run: python -m nsc collect welfare
+        timeout-minutes: 40
         continue-on-error: true
       - run: python -m nsc build
         continue-on-error: true
