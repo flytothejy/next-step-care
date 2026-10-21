@@ -1,0 +1,12 @@
+{
+ "has_key": true,
+ "addr_ltc": "EXC RemoteDisconnected: Remote end closed connection without response",
+ "addr_ltc_domain": "EXC RemoteDisconnected: Remote end closed connection without response",
+ "addr_prov": "EXC HTTPError: HTTP Error 502: Bad Gateway",
+ "addr_eup": "EXC HTTPError: HTTP Error 502: Bad Gateway",
+ "bld_newsig": "EXC HTTPError: HTTP Error 502: Bad Gateway",
+ "bld_oldsig": "EXC HTTPError: HTTP Error 502: Bad Gateway",
+ "bld_rnonly": "EXC RemoteDisconnected: Remote end closed connection without response",
+ "place": "EXC RemoteDisconnected: Remote end closed connection without response",
+ "road_search": "EXC HTTPError: HTTP Error 502: Bad Gateway"
+}
