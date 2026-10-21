@@ -1,42 +1,86 @@
-"""주소·좌표 채우기 (브이월드). 결과는 state/geocode.json 에 쌓아 두고 새 주소만 묻는다.
+"""주소·좌표 채우기 (행정안전부 도로명주소 API). 결과는 state/geocode.json 에 쌓고 새 것만 묻는다.
+
+브이월드는 해외 IP(GitHub Actions)를 막아 수집 서버에서 쓸 수 없다. juso.go.kr 은 열려 있다.
+
+  검색 API  (JUSO_KEY)        주소 글자 → 도로명주소, 행정구역코드(admCd), 도로명코드(rnMgtSn), 건물번호
+  좌표 API  (JUSO_COORD_KEY)  admCd + rnMgtSn + 지하여부 + 건물 본·부번 → 출입구 좌표 (UTM-K → 위경도로 변환)
 
 기관마다 가진 단서가 달라 순서대로 시도한다.
-  1. 주소 글자가 있으면            → 주소 → 좌표 (도로명, 안 되면 지번)
-  2. 도로명코드·건물번호만 있으면   → 도로명주소 건물 레이어에서 코드로 바로 찾기
-                                   → 다른 기관에서 배운 '도로명코드 → 도로 이름'으로 주소를 만들어 1번
-                                   → 기관 이름으로 장소 검색, 건물번호·시군구가 맞을 때만 채택
-구(區)는 장기요양 도로명코드 앞 5자리(시군구 코드)가 있으면 그것을 가장 먼저 믿는다.
-
-키: VWORLD_KEY (GitHub Secrets). 없으면 캐시만 쓰고 넘어간다.
+  1. 주소 글자가 있으면  → 검색 → 좌표
+  2. 도로명코드·건물번호만 있으면 (장기요양 상세)
+     → 다른 기관 검색 결과에서 배운 '도로명코드 → admCd·도로 이름'으로 바로 좌표
+     → 못 배운 도로는 법정동 코드(시군구 5 + 읍면동 3 + 리 2)를 만들어 좌표 API에 차례로 시도
+구(區)는 장기요양 도로명코드 앞 5자리(시군구 코드)를 가장 먼저 믿는다.
+키가 없으면 캐시만 쓰고 넘어간다.
 """
 import json
+import math
 import os
 import re
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from collections import Counter, defaultdict
+from collections import Counter
 
 from .core import DATA, UA, log, read_json, today, write_json
 
-API = "https://api.vworld.kr/req/"
+SEARCH = "https://business.juso.go.kr/addrlink/addrLinkApi.do"
+COORD = "https://business.juso.go.kr/addrlink/addrCoordApi.do"
 CACHE_P = DATA / "state" / "geocode.json"
 RETRY_MISS_DAYS = 30
-MAX_CALLS = int(os.environ.get("NSC_GEO_MAX_CALLS", "3000"))
+MAX_CALLS = int(os.environ.get("NSC_GEO_MAX_CALLS", "4000"))
+RI_TRY = [f"{i:02d}" for i in range(21, 46)]     # 읍·면의 리 코드 후보 (00 다음)
+FATAL = {"E0001", "E0014", "E0015"}              # 승인되지 않은 키, 기간 만료 등
 
 ROAD_TAIL = re.compile(r"^(.*?[가-힣0-9·]+(?:로|길)\s*\d+(?:-\d+)?)")
 PAREN = re.compile(r"\([^)]*\)")
 ROAD_NAME = re.compile(r"([가-힣0-9·]+(?:로|길))\s*(\d+)(?:-(\d+))?")
 
 
-def _key():
-    return os.environ.get("VWORLD_KEY", "")
+def _keys():
+    return os.environ.get("JUSO_KEY", ""), os.environ.get("JUSO_COORD_KEY", "")
 
 
 def _redact(s):
-    k = _key()
-    return s.replace(k, "***") if k else s
+    for k in _keys():
+        if k:
+            s = s.replace(k, "***")
+    return s
+
+
+# ── 좌표계: UTM-K (EPSG:5179, GRS80 횡메르카토르) → WGS84 위경도 ──
+_A, _F = 6378137.0, 1 / 298.257222101
+_K0, _LAT0, _LON0, _FE, _FN = 0.9996, math.radians(38), math.radians(127.5), 1_000_000.0, 2_000_000.0
+_E2 = _F * (2 - _F)
+_EP2 = _E2 / (1 - _E2)
+
+
+def _m(phi):
+    e2, e4, e6 = _E2, _E2 ** 2, _E2 ** 3
+    return _A * ((1 - e2 / 4 - 3 * e4 / 64 - 5 * e6 / 256) * phi
+                 - (3 * e2 / 8 + 3 * e4 / 32 + 45 * e6 / 1024) * math.sin(2 * phi)
+                 + (15 * e4 / 256 + 45 * e6 / 1024) * math.sin(4 * phi)
+                 - (35 * e6 / 3072) * math.sin(6 * phi))
+
+
+def utmk_to_wgs84(x, y):
+    m = _m(_LAT0) + (y - _FN) / _K0
+    mu = m / (_A * (1 - _E2 / 4 - 3 * _E2 ** 2 / 64 - 5 * _E2 ** 3 / 256))
+    e1 = (1 - math.sqrt(1 - _E2)) / (1 + math.sqrt(1 - _E2))
+    p1 = (mu + (3 * e1 / 2 - 27 * e1 ** 3 / 32) * math.sin(2 * mu)
+          + (21 * e1 ** 2 / 16 - 55 * e1 ** 4 / 32) * math.sin(4 * mu)
+          + (151 * e1 ** 3 / 96) * math.sin(6 * mu) + (1097 * e1 ** 4 / 512) * math.sin(8 * mu))
+    c1 = _EP2 * math.cos(p1) ** 2
+    t1 = math.tan(p1) ** 2
+    n1 = _A / math.sqrt(1 - _E2 * math.sin(p1) ** 2)
+    r1 = _A * (1 - _E2) / (1 - _E2 * math.sin(p1) ** 2) ** 1.5
+    d = (x - _FE) / (n1 * _K0)
+    lat = p1 - (n1 * math.tan(p1) / r1) * (d ** 2 / 2 - (5 + 3 * t1 + 10 * c1 - 4 * c1 ** 2 - 9 * _EP2) * d ** 4 / 24
+                                          + (61 + 90 * t1 + 298 * c1 + 45 * t1 ** 2 - 252 * _EP2 - 3 * c1 ** 2) * d ** 6 / 720)
+    lon = _LON0 + (d - (1 + 2 * t1 + c1) * d ** 3 / 6
+                   + (5 - 2 * c1 + 28 * t1 - 3 * c1 ** 2 + 8 * _EP2 + 24 * t1 ** 2) * d ** 5 / 120) / math.cos(p1)
+    return round(math.degrees(lat), 6), round(math.degrees(lon), 6)
 
 
 class Geo:
@@ -44,34 +88,35 @@ class Geo:
         self.cache = read_json(CACHE_P, {}) or {}
         self.calls = 0
         self.errors = Counter()
-        self.online = bool(_key())
+        sk, ck = _keys()
+        self.online = {"search": bool(sk), "coord": bool(ck)}
         self.failed = False
 
-    # ── 호출 ──
     def _req(self, kind, params):
-        if not self.online or self.calls >= MAX_CALLS:
+        if not self.online[kind] or self.calls >= MAX_CALLS:
             self.failed = True
             return None
-        extra = {"domain": os.environ["VWORLD_DOMAIN"]} if os.environ.get("VWORLD_DOMAIN") else {}
-        q = urllib.parse.urlencode({"key": _key(), "format": "json", **extra, **params})
+        sk, ck = _keys()
+        q = urllib.parse.urlencode({"confmKey": sk if kind == "search" else ck, "resultType": "json", **params})
         for i in range(3):
             self.calls += 1
             try:
-                req = urllib.request.Request(f"{API}{kind}?{q}", headers=UA)
+                req = urllib.request.Request(f"{SEARCH if kind == 'search' else COORD}?{q}", headers=UA)
                 with urllib.request.urlopen(req, timeout=20) as r:
-                    body = json.loads(r.read().decode("utf-8", "replace"))
-                resp = body.get("response", {})
-                st = resp.get("status")
-                if st == "ERROR":
-                    err = resp.get("error", {})
-                    code = err.get("code", "")
-                    self.errors[code] += 1
+                    res = json.loads(r.read().decode("utf-8", "replace")).get("results", {})
+                code = res.get("common", {}).get("errorCode", "")
+                if code == "0":
+                    return res.get("juso") or []
+                self.errors[code] += 1
+                if code in FATAL:
+                    log(f"주소 API({kind}) 중단:", code, _redact(res.get("common", {}).get("errorMessage", ""))[:120])
+                    self.online[kind] = False
                     self.failed = True
-                    if code in ("INVALID_KEY", "INCORRECT_KEY", "UNAVAILABLE_KEY", "OVER_REQUEST_LIMIT"):
-                        log("브이월드 중단:", code, _redact(err.get("text", ""))[:120])
-                        self.online = False
                     return None
-                return resp
+                if code == "-999":        # 시스템 오류 → 재시도
+                    time.sleep(1 + i)
+                    continue
+                return []                 # 입력 오류 등: 결과 없음으로 본다
             except (urllib.error.URLError, TimeoutError, ConnectionError, json.JSONDecodeError) as e:
                 self.errors[type(e).__name__] += 1
                 time.sleep(1 + i)
@@ -82,83 +127,37 @@ class Geo:
         hit = self.cache.get(ck)
         if hit and (hit.get("ok") or _days_since(hit.get("at")) < RETRY_MISS_DAYS):
             return hit if hit.get("ok") else None
-        if not self.online:
-            return hit if hit and hit.get("ok") else None
         self.failed = False
         res = fn()
-        if res is None and self.failed:          # 오류·한도로 못 물어본 것은 '없음'으로 남기지 않음
-            return None
+        if res is None and self.failed:          # 오류·한도·키 없음으로 못 물어본 것은 '없음'으로 남기지 않음
+            return hit if hit and hit.get("ok") else None
         self.cache[ck] = {**(res or {}), "ok": bool(res), "at": today()}
         return self.cache[ck] if res else None
 
-    # ── 전략 ──
-    def address(self, addr):
+    # ── 호출 단위 ──
+    def search(self, addr):
         a = clean(addr)
         if not a:
             return None
 
         def ask():
-            for typ in ("road", "parcel"):
-                r = self._req("address", {"service": "address", "request": "getcoord", "version": "2.0",
-                                          "crs": "epsg:4326", "refine": "true", "simple": "false",
-                                          "type": typ, "address": a})
-                if r and r.get("status") == "OK":
-                    p = r["result"]["point"]
-                    ref = r.get("refined", {})
-                    return {"lat": round(float(p["y"]), 6), "lng": round(float(p["x"]), 6),
-                            "addr": ref.get("text") or a, "level2": ref.get("structure", {}).get("level2"),
-                            "how": f"주소({'도로명' if typ == 'road' else '지번'})"}
-            return None
-        return self._cached(f"a:{a}", ask)
-
-    def building(self, codes):
-        """도로명코드(12) + 건물 본·부번 → 도로명주소 건물 레이어."""
-        rn, mn = codes.get("roadNmCd"), codes.get("gunmulMlno")
-        if not rn or len(rn) != 12 or not mn:
-            return None
-        sn = codes.get("gunmulSlno") or "0"
-
-        def ask():
-            flt = f"sig_cd:=:{rn[:5]}|rn_cd:=:{rn[5:]}|buld_mnnm:=:{int(mn)}|buld_slno:=:{int(sn)}"
-            r = self._req("data", {"service": "data", "request": "GetFeature", "version": "2.0",
-                                   "data": "LT_C_SPBD", "attrFilter": flt, "geometry": "true",
-                                   "attribute": "true", "crs": "EPSG:4326", "size": "5"})
-            feats = (((r or {}).get("result") or {}).get("featureCollection") or {}).get("features") or []
-            if not feats:
+            rows = self._req("search", {"currentPage": "1", "countPerPage": "5", "keyword": a})
+            if not rows:
                 return None
-            f = feats[0]
-            lat, lng = centroid(f.get("geometry"))
-            if lat is None:
-                return None
-            pr = f.get("properties", {})
-            road = pr.get("rd_nm") or pr.get("rn")
-            num = f"{int(mn)}" + (f"-{int(sn)}" if int(sn) else "")
-            return {"lat": lat, "lng": lng, "addr": f"{road} {num}" if road else None,
-                    "road": road, "how": "건물(도로명코드)"}
-        return self._cached(f"b:{rn}:{mn}:{sn}", ask)
+            j = rows[0]
+            return {k: j.get(k) for k in ("roadAddrPart1", "roadAddr", "jibunAddr", "zipNo", "admCd", "rnMgtSn", "rn",
+                                         "udrtYn", "buldMnnm", "buldSlno", "sggNm", "emdNm", "bdNm")}
+        return self._cached(f"s:{a}", ask)
 
-    def place(self, name, region, codes):
-        """기관 이름 검색. 같은 시 안이고 건물번호가 맞을 때만 받는다."""
-        mn = str(int(codes["gunmulMlno"])) if codes.get("gunmulMlno") else None
-        sn = int(codes.get("gunmulSlno") or 0)
-
+    def coord(self, adm, rn, udrt, mn, sn):
         def ask():
-            r = self._req("search", {"service": "search", "request": "search", "version": "2.0",
-                                     "crs": "EPSG:4326", "size": "10", "page": "1", "type": "place",
-                                     "query": f"{region} {name}"})
-            items = (((r or {}).get("result") or {}).get("items")) or []
-            for it in items:
-                road = (it.get("address") or {}).get("road") or ""
-                if region not in road:
-                    continue
-                m = ROAD_NAME.search(road)
-                if mn and not (m and m.group(2) == mn and int(m.group(3) or 0) == sn):
-                    continue
-                p = it.get("point") or {}
-                return {"lat": round(float(p["y"]), 6), "lng": round(float(p["x"]), 6),
-                        "addr": road, "how": "이름 검색(건물번호 일치)" if mn else "이름 검색"}
-            return None
-        return self._cached(f"p:{region}:{name}:{mn}:{sn}", ask)
+            rows = self._req("coord", {"admCd": adm, "rnMgtSn": rn, "udrtYn": udrt or "0",
+                                       "buldMnnm": str(int(mn)), "buldSlno": str(int(sn or 0))})
+            if not rows or not rows[0].get("entX"):
+                return None
+            lat, lng = utmk_to_wgs84(float(rows[0]["entX"]), float(rows[0]["entY"]))
+            return {"lat": lat, "lng": lng, "bdNm": rows[0].get("bdNm")}
+        return self._cached(f"c:{adm}:{rn}:{udrt or 0}:{int(mn)}:{int(sn or 0)}", ask)
 
     def save(self):
         write_json(CACHE_P, self.cache)
@@ -184,32 +183,6 @@ def clean(addr):
     return m.group(1) if m else a
 
 
-def centroid(geom):
-    """폴리곤(멀티 포함) 외곽선 꼭짓점 평균. 건물 하나 크기라 이 정도로 충분하다."""
-    if not geom:
-        return None, None
-    c = geom.get("coordinates")
-    t = geom.get("type")
-    if t == "Point":
-        return round(c[1], 6), round(c[0], 6)
-    ring = c[0] if t == "Polygon" else c[0][0] if t == "MultiPolygon" else None
-    if not ring:
-        return None, None
-    xs, ys = zip(*[(p[0], p[1]) for p in ring])
-    return round(sum(ys) / len(ys), 6), round(sum(xs) / len(xs), 6)
-
-
-def learn_roads(rows):
-    """주소 글자와 도로명코드를 함께 가진 기관에서 '도로명코드 → 도로 이름'을 배운다."""
-    tab = defaultdict(Counter)
-    for x in rows:
-        c = (x.get("addr_codes") or {}).get("roadNmCd")
-        m = ROAD_NAME.search(clean(x.get("address")) or "")
-        if c and m:
-            tab[c][m.group(1)] += 1
-    return {c: n.most_common(1)[0][0] for c, n in tab.items()}
-
-
 def gu_of(text, gu_re):
     m = gu_re.search(text or "")
     return m.group(1) if m else None
@@ -218,56 +191,79 @@ def gu_of(text, gu_re):
 # ── 적용 ──
 
 def apply(inst, region, gu_re):
-    """기관 목록에 gu(코드), address, lat/lng, geo_from 을 채운다. 반환: 요약."""
+    """기관 목록에 gu, address, lat/lng, geo_from 을 채운다. 반환: 요약."""
     g = Geo()
     gu_codes = region.get("gu_codes", {})
-    city = region["name"]
     prefix = region["provider_signgu_prefix"]
-    roads = learn_roads([x for x in inst if x.get("source") == "장기요양기관"])
     how = Counter()
+    roads = {}          # rnMgtSn → (admCd, 도로 이름, 시군구 이름)
 
+    def place(x, r, c, src):
+        x["lat"], x["lng"], x["geo_from"] = c["lat"], c["lng"], src
+        if r and r.get("roadAddrPart1"):
+            x["road_address"] = r["roadAddrPart1"]
+        if not x.get("gu"):
+            gu = gu_of((r or {}).get("sggNm"), gu_re) or gu_of((r or {}).get("roadAddrPart1"), gu_re)
+            if gu:
+                x["gu"], x["gu_from"] = gu, "주소 검색"
+        how[src] += 1
+
+    # 구: 도로명코드의 시군구 코드가 가장 확실하다
     for x in inst:
-        codes = x.get("addr_codes") or {}
-        rn = codes.get("roadNmCd") or ""
-        # 구: 도로명코드의 시군구 코드가 가장 확실하다
-        if rn[:5] in gu_codes and x.get("gu_from") != "도로명코드":
-            if x.get("gu") and x["gu"] != gu_codes[rn[:5]]:
+        rn = (x.get("addr_codes") or {}).get("roadNmCd") or ""
+        if rn[:5] in gu_codes:
+            if x.get("gu") and x["gu"] != gu_codes[rn[:5]] and x.get("gu_from") != "도로명코드":
                 how["구 바로잡음"] += 1
             x["gu"], x["gu_from"] = gu_codes[rn[:5]], "도로명코드"
 
+    # 1단계: 주소 글자 → 검색 → 좌표. 검색 결과로 도로 사전을 배운다.
+    pending = []
+    for x in inst:
         if x.get("lat") and x.get("lng"):
             how["원천 좌표"] += 1
             continue
+        r = g.search(x["address"]) if x.get("address") else None
+        if r and r.get("rnMgtSn"):
+            roads.setdefault(r["rnMgtSn"], (r.get("admCd"), r.get("rn"), r.get("sggNm")))
+            c = g.coord(r["admCd"], r["rnMgtSn"], r.get("udrtYn"), r["buldMnnm"], r.get("buldSlno"))
+            if c:
+                place(x, r, c, "주소 검색")
+                continue
+        pending.append(x)
 
-        r = None
-        if x.get("address"):
-            r = g.address(x["address"])
-        if not r and codes:
-            r = g.building(codes)
-            if not r and rn in roads and codes.get("gunmulMlno"):
-                sn = int(codes.get("gunmulSlno") or 0)
-                guess = f"{prefix} {roads[rn]} {int(codes['gunmulMlno'])}" + (f"-{sn}" if sn else "")
-                r = g.address(guess)
-                if r:
-                    r = {**r, "how": "도로명코드로 만든 주소"}
-            if not r and x.get("name"):
-                r = g.place(x["name"], city, codes)
-        if not r:
+    # 2단계: 도로명코드·건물번호만 있는 곳
+    for x in pending:
+        codes = x.get("addr_codes") or {}
+        rn, mn, sn = codes.get("roadNmCd"), codes.get("gunmulMlno"), codes.get("gunmulSlno") or "0"
+        if not (rn and len(rn) == 12 and mn and str(mn).isdigit()):
             how["못 찾음"] += 1
             continue
-        x["lat"], x["lng"], x["geo_from"] = r["lat"], r["lng"], r["how"]
-        if not x.get("address") and r.get("addr"):
-            a = r["addr"]
-            x["address"] = a if a.startswith(("경기", "서울")) else f"{prefix} {a}"
-            x["address_from"] = r["how"]
-        if not x.get("gu"):
-            gu = gu_of(r.get("level2"), gu_re) or gu_of(x.get("address"), gu_re)
-            if gu:
-                x["gu"], x["gu_from"] = gu, "좌표 변환"
-        how[r["how"]] += 1
+        cands = []
+        if rn in roads and roads[rn][0]:
+            cands.append(roads[rn][0])
+        if codes.get("BDongCd"):
+            base = f"{rn[:5]}{int(codes['BDongCd']):03d}"
+            cands += [base + "00"] + ([base + ri for ri in RI_TRY] if int(codes["BDongCd"]) >= 250 else [])
+        c, used = None, None
+        tries = [(adm, "0") for adm in dict.fromkeys(cands)] + [(cands[0], "1")] if cands else []
+        for adm, udrt in tries:              # 지하 건물은 드물어 첫 후보에서만 확인
+            c = g.coord(adm, rn, udrt, mn, sn)
+            if c:
+                used = adm
+                break
+        if not c:
+            how["못 찾음"] += 1
+            continue
+        known = roads.get(rn)
+        roads.setdefault(rn, (used, None, None))
+        num = f"{int(mn)}" + (f"-{int(sn)}" if int(sn) else "")
+        if not x.get("address") and known and known[1]:
+            x["address"], x["address_from"] = f"{prefix} {known[1]} {num}", "도로명코드"
+        place(x, None, c, "도로명코드")
 
     g.save()
-    summary = {"calls": g.calls, "online": bool(_key()), "errors": dict(g.errors),
-               "learned_roads": len(roads), "how": dict(how), "cache": len(g.cache)}
+    sk, ck = _keys()
+    summary = {"calls": g.calls, "keys": {"search": bool(sk), "coord": bool(ck)}, "errors": dict(g.errors),
+               "roads": len(roads), "how": dict(how), "cache": len(g.cache)}
     log("좌표:", json.dumps(summary, ensure_ascii=False))
     return summary
