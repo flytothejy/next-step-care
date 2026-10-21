@@ -27,7 +27,7 @@ jobs:
           python-version: "3.12"
       - run: pip install -q -r requirements.txt
       - run: python -m nsc sync pull
-      - run: python -m nsc collect standard files
+      - run: python -m nsc collect files
         timeout-minutes: 70
         continue-on-error: true
       - run: python -m nsc build
@@ -70,6 +70,14 @@ jobs:
               pr = json.loads((p / "programs.json").read_text())
               out["program_sample"] = [x for x in pr if "발달재활" in (x.get("name") or "")][:1]
               out["programs_linked"] = [(x["name"], x["provider_count"]) for x in pr if x.get("provider_count")][:20]
+          import gzip, glob
+          fs = sorted(glob.glob("data/nsc/snap/*/files.json.gz"))
+          if fs:
+              f = json.loads(gzip.open(fs[-1]).read())
+              for k, rows in f.items():
+                  out[f"file_{k}_n"] = len(rows)
+                  out[f"file_{k}_first"] = rows[:2]
+                  out[f"file_{k}_hwaseong"] = [r for r in rows if "화성" in json.dumps(r, ensure_ascii=False)][:2]
           pathlib.Path("firstrun/summary.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
           EOF
           git config user.name "github-actions[bot]"
