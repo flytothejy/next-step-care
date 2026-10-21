@@ -5,13 +5,13 @@
   검색 API  (JUSO_KEY)        주소 글자 → 도로명주소, 행정구역코드(admCd), 도로명코드(rnMgtSn), 건물번호
   좌표 API  (JUSO_COORD_KEY)  admCd + rnMgtSn + 지하여부 + 건물 본·부번 → 출입구 좌표 (UTM-K → 위경도로 변환)
 
-기관마다 가진 단서가 달라 순서대로 시도한다.
-  1. 주소 글자가 있으면  → 검색 → 좌표
-  2. 도로명코드·건물번호만 있으면 (장기요양 상세)
-     → 다른 기관 검색 결과에서 배운 '도로명코드 → admCd·도로 이름'으로 바로 좌표
-     → 못 배운 도로는 법정동 코드(시군구 5 + 읍면동 3 + 리 2)를 만들어 좌표 API에 차례로 시도
-구(區)는 장기요양 도로명코드 앞 5자리(시군구 코드)를 가장 먼저 믿는다.
-키가 없으면 캐시만 쓰고 넘어간다.
+순서
+  1. 구: 장기요양 도로명코드 앞 5자리(시군구 코드)를 가장 먼저 믿는다
+  2. 주소 글자가 있으면 검색 → 정리된 도로명주소·구. 결과로 '도로명코드 → 도로 이름·행정구역코드'를 배운다
+  3. 도로명코드·건물번호만 있으면 (장기요양 상세) 배운 도로 이름으로 주소를 만들어 검색,
+     도로명코드·건물번호가 같을 때만 채택. 도로를 모르면 법정동 코드 후보(시군구 5 + 읍면동 3 + 리 2)만 만든다
+  4. 좌표 API로 출입구 좌표
+검색 키만 있어도 1~3은 된다. 키가 없으면 캐시만 쓰고 넘어간다.
 """
 import json
 import math
@@ -198,17 +198,19 @@ def apply(inst, region, gu_re):
     how = Counter()
     roads = {}          # rnMgtSn → (admCd, 도로 이름, 시군구 이름)
 
-    def place(x, r, c, src):
-        x["lat"], x["lng"], x["geo_from"] = c["lat"], c["lng"], src
-        if r and r.get("roadAddrPart1"):
-            x["road_address"] = r["roadAddrPart1"]
+    def take(x, r, src):
+        """검색 결과를 기관에 붙인다: 정리된 도로명주소, 좌표 API 입력값, 구."""
+        x["road_address"] = r.get("roadAddrPart1")
+        if not x.get("address"):
+            x["address"], x["address_from"] = r.get("roadAddrPart1"), src
+        x["_juso"] = (r.get("admCd"), r.get("rnMgtSn"), r.get("udrtYn"), r.get("buldMnnm"), r.get("buldSlno"))
         if not x.get("gu"):
-            gu = gu_of((r or {}).get("sggNm"), gu_re) or gu_of((r or {}).get("roadAddrPart1"), gu_re)
+            gu = gu_of(r.get("sggNm"), gu_re) or gu_of(r.get("roadAddrPart1"), gu_re)
             if gu:
                 x["gu"], x["gu_from"] = gu, "주소 검색"
-        how[src] += 1
+        how[f"주소: {src}"] += 1
 
-    # 구: 도로명코드의 시군구 코드가 가장 확실하다
+    # 1. 구: 도로명코드의 시군구 코드가 가장 확실하다
     for x in inst:
         rn = (x.get("addr_codes") or {}).get("roadNmCd") or ""
         if rn[:5] in gu_codes:
@@ -216,50 +218,51 @@ def apply(inst, region, gu_re):
                 how["구 바로잡음"] += 1
             x["gu"], x["gu_from"] = gu_codes[rn[:5]], "도로명코드"
 
-    # 1단계: 주소 글자 → 검색 → 좌표. 검색 결과로 도로 사전을 배운다.
-    pending = []
+    # 2. 주소 글자가 있으면 검색. 결과로 '도로명코드 → 도로 이름·행정구역코드'를 배운다.
     for x in inst:
-        if x.get("lat") and x.get("lng"):
-            how["원천 좌표"] += 1
-            continue
         r = g.search(x["address"]) if x.get("address") else None
         if r and r.get("rnMgtSn"):
-            roads.setdefault(r["rnMgtSn"], (r.get("admCd"), r.get("rn"), r.get("sggNm")))
-            c = g.coord(r["admCd"], r["rnMgtSn"], r.get("udrtYn"), r["buldMnnm"], r.get("buldSlno"))
-            if c:
-                place(x, r, c, "주소 검색")
-                continue
-        pending.append(x)
+            roads.setdefault(r["rnMgtSn"], (r.get("admCd"), r.get("rn")))
+            take(x, r, "검색")
 
-    # 2단계: 도로명코드·건물번호만 있는 곳
-    for x in pending:
+    # 3. 코드만 있는 곳: 배운 도로 이름으로 주소를 만들어 검색하고, 도로명코드·건물번호가 같을 때만 채택
+    for x in inst:
         codes = x.get("addr_codes") or {}
-        rn, mn, sn = codes.get("roadNmCd"), codes.get("gunmulMlno"), codes.get("gunmulSlno") or "0"
-        if not (rn and len(rn) == 12 and mn and str(mn).isdigit()):
-            how["못 찾음"] += 1
+        rn, mn, sn = codes.get("roadNmCd"), codes.get("gunmulMlno"), int(codes.get("gunmulSlno") or 0)
+        if x.get("_juso") or not (rn and mn and str(mn).isdigit()):
             continue
-        cands = []
-        if rn in roads and roads[rn][0]:
-            cands.append(roads[rn][0])
+        if rn in roads and roads[rn][1]:
+            r = g.search(f"{prefix} {roads[rn][1]} {int(mn)}" + (f"-{sn}" if sn else ""))
+            if r and r.get("rnMgtSn") == rn and int(r.get("buldMnnm") or -1) == int(mn) and int(r.get("buldSlno") or 0) == sn:
+                take(x, r, "도로명코드")
+                continue
+        # 도로 이름을 모르면 좌표 API용 후보만 만든다 (법정동 코드 = 시군구 5 + 읍면동 3 + 리 2)
+        cands = [roads[rn][0]] if rn in roads and roads[rn][0] else []
         if codes.get("BDongCd"):
             base = f"{rn[:5]}{int(codes['BDongCd']):03d}"
             cands += [base + "00"] + ([base + ri for ri in RI_TRY] if int(codes["BDongCd"]) >= 250 else [])
-        c, used = None, None
-        tries = [(adm, "0") for adm in dict.fromkeys(cands)] + [(cands[0], "1")] if cands else []
-        for adm, udrt in tries:              # 지하 건물은 드물어 첫 후보에서만 확인
-            c = g.coord(adm, rn, udrt, mn, sn)
-            if c:
-                used = adm
-                break
-        if not c:
-            how["못 찾음"] += 1
+        x["_cands"] = (list(dict.fromkeys(cands)), rn, mn, sn)
+
+    # 4. 좌표 (좌표제공 API)
+    for x in inst:
+        j, cands = x.pop("_juso", None), x.pop("_cands", None)
+        if x.get("lat") and x.get("lng"):
+            how["좌표: 원천"] += 1
             continue
-        known = roads.get(rn)
-        roads.setdefault(rn, (used, None, None))
-        num = f"{int(mn)}" + (f"-{int(sn)}" if int(sn) else "")
-        if not x.get("address") and known and known[1]:
-            x["address"], x["address_from"] = f"{prefix} {known[1]} {num}", "도로명코드"
-        place(x, None, c, "도로명코드")
+        c = None
+        if j and all(j[k] for k in (0, 1, 3)):
+            c = g.coord(j[0], j[1], j[2], j[3], j[4])
+        elif cands and cands[0]:
+            adms, rn, mn, sn = cands
+            for adm, udrt in [(a, "0") for a in adms] + [(adms[0], "1")]:   # 지하 건물은 드물어 첫 후보만
+                c = g.coord(adm, rn, udrt, mn, sn)
+                if c:
+                    break
+        if c:
+            x["lat"], x["lng"], x["geo_from"] = c["lat"], c["lng"], "도로명주소 출입구"
+            how["좌표: 변환"] += 1
+        else:
+            how["좌표: 없음"] += 1
 
     g.save()
     sk, ck = _keys()
