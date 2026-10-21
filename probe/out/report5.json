@@ -1,0 +1,365 @@
+{
+ "key_set": true,
+ "ops": [
+  {
+   "pk": "15058856",
+   "detailPk": "uddi:c552364f-8c99-4001-8933-965092f05a4a_202203241044",
+   "ops": [
+    {
+     "seq": "41534",
+     "name": "협약기관 현황 상세 정보조회",
+     "url": "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/getConvInsttDetailInfoList02",
+     "request": "(Request Parameter) 해당 오픈API의 요청변수(Request Parameter) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 14139000308 장기요양기관코드 페이지번호 pageNo 8 옵 1 목록의 페이지 번호 행개수 numOfRows 8 옵 1 페이지당 행의 개수 ",
+     "response": "(Response Element) 해당 오픈API의 출력결과(Response Element) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 14139000308 장기요양기관코드 협약기관명 yoyangNm 1 필 더베스트내과의원 협약기관명 협약기간_시작날짜 adptFrDt 50 필 20150601 협약 기간 체결 시작 날짜 협약기간_끝날짜 adptToDt 50 필 99991231 협약 기간 체결 끝 날짜 const apiObj = { fn_selectApiDetailFunction: function() { let dataObj = {}; dataObj.oprtinSeqNo = $(\"#open_api_detail_select\").val(); dataObj.publicDataDetailPk = $(\"#publicDataDetailPk\").val(); dataObj.publicDataPk = $(\"#publicDataPk\").val(); // 국가 중점 표준데이터인 경우 피케이가 변경돼야함. // if ($(\"#natCoreDataSe\").val() === \"Y\") { // dataObj.publicDataPk = $(\"#stdPublicDataPk\").val(); // } $.ajax({ url : \"/tcs/dss/selectApiDetailFunction.do\", method : \"post\", data : dataObj, success : function(data) { $(\".data-info-tit\").remove(); $(\".data-report-group\").remove(); $(\"#apiDetailFunctionDiv\").append(data); } }) }, fn_goApplyReq: function() { var mberId = \"\"; if (fn_empty(mberId)) { if (confirm(\"로그인이 필요한 서비스입니다.\\n로그인 페이지로 이동하시겠습니까?\")) { location.href = \"/uim/login/loginView.do\"; return; } else { return; } } location.href=\"/tcs/dss/redirectDevAcountRequestForm.do?publicDataPk=\" + $(\"#publicDataPk\").val(); } }"
+    },
+    {
+     "seq": "41535",
+     "name": "프로그램현황 상세 정보조회",
+     "url": "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/getProgramSttusDetailInfoList02",
+     "request": "(Request Parameter) 해당 오픈API의 요청변수(Request Parameter) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 12817000042 장기요양기관코드 페이지번호 pageNo 8 옵 1 목록의 페이지 번호 행개수 numOfRows 8 옵 1 페이지당 행의 개수 ",
+     "response": "(Response Element) 해당 오픈API의 출력결과(Response Element) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 12817000042 장기요양기관코드 종류 pgmType 1 필 2 공통항목 코드 정의 프로그램 종류 코드 정의 참조 제목 pgmNm 1 필 몸으로 말해요 프로그램 이름 대상 tgtNop 5 필 5 대상 인원 수 주기 cyclTm 20 필 월 2회(20시간) 주기, 회수, 시간 장소 runPlc 50 필 한마음노인요양원 시설 프로그램 운영 장소 const apiObj = { fn_selectApiDetailFunction: function() { let dataObj = {}; dataObj.oprtinSeqNo = $(\"#open_api_detail_select\").val(); dataObj.publicDataDetailPk = $(\"#publicDataDetailPk\").val(); dataObj.publicDataPk = $(\"#publicDataPk\").val(); // 국가 중점 표준데이터인 경우 피케이가 변경돼야함. // if ($(\"#natCoreDataSe\").val() === \"Y\") { // dataObj.publicDataPk = $(\"#stdPublicDataPk\").val(); // } $.ajax({ url : \"/tcs/dss/selectApiDetailFunction.do\", method : \"post\", data : dataObj, success : function(data) { $(\".data-info-tit\").remove(); $(\".data-report-group\").remove(); $(\"#apiDetailFunctionDiv\").append(data); } }) }, fn_goApplyReq: function() { var mberId = \"\"; if (fn_empty(mberId)) { if (confirm(\"로그인이 필요한 서비스입니다.\\n로그인 페이지로 이동하시겠습니까?\")) { location.href = \"/uim/login/loginView.do\"; return; } else { return; } } location.href=\"/tcs/dss/redirectDevAcountRequestForm.do?publicDataPk=\" + $(\"#publicDataPk\").val(); } }"
+    },
+    {
+     "seq": "41536",
+     "name": "일반현황 상세 정보조회",
+     "url": "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/getGeneralSttusDetailInfoItem02",
+     "request": "(Request Parameter) 해당 오픈API의 요청변수(Request Parameter) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관기호 longTermAdminSym 11 필 21130500195 장기요양기관코드 장기요양 기관유형코드 adminPttnCd 3 필 B03 공통항목 코드 정의 기관유형코드 정의 참조 ",
+     "response": "(Response Element) 해당 오픈API의 출력결과(Response Element) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관기호 longTermAdminSym 11 필 21130500195 장기요양기관코드 장기요양 기관유형코드 adminPttnCd 3 필 B03 공통항목 코드 정의 기관유형코드 정의 참조 장기요양기관이름 adminNm 100 필 번동데이케어센터 기관이름 행망우편번호 hmPostNo 6 옵 01231 우편번호 시도코드 siDoCd 2 필 11 공통항목 코드정의 법정동 코드 설명 참조 시군구코드 siGunGuCd 3 필 305 공통항목 코드정의 법정동 코드 설명 참조 행정동코드 HDongCd 3 옵 590 공통항목 코드정의 법정동 코드 설명 참조 법정동코드 BDongCd 3 옵 102 공통항목 코드정의 법정동 코드 설명 참조 리코드 riCd 2 옵 00 공통항목 코드정의 법정동 코드 설명 참조 상세주소 detailAddr 1000 옵 상세주소 도로명코드 roadNmCd 12 옵 113053107018 행정표준 도로명코드 건물본번 gunmulMlno 5 옵 187 건물본번 건물부번 gunmulSlno 5 옵 0 건물부번 층 fl 10 옵 2 층 소재지전화번호-지역 locTelNo_1 4 옵 02 소재지전화번호-지역 소재지전화번호-국번 locTelNo_2 4 옵 980 소재지전화번호-국번 소재지전화번호-번호 locTelNo_3 10 옵 3004 소재지전화번호-번호 장기요양기관지정일 longTermPeribRgtDt 8 필 20131224 기관지정일 설치신고일자 stpRptDt 8 필 20131224 등록일 const apiObj = { fn_selectApiDetailFunction: function() { let dataObj = {}; dataObj.oprtinSeqNo = $(\"#open_api_detail_select\").val(); dataObj.publicDataDetailPk = $(\"#publicDataDetailPk\").val(); dataObj.publicDataPk = $(\"#publicDataPk\").val(); // 국가 중점 표준데이터인 경우 피케이가 변경돼야함. // if ($(\"#natCoreDataSe\").val() === \"Y\") { // dataObj.publicDataPk = $(\"#stdPublicDataPk\").val(); // } $.ajax({ url : \"/tcs/dss/selectApiDetailFunction.do\", method : \"post\", data : dataObj, success : function(data) { $(\".data-info-tit\").remove(); $(\".data-report-group\").remove(); $(\"#apiDetailFunctionDiv\").append(data); } }) }, fn_goApplyReq: function() { var mberId = \"\"; if (fn_empty(mberId)) { if (confirm(\"로그인이 필요한 서비스입니다.\\n로그인 페이지로 이동하시겠습니까?\")) { location.href = \"/uim/login/loginView.do\"; return; } else { return; } } location.href=\"/tcs/dss/redirectDevAcountRequestForm.do?publicDataPk=\" + $(\"#publicDataPk\").val(); } }"
+    },
+    {
+     "seq": "41537",
+     "name": "인력현황 상세 정보조회",
+     "url": "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/getStaffSttusDetailInfoItem02",
+     "request": "(Request Parameter) 해당 오픈API의 요청변수(Request Parameter) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 31171000081 장기요양기관코드 장기요양기관유형코드 adminPttnCd 3 필 C06 공통항목 코드 정의 기관유형코드 정의 참조 ",
+     "response": "(Response Element) 해당 오픈API의 출력결과(Response Element) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 기관코드 longTermAdminSym 11 필 31171000081 기관코드 기관유형코드 adminPttnCd 3 필 C06 공통항목 코드 정의 기관유형코드 정의 참조 시설장 equipLong 10 필 1 시설장 인원 수 사무국장 hdOfce 10 필 0 사무국장 인원 수 사회복지사 socWel 10 필 0 사회복지사 인원 수 의사_전임 chrgDoc 10 필 0 의사_전임 인원 수 의사_촉탁 chargeDoc 10 필 0 의사_촉탁 인원 수 간호사 nur 10 필 0 간호사 인원 수 간호조무사 nurArticle 10 필 0 간호조무사 인원 수 치위생사 dent 10 필 0 치위생사 인원 수 물리치료사 physicalMTret 10 필 0 물리치료사 인원 수 작업치료사 wrkMTret 10 필 0 작업치료사 인원 수 요양보호사1급 recuProt_1 10 필 0 요양보호사1급 인원 수 요양보호사2급 recuProt_2 10 필 0 요양보호사2급 인원 수 요양보호사유예인원 recuProtDelay 10 필 0 요양보호사유예인원 수 사무원 ofceEmp 10 필 1 사무원 수 영양사 nut 10 필 0 영양사 인원 수 조리원 cook 10 필 0 조리원 수 위생원 hygiPrsn 10 필 0 위생원 수 관리인 mgmtPrsn 10 필 0 관리인 인원 수 보조원 suppPrsn 10 필 0 보조원 인원 수 기타인원 etcPer 10 필 0 기타인원 수 const apiObj = { fn_selectApiDetailFunction: function() { let dataObj = {}; dataObj.oprtinSeqNo = $(\"#open_api_detail_select\").val(); dataObj.publicDataDetailPk = $(\"#publicDataDetailPk\").val(); dataObj.publicDataPk = $(\"#publicDataPk\").val(); // 국가 중점 표준데이터인 경우 피케이가 변경돼야함. // if ($(\"#natCoreDataSe\").val() === \"Y\") { // dataObj.publicDataPk = $(\"#stdPublicDataPk\").val(); // } $.ajax({ url : \"/tcs/dss/selectApiDetailFunction.do\", method : \"post\", data : dataObj, success : function(data) { $(\".data-info-tit\").remove(); $(\".data-report-group\").remove(); $(\"#apiDetailFunctionDiv\").append(data); } }) }, fn_goApplyReq: function() { var mberId = \"\"; if (fn_empty(mberId)) { if (confirm(\"로그인이 필요한 서비스입니다.\\n로그인 페이지로 이동하시겠습니까?\")) { location.href = \"/uim/login/loginView.do\"; return; } else { return; } } location.href=\"/tcs/dss/redirectDevAcountRequestForm.do?publicDataPk=\" + $(\"#publicDataPk\").val(); } }"
+    },
+    {
+     "seq": "41538",
+     "name": "시설현황 상세 정보조회",
+     "url": "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/getInsttSttusDetailInfoItem02",
+     "request": "(Request Parameter) 해당 오픈API의 요청변수(Request Parameter) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 31171000081 장기요양기관코드 기관유형코드 adminPttnCd 3 필 C06 공통항목 코드 정의 기관유형코드 정의 참조 ",
+     "response": "(Response Element) 해당 오픈API의 출력결과(Response Element) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 31171000081 장기요양기관코드 기관유형코드 adminPttnCd 3 필 C06 공통항목 코드 정의 기관유형코드 정의 참조 1인실 prsnRoomReal1 11 필 0 1인실의 수 2인실 prsnRoomReal2 11 필 0 2인실의 수 3인실 prsnRoomReal3 11 필 0 3인실의 수 4인실 prsnRoomReal4 11 필 0 4인실의 수 특수침실 spcAcupRoomReal 11 필 0 특수침실 수 사무실 ofce 11 필 0 사무실의 수 의료 및 간호사실 medRoomReal 11 필 0 의료 및 간호사실 수 작업 및 일상동작훈련실 funcTrnRoomReal 11 필 0 작업 및 일상동작훈련실 수 프로그램실 pgmRoomReal 11 필 0 프로그램실 수 식당 및 조리실 crmnyPrst 11 필 0 식당 및 조리실 수 화장실 batRoom 11 필 0 화장실 수 세면장 및 목욕실 taxPageLong 11 필 0 세면장 및 목욕실 수 세탁장 및 건조장 taxRoom 11 필 0 세탁장 및 건조장 수 const apiObj = { fn_selectApiDetailFunction: function() { let dataObj = {}; dataObj.oprtinSeqNo = $(\"#open_api_detail_select\").val(); dataObj.publicDataDetailPk = $(\"#publicDataDetailPk\").val(); dataObj.publicDataPk = $(\"#publicDataPk\").val(); // 국가 중점 표준데이터인 경우 피케이가 변경돼야함. // if ($(\"#natCoreDataSe\").val() === \"Y\") { // dataObj.publicDataPk = $(\"#stdPublicDataPk\").val(); // } $.ajax({ url : \"/tcs/dss/selectApiDetailFunction.do\", method : \"post\", data : dataObj, success : function(data) { $(\".data-info-tit\").remove(); $(\".data-report-group\").remove(); $(\"#apiDetailFunctionDiv\").append(data); } }) }, fn_goApplyReq: function() { var mberId = \"\"; if (fn_empty(mberId)) { if (confirm(\"로그인이 필요한 서비스입니다.\\n로그인 페이지로 이동하시겠습니까?\")) { location.href = \"/uim/login/loginView.do\"; return; } else { return; } } location.href=\"/tcs/dss/redirectDevAcountRequestForm.do?publicDataPk=\" + $(\"#publicDataPk\").val(); } }"
+    },
+    {
+     "seq": "41539",
+     "name": "비급여현황 상세 정보조회",
+     "url": "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/getNonBenefitSttusDetailInfoList02",
+     "request": "(Request Parameter) 해당 오픈API의 요청변수(Request Parameter) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 31132000227 장기요양기관코드 페이지번호 pageNo 8 옵 1 목록의 페이지 번호 행개수 numOfRows 8 옵 1 페이지당 행의 개수 ",
+     "response": "(Response Element) 해당 오픈API의 출력결과(Response Element) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 31132000227 장기요양기관코드 비급여항목 종류 nonpayKind 4 필 3 공통항목 코드 정의 비급여항목 종류 코드 정의 참조 신출근거 prodBase 100 필 지급하지 않음 산출근거 비급여항목 금액 nonpayTgtAmt 12 필 0 비급여항목 금액 등록일 uptDt 10 필 20150831 등록일 const apiObj = { fn_selectApiDetailFunction: function() { let dataObj = {}; dataObj.oprtinSeqNo = $(\"#open_api_detail_select\").val(); dataObj.publicDataDetailPk = $(\"#publicDataDetailPk\").val(); dataObj.publicDataPk = $(\"#publicDataPk\").val(); // 국가 중점 표준데이터인 경우 피케이가 변경돼야함. // if ($(\"#natCoreDataSe\").val() === \"Y\") { // dataObj.publicDataPk = $(\"#stdPublicDataPk\").val(); // } $.ajax({ url : \"/tcs/dss/selectApiDetailFunction.do\", method : \"post\", data : dataObj, success : function(data) { $(\".data-info-tit\").remove(); $(\".data-report-group\").remove(); $(\"#apiDetailFunctionDiv\").append(data); } }) }, fn_goApplyReq: function() { var mberId = \"\"; if (fn_empty(mberId)) { if (confirm(\"로그인이 필요한 서비스입니다.\\n로그인 페이지로 이동하시겠습니까?\")) { location.href = \"/uim/login/loginView.do\"; return; } else { return; } } location.href=\"/tcs/dss/redirectDevAcountRequestForm.do?publicDataPk=\" + $(\"#publicDataPk\").val(); } }"
+    },
+    {
+     "seq": "41540",
+     "name": "기관기타 상세 정보조회",
+     "url": "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/getInsttEtcDetailInfoItem02",
+     "request": "(Request Parameter) 해당 오픈API의 요청변수(Request Parameter) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 14421000065 장기요양기관코드 장기요양기관유형코드 adminPttnCd 3 필 A04 공통항목 코드 정의 기관유형코드 참조 ",
+     "response": "(Response Element) 해당 오픈API의 출력결과(Response Element) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 14421000065 장기요양기관코드 장기요양기관유형코드 adminPttnCd 3 필 A04 공통항목 코드 정의 기관유형코드 참조 홈페이지주소 hmpgAddr 500 옵 http://www.cafe.daum.net/sampol728 홈페이지주소 교통편 tfMth 2000 필 서산에서 홍성방향으로 고북에서 사기리 방향으로 들어오신 후 봉생2리 입구에서 좌회전 후 600미터 가량 오신 후 오른편에 요양원 위치 (안내표지판 참고) 고속도로 : 서해안고속도로 해미IC 이용 교통편 주차시설 pkngEquip 2000 필 10대 이상 수용 가능 주차시설 const apiObj = { fn_selectApiDetailFunction: function() { let dataObj = {}; dataObj.oprtinSeqNo = $(\"#open_api_detail_select\").val(); dataObj.publicDataDetailPk = $(\"#publicDataDetailPk\").val(); dataObj.publicDataPk = $(\"#publicDataPk\").val(); // 국가 중점 표준데이터인 경우 피케이가 변경돼야함. // if ($(\"#natCoreDataSe\").val() === \"Y\") { // dataObj.publicDataPk = $(\"#stdPublicDataPk\").val(); // } $.ajax({ url : \"/tcs/dss/selectApiDetailFunction.do\", method : \"post\", data : dataObj, success : function(data) { $(\".data-info-tit\").remove(); $(\".data-report-group\").remove(); $(\"#apiDetailFunctionDiv\").append(data); } }) }, fn_goApplyReq: function() { var mberId = \"\"; if (fn_empty(mberId)) { if (confirm(\"로그인이 필요한 서비스입니다.\\n로그인 페이지로 이동하시겠습니까?\")) { location.href = \"/uim/login/loginView.do\"; return; } else { return; } } location.href=\"/tcs/dss/redirectDevAcountRequestForm.do?publicDataPk=\" + $(\"#publicDataPk\").val(); } }"
+    },
+    {
+     "seq": "41541",
+     "name": "입소인원 상세 정보조회",
+     "url": "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/getAceptncNmprDetailInfoItem02",
+     "request": "(Request Parameter) 해당 오픈API의 요청변수(Request Parameter) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 11156000023 장기요양기관코드 기관유형코드 adminPttnCd 3 필 A03 공통항목 코드 정의 기관유형코드 정의 참조 ",
+     "response": "(Response Element) 해당 오픈API의 출력결과(Response Element) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 11156000023 장기요양기관코드 기관유형코드 adminPttnCd 3 필 A03 공통항목 코드 정의 기관유형코드 정의 참조 정원 totPer 10 옵 65 정원 현원_남 maNowPer 10 옵 14 현원_남 현원_여 fmNowPer 10 옵 51 현원_여 대기_남 maRsvPer 10 옵 36 대기_남 대기_여 fmRsvPer 10 옵 58 대기_여 const apiObj = { fn_selectApiDetailFunction: function() { let dataObj = {}; dataObj.oprtinSeqNo = $(\"#open_api_detail_select\").val(); dataObj.publicDataDetailPk = $(\"#publicDataDetailPk\").val(); dataObj.publicDataPk = $(\"#publicDataPk\").val(); // 국가 중점 표준데이터인 경우 피케이가 변경돼야함. // if ($(\"#natCoreDataSe\").val() === \"Y\") { // dataObj.publicDataPk = $(\"#stdPublicDataPk\").val(); // } $.ajax({ url : \"/tcs/dss/selectApiDetailFunction.do\", method : \"post\", data : dataObj, success : function(data) { $(\".data-info-tit\").remove(); $(\".data-report-group\").remove(); $(\"#apiDetailFunctionDiv\").append(data); } }) }, fn_goApplyReq: function() { var mberId = \"\"; if (fn_empty(mberId)) { if (confirm(\"로그인이 필요한 서비스입니다.\\n로그인 페이지로 이동하시겠습니까?\")) { location.href = \"/uim/login/loginView.do\"; return; } else { return; } } location.href=\"/tcs/dss/redirectDevAcountRequestForm.do?publicDataPk=\" + $(\"#publicDataPk\").val(); } }"
+    },
+    {
+     "seq": "41542",
+     "name": "복지용구 현황 상세 정보조회",
+     "url": "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/getWlfareToolDetailInfoList02",
+     "request": "(Request Parameter) 해당 오픈API의 요청변수(Request Parameter) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 34115000052 장기요양기관코드 페이지번호 pageNo 8 옵 1 목록의 페이지 번호 행개수 numOfRows 8 옵 1 페이지당 행의 개수 ",
+     "response": "(Response Element) 해당 오픈API의 출력결과(Response Element) 항목에 대한 표로, 국문항목명, 영문 항목명, 항목크기, 항목구분, 샘플데이터, 항목 설명순으로 나열됩니다. 항목명(국문) 항목명(영문) 항목크기 항목구분 샘플데이터 항목설명 장기요양기관코드 longTermAdminSym 11 필 34115000052 장기요양기관코드 신고내역 witemRptDesc 1 필 A 공통항목 코드 정의 복지용구 신고내역 코드정의 참조 장비명 itemName 50 필 하이크로 S 장비명 제조사 mnfCo 50 필 수산이엔씨 제조사 이름 모델명 modelNm 50 필 하이크로 S 모델명 용도 usage 50 필 소독 용도 기타 rmk 50 옵 기타 const apiObj = { fn_selectApiDetailFunction: function() { let dataObj = {}; dataObj.oprtinSeqNo = $(\"#open_api_detail_select\").val(); dataObj.publicDataDetailPk = $(\"#publicDataDetailPk\").val(); dataObj.publicDataPk = $(\"#publicDataPk\").val(); // 국가 중점 표준데이터인 경우 피케이가 변경돼야함. // if ($(\"#natCoreDataSe\").val() === \"Y\") { // dataObj.publicDataPk = $(\"#stdPublicDataPk\").val(); // } $.ajax({ url : \"/tcs/dss/selectApiDetailFunction.do\", method : \"post\", data : dataObj, success : function(data) { $(\".data-info-tit\").remove(); $(\".data-report-group\").remove(); $(\"#apiDetailFunctionDiv\").append(data); } }) }, fn_goApplyReq: function() { var mberId = \"\"; if (fn_empty(mberId)) { if (confirm(\"로그인이 필요한 서비스입니다.\\n로그인 페이지로 이동하시겠습니까?\")) { location.href = \"/uim/login/loginView.do\"; return; } else { return; } } location.href=\"/tcs/dss/redirectDevAcountRequestForm.do?publicDataPk=\" + $(\"#publicDataPk\").val(); } }"
+    }
+   ]
+  },
+  {
+   "pk": "15059029",
+   "detailPk": "uddi:d2defb59-d1e0-4c89-b542-8902de62dbb2_202511101347",
+   "ops": []
+  },
+  {
+   "pk": "15158798",
+   "detailPk": "uddi:3252958b-778b-4177-977b-e9cdbd558f24_202607211410",
+   "ops": []
+  },
+  {
+   "pk": "15090532",
+   "detailPk": "uddi:451cccb3-fed4-43d1-a0b6-a8c2d0a79e19_202504231102",
+   "ops": []
+  },
+  {
+   "pk": "15108347",
+   "detailPk": "uddi:d48fbd19-d9f5-4635-93c1-bdf0a7cb03a2_202303021514",
+   "ops": []
+  }
+ ],
+ "ltc_detail_calls": {
+  "협약기관 현황 상세 정보조회 | A03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "협약기관 현황 상세 정보조회 | B03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "협약기관 현황 상세 정보조회 | B01": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "협약기관 현황 상세 정보조회 | A04": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "프로그램현황 상세 정보조회 | A03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items><item><cyclTm>1</cyclTm><longTermAdminSym>14159000629</longTermAdminSym><pgmNm>생신잔치</pgmNm><pgmType>3</pgmType><runPlc>각 층 프로그램실</runPlc><tgtNop>48</tgtNop></item><item><cyclTm>1</cyclTm><longTermAdminSym>14159000629</longTermAdminSym><pgmNm>치매예방 인지수</pgmNm><pgmType>1</pgmType><runPlc>각 층 프로그램실</runPlc><tgtNop>48</tgtNop></item><item><cyclTm>0</cyclTm><longTermAdminSym>14159000629</longTermAdminSym><pgmNm>신체기능 회복훈련</pgmNm><pgmType>2</pgmType><runPlc>각 층 프로그램실</runPlc><tgtNop>48</tgtNop></item><item><cyclTm>1</cyclTm><longTermAdminSym>14159000629</longTermAdminSym><pgmNm>치매예방 아트별</pgmNm><pgmType>1</pgmType><runPlc>각 층 프로그램실</runPlc><tgtNop>48</tgtNop></item><item><cyclTm>1</cyclTm><longTermAdminSym>14159000629</longTermAdminSym><pgmNm>치매예방 소리꽃</pgmNm><pgmType>1</pgmType><runPlc>각 층 프로그램실</runPlc><tgtNop>48</tgtNop></item><item><cyclTm>1</cyclTm><longTermAdminSym>14159000629</longTermAdminSym><pgmNm>치매예방 신체/레크레이션</pgmNm><pgmType>1</pgmType><runPlc>각 층 프로그램실</runPlc><tgtNop>48</tgtNop></item><item><cyclTm>1</cyclTm><longTermAdminSym>14159000629</longTermAdminSym><pgmNm>인지프로그램</pgmNm><pgmType>1</pgmType><runPlc>각 층 프로그램실</runPlc><tgtNop>48</tgtNop></item></items><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>7</totalCount></body></response>"
+  },
+  "프로그램현황 상세 정보조회 | B03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items><item><cyclTm>1</cyclTm><longTermAdminSym>24159000520</longTermAdminSym><pgmNm>신체프로그램</pgmNm><pgmType>2</pgmType><runPlc>프로그램실</runPlc><tgtNop>28</tgtNop></item><item><cyclTm>1</cyclTm><longTermAdminSym>24159000520</longTermAdminSym><pgmNm>사회적응프로그램</pgmNm><pgmType>3</pgmType><runPlc>프로그램실</runPlc><tgtNop>28</tgtNop></item><item><cyclTm>1</cyclTm><longTermAdminSym>24159000520</longTermAdminSym><pgmNm>물리치료</pgmNm><pgmType>3</pgmType><runPlc>프로그램실</runPlc><tgtNop>28</tgtNop></item><item><cyclTm>1</cyclTm><longTermAdminSym>24159000520</longTermAdminSym><pgmNm>기능회복훈련</pgmNm><pgmType>3</pgmType><runPlc>생활실</runPlc><tgtNop>28</tgtNop></item><item><cyclTm>1</cyclTm><longTermAdminSym>24159000520</longTermAdminSym><pgmNm>여가프로그램</pgmNm><pgmType>3</pgmType><runPlc>프로그램실</runPlc><tgtNop>28</tgtNop></item><item><cyclTm>1</cyclTm><longTermAdminSym>24159000520</longTermAdminSym><pgmNm>인지향상프로그램</pgmNm><pgmType>1</pgmType><runPlc>프로그램실</runPlc><tgtNop>28</tgtNop></item></items><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>6</totalCount></body></response>"
+  },
+  "프로그램현황 상세 정보조회 | B01": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "프로그램현황 상세 정보조회 | A04": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "일반현황 상세 정보조회 | A03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminFdatType>4</adminFdatType><adminNm>우리함께요양원(동탄점)</adminNm><adminPttnCd>A03</adminPttnCd><BDongCd>114</BDongCd><gunmulMlno>35</gunmulMlno><gunmulSlno>0</gunmulSlno><HDongCd>560</HDongCd><hmPostNo>18511</hmPostNo><locTelNo_1>031</locTelNo_1><locTelNo_2>376</locTelNo_2><locTelNo_3>6471</locTelNo_3><longTermAdminSym>14159000629</longTermAdminSym><longTermPeribRgtDt>20221108</longTermPeribRgtDt><riCd>00</riCd><roadNmCd>415974430146</roadNmCd><siDoCd>41</siDoCd><siGunGuCd>597</siGunGuCd><stpRptDt>20221108</stpRptDt></item></body></response>"
+  },
+  "일반현황 상세 정보조회 | B03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminFdatType>4</adminFdatType><adminNm>은빛노인복지센터</adminNm><adminPttnCd>B03</adminPttnCd><BDongCd>101</BDongCd><fl>4</fl><gunmulMlno>338</gunmulMlno><gunmulSlno>0</gunmulSlno><HDongCd>530</HDongCd><hmPostNo>18423</hmPostNo><locTelNo_1>031</locTelNo_1><locTelNo_2>377</locTelNo_2><locTelNo_3>7704</locTelNo_3><longTermAdminSym>24159000520</longTermAdminSym><longTermPeribRgtDt>20210101</longTermPeribRgtDt><riCd>00</riCd><roadNmCd>415973012002</roadNmCd><siDoCd>41</siDoCd><siGunGuCd>597</siGunGuCd><stpRptDt>20210101</stpRptDt></item></body></response>"
+  },
+  "일반현황 상세 정보조회 | B01": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminFdatType>4</adminFdatType><adminNm>위드케어재가방문센터</adminNm><adminPttnCd>B01</adminPttnCd><BDongCd>106</BDongCd><gunmulMlno>108</gunmulMlno><gunmulSlno>21</gunmulSlno><HDongCd>550</HDongCd><hmPostNo>18463</hmPostNo><locTelNo_1>031</locTelNo_1><locTelNo_2>8043</locTelNo_2><locTelNo_3>1492</locTelNo_3><longTermAdminSym>24159000614</longTermAdminSym><longTermPeribRgtDt>20220912</longTermPeribRgtDt><riCd>00</riCd><roadNmCd>415973350553</roadNmCd><siDoCd>41</siDoCd><siGunGuCd>597</siGunGuCd><stpRptDt>20220912</stpRptDt></item></body></response>"
+  },
+  "일반현황 상세 정보조회 | A04": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminFdatType>3</adminFdatType><adminNm>원광한가족노인요양공동생활가정</adminNm><adminPttnCd>A04</adminPttnCd><BDongCd>256</BDongCd><gunmulMlno>34</gunmulMlno><gunmulSlno>8</gunmulSlno><HDongCd>256</HDongCd><hmPostNo>18255</hmPostNo><locTelNo_1>031</locTelNo_1><locTelNo_2>355</locTelNo_2><locTelNo_3>3016</locTelNo_3><longTermAdminSym>14159000013</longTermAdminSym><longTermPeribRgtDt>20080613</longTermPeribRgtDt><riCd>28</riCd><roadNmCd>415914430196</roadNmCd><siDoCd>41</siDoCd><siGunGuCd>591</siGunGuCd><stpRptDt>20080331</stpRptDt></item></body></response>"
+  },
+  "인력현황 상세 정보조회 | A03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>A03</adminPttnCd><chargeDoc>0</chargeDoc><chrgDoc>0</chrgDoc><cook>3</cook><dent>0</dent><equipLong>1</equipLong><etcPer>0</etcPer><hdOfce>0</hdOfce><hygiPrsn>0</hygiPrsn><longTermAdminSym>14159000629</longTermAdminSym><mgmtPrsn>0</mgmtPrsn><nur>0</nur><nurArticle>3</nurArticle><nut>0</nut><ofceEmp>0</ofceEmp><physicalMTret>1</physicalMTret><recuProtDelay>0</recuProtDelay><recuProt_1>24</recuProt_1><recuProt_2>0</recuProt_2><socWel>3</socWel><suppPrsn>0</suppPrsn><wrkMTret>0</wrkMTret></item></body></response>"
+  },
+  "인력현황 상세 정보조회 | B03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>B03</adminPttnCd><chargeDoc>0</chargeDoc><chrgDoc>0</chrgDoc><cook>0</cook><dent>0</dent><equipLong>1</equipLong><etcPer>0</etcPer><hdOfce>0</hdOfce><hygiPrsn>0</hygiPrsn><longTermAdminSym>24159000520</longTermAdminSym><mgmtPrsn>0</mgmtPrsn><nur>1</nur><nurArticle>0</nurArticle><nut>0</nut><ofceEmp>0</ofceEmp><physicalMTret>0</physicalMTret><recuProtDelay>0</recuProtDelay><recuProt_1>6</recuProt_1><recuProt_2>0</recuProt_2><socWel>2</socWel><suppPrsn>1</suppPrsn><wrkMTret>0</wrkMTret></item></body></response>"
+  },
+  "인력현황 상세 정보조회 | B01": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>B01</adminPttnCd><chargeDoc>0</chargeDoc><chrgDoc>0</chrgDoc><cook>0</cook><dent>0</dent><equipLong>1</equipLong><etcPer>0</etcPer><hdOfce>0</hdOfce><hygiPrsn>0</hygiPrsn><longTermAdminSym>24159000614</longTermAdminSym><mgmtPrsn>0</mgmtPrsn><nur>0</nur><nurArticle>0</nurArticle><nut>0</nut><ofceEmp>0</ofceEmp><physicalMTret>0</physicalMTret><recuProtDelay>0</recuProtDelay><recuProt_1>47</recuProt_1><recuProt_2>0</recuProt_2><socWel>2</socWel><suppPrsn>0</suppPrsn><wrkMTret>0</wrkMTret></item></body></response>"
+  },
+  "인력현황 상세 정보조회 | A04": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>A04</adminPttnCd><chargeDoc>0</chargeDoc><chrgDoc>0</chrgDoc><cook>0</cook><dent>0</dent><equipLong>0</equipLong><etcPer>0</etcPer><hdOfce>0</hdOfce><hygiPrsn>0</hygiPrsn><longTermAdminSym>14159000013</longTermAdminSym><mgmtPrsn>0</mgmtPrsn><nur>0</nur><nurArticle>1</nurArticle><nut>0</nut><ofceEmp>0</ofceEmp><physicalMTret>0</physicalMTret><recuProtDelay>0</recuProtDelay><recuProt_1>0</recuProt_1><recuProt_2>0</recuProt_2><socWel>0</socWel><suppPrsn>0</suppPrsn><wrkMTret>0</wrkMTret></item></body></response>"
+  },
+  "시설현황 상세 정보조회 | A03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>A03</adminPttnCd><batRoom>12</batRoom><crmnyPrst>1</crmnyPrst><funcTrnRoomreal>1</funcTrnRoomreal><longTermAdminSym>14159000629</longTermAdminSym><medRoomreal>2</medRoomreal><ofce>1</ofce><pgmRoomreal>4</pgmRoomreal><prsnRoomreal1>1</prsnRoomreal1><prsnRoomreal2>17</prsnRoomreal2><prsnRoomreal3>3</prsnRoomreal3><prsnRoomreal4>1</prsnRoomreal4><spcAcupRoomreal>1</spcAcupRoomreal><taxPageLong>1</taxPageLong><taxRoom>1</taxRoom></item></body></response>"
+  },
+  "시설현황 상세 정보조회 | B03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>B03</adminPttnCd><batRoom>2</batRoom><crmnyPrst>1</crmnyPrst><funcTrnRoomreal>1</funcTrnRoomreal><longTermAdminSym>24159000520</longTermAdminSym><medRoomreal>1</medRoomreal><ofce>1</ofce><pgmRoomreal>0</pgmRoomreal><prsnRoomreal1>0</prsnRoomreal1><prsnRoomreal2>0</prsnRoomreal2><prsnRoomreal3>0</prsnRoomreal3><prsnRoomreal4>0</prsnRoomreal4><spcAcupRoomreal>0</spcAcupRoomreal><taxPageLong>0</taxPageLong><taxRoom>1</taxRoom></item></body></response>"
+  },
+  "시설현황 상세 정보조회 | B01": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>B01</adminPttnCd><batRoom>0</batRoom><crmnyPrst>0</crmnyPrst><funcTrnRoomreal>0</funcTrnRoomreal><longTermAdminSym>24159000614</longTermAdminSym><medRoomreal>0</medRoomreal><ofce>0</ofce><pgmRoomreal>0</pgmRoomreal><prsnRoomreal1>0</prsnRoomreal1><prsnRoomreal2>0</prsnRoomreal2><prsnRoomreal3>0</prsnRoomreal3><prsnRoomreal4>0</prsnRoomreal4><spcAcupRoomreal>0</spcAcupRoomreal><taxPageLong>0</taxPageLong><taxRoom>0</taxRoom></item></body></response>"
+  },
+  "시설현황 상세 정보조회 | A04": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>A04</adminPttnCd><batRoom>5</batRoom><crmnyPrst>1</crmnyPrst><funcTrnRoomreal>1</funcTrnRoomreal><longTermAdminSym>14159000013</longTermAdminSym><medRoomreal>0</medRoomreal><ofce>1</ofce><pgmRoomreal>1</pgmRoomreal><prsnRoomreal1>0</prsnRoomreal1><prsnRoomreal2>3</prsnRoomreal2><prsnRoomreal3>1</prsnRoomreal3><prsnRoomreal4>0</prsnRoomreal4><spcAcupRoomreal>0</spcAcupRoomreal><taxPageLong>5</taxPageLong><taxRoom>1</taxRoom></item></body></response>"
+  },
+  "비급여현황 상세 정보조회 | A03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "비급여현황 상세 정보조회 | B03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items><item><adminPttnCd>B03</adminPttnCd><longTermAdminSym>24159000520</longTermAdminSym><nonpayKind>1</nonpayKind><nonpayTgtAmt>3800</nonpayTgtAmt><prodBase>1식 3800원 X 1식/일</prodBase><uptDt>20260820</uptDt></item><item><adminPttnCd>B03</adminPttnCd><longTermAdminSym>24159000520</longTermAdminSym><nonpayKind>1</nonpayKind><nonpayTgtAmt>1000</nonpayTgtAmt><prodBase>1식 1000원 X 1식/일</prodBase><uptDt>20260820</uptDt></item></items><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>2</totalCount></body></response>"
+  },
+  "비급여현황 상세 정보조회 | B01": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "비급여현황 상세 정보조회 | A04": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "기관기타 상세 정보조회 | A03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>A03</adminPttnCd><hmpgAddr>https://blog.naver.com/woori-dt</hmpgAddr><longTermAdminSym>14159000629</longTermAdminSym><pkngEquip>자체주차시설 완비</pkngEquip><tfMth>71번, H17 오산역에서 20분거리</tfMth></item></body></response>"
+  },
+  "기관기타 상세 정보조회 | B03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>B03</adminPttnCd><hmpgAddr>blog.naver.com/esg2010</hmpgAddr><longTermAdminSym>24159000520</longTermAdminSym><pkngEquip>건물내 지하 1-3층 주차가능</pkngEquip><tfMth>(대중교통 이용시)1.병점역-마을버스 11-2번 타고 능리교차로 정류장 하차2.오산역-마을버스 H 24 번 타고 능리교차로 정류장 하차(승용차 이용시)1.오산IC에서 동탄방향(능리교차로)으로 이동시 15분소요2.기흥동탄IC에서 동탄방향(능리교차로)으로 이동시 10분소요3.병점역에서 5-8분소요4.서동탄역에서 5-8분소요</tfMth></item></body></response>"
+  },
+  "기관기타 상세 정보조회 | B01": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>B01</adminPttnCd><hmpgAddr>https://blog.naver.com/withcarehome</hmpgAddr><longTermAdminSym>24159000614</longTermAdminSym><pkngEquip>주차장 무료 이용 가능</pkngEquip><tfMth>화성시 동탄영천로 108-21, LH2단지 상가 1층[동탄역]버스: H2, H11</tfMth></item></body></response>"
+  },
+  "기관기타 상세 정보조회 | A04": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>A04</adminPttnCd><longTermAdminSym>14159000013</longTermAdminSym><pkngEquip>시설 내 5대규모 주차공간 확보.주위 공터나 공용공간에 주차 가능.</pkngEquip><tfMth>대중교통이용시 : 수원역에서 남양시청, 서신방면 버스탑승후 북양1동 정류장 하차. 금정역에서 승차시 330번 좌석버스 이용 북양1동 정류장 하차. 북양1동 정거장에서 도보 5분거리입니다.자차 이용시 블로그내 공지를 참조하여 주세요.</tfMth></item></body></response>"
+  },
+  "입소인원 상세 정보조회 | A03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>A03</adminPttnCd><fmNowPer>32</fmNowPer><fmRsvPer>3</fmRsvPer><longTermAdminSym>14159000629</longTermAdminSym><maNowPer>15</maNowPer><maRsvPer>2</maRsvPer><totPer>48</totPer></item></body></response>"
+  },
+  "입소인원 상세 정보조회 | B03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>B03</adminPttnCd><fmNowPer>16</fmNowPer><fmRsvPer>1</fmRsvPer><longTermAdminSym>24159000520</longTermAdminSym><maNowPer>8</maNowPer><totPer>28</totPer></item></body></response>"
+  },
+  "입소인원 상세 정보조회 | B01": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>B01</adminPttnCd><fmNowPer>29</fmNowPer><longTermAdminSym>24159000614</longTermAdminSym><maNowPer>13</maNowPer><totPer>0</totPer></item></body></response>"
+  },
+  "입소인원 상세 정보조회 | A04": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><item><adminPttnCd>A04</adminPttnCd><fmNowPer>2</fmNowPer><fmRsvPer>0</fmRsvPer><longTermAdminSym>14159000013</longTermAdminSym><maNowPer>3</maNowPer><maRsvPer>0</maRsvPer><totPer>9</totPer></item></body></response>"
+  },
+  "복지용구 현황 상세 정보조회 | A03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "복지용구 현황 상세 정보조회 | B03": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "복지용구 현황 상세 정보조회 | B01": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  },
+  "복지용구 현황 상세 정보조회 | A04": {
+   "status": 200,
+   "body": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><response><header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header><body><items/><numOfRows>20</numOfRows><pageNo>1</pageNo><totalCount>0</totalCount></body></response>"
+  }
+ },
+ "files": [
+  {
+   "pk": "15104801",
+   "kind": "fileData",
+   "status": 200,
+   "title": "국민건강보험공단_장기요양기관 평가 결과_20260625 | 공공데이터포털",
+   "api_urls": [],
+   "download_js": [
+    "atchFileId",
+    "fileDetailSn",
+    "fn_fileDataDown"
+   ],
+   "links": [],
+   "meta": {
+    "publicDataPk": null,
+    "publicDataDetailPk": null,
+    "atchFileId": null,
+    "fileDetailSn": null,
+    "uddi": null
+   }
+  },
+  {
+   "pk": "15145962",
+   "kind": "fileData",
+   "status": 200,
+   "title": "국민건강보험공단_치매관련급여 제공 장기요양기관 현황_20250807 | 공공데이터포털",
+   "api_urls": [],
+   "download_js": [
+    "atchFileId",
+    "fileDetailSn",
+    "fn_fileDataDown"
+   ],
+   "links": [],
+   "meta": {
+    "publicDataPk": null,
+    "publicDataDetailPk": null,
+    "atchFileId": null,
+    "fileDetailSn": null,
+    "uddi": null
+   }
+  },
+  {
+   "pk": "15155702",
+   "kind": "standard",
+   "status": 200,
+   "title": "전국발달재활서비스제공기관표준데이터 | 공공데이터포털",
+   "api_urls": [
+    "https://api.data.go.kr/openapi/tn_pubr_public_developmental_rehabilitation_service_provider_api"
+   ],
+   "download_js": [
+    "atchFileId",
+    "fileDetailSn"
+   ],
+   "links": [],
+   "meta": {
+    "publicDataPk": null,
+    "publicDataDetailPk": null,
+    "atchFileId": null,
+    "fileDetailSn": null,
+    "uddi": null
+   }
+  },
+  {
+   "pk": "15021138",
+   "kind": "standard",
+   "status": 200,
+   "title": "전국치매센터표준데이터 | 공공데이터포털",
+   "api_urls": [
+    "https://api.data.go.kr/openapi/tn_pubr_public_imbclty_cnter_api"
+   ],
+   "download_js": [
+    "atchFileId",
+    "fileDetailSn"
+   ],
+   "links": [],
+   "meta": {
+    "publicDataPk": null,
+    "publicDataDetailPk": null,
+    "atchFileId": null,
+    "fileDetailSn": null,
+    "uddi": null
+   }
+  },
+  {
+   "pk": "15028207",
+   "kind": "standard",
+   "status": 200,
+   "title": "전국교통약자이동지원센터정보표준데이터 | 공공데이터포털",
+   "api_urls": [
+    "https://api.data.go.kr/openapi/tn_pubr_public_tfcwker_mvmn_cnter_api"
+   ],
+   "download_js": [
+    "atchFileId",
+    "fileDetailSn"
+   ],
+   "links": [],
+   "meta": {
+    "publicDataPk": null,
+    "publicDataDetailPk": null,
+    "atchFileId": null,
+    "fileDetailSn": null,
+    "uddi": null
+   }
+  },
+  {
+   "pk": "15100058",
+   "kind": "standard",
+   "status": 200,
+   "title": "전국장애인편의시설표준데이터 | 공공데이터포털",
+   "api_urls": [],
+   "download_js": [
+    "atchFileId",
+    "fileDetailSn",
+    "fn_fileDownload"
+   ],
+   "links": [],
+   "meta": {
+    "publicDataPk": null,
+    "publicDataDetailPk": null,
+    "atchFileId": null,
+    "fileDetailSn": null,
+    "uddi": null
+   }
+  }
+ ]
+}
