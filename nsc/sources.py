@@ -7,7 +7,7 @@
 import datetime as dt
 from concurrent.futures import ThreadPoolExecutor
 
-from .core import DATA, ApiError, get, log, page_all, parse, read_json, regions, today, write_json
+from .core import DATA, ApiError, budget_left, get, log, page_all, parse, read_json, regions, today, write_json
 
 LTC_LIST = "https://apis.data.go.kr/B550928/searchLtcInsttService02/getLtcInsttSeachList02"
 LTC_DETAIL = "https://apis.data.go.kr/B550928/getLtcInsttDetailInfoService02/getGeneralSttusDetailInfoItem02"
@@ -29,6 +29,32 @@ def _stale(fetched, days=DETAIL_MAX_AGE_DAYS):
     return not fetched or (dt.date.fromisoformat(today()) - dt.date.fromisoformat(fetched)).days >= days
 
 
+def fetch_details(todo, call, workers=6, reserve=180):
+    """상세를 병렬로 받는다. 남은 시간이 reserve초 아래로 떨어지면 새 요청을 멈추고 받은 것만 돌려준다."""
+    done = {}
+
+    def one(x):
+        if budget_left() < reserve:
+            return x, None, "time"
+        try:
+            return x, call(x), None
+        except ApiError as e:
+            return x, None, str(e)[:120]
+
+    skipped = failed = 0
+    with ThreadPoolExecutor(workers) as ex:
+        for x, res, err in ex.map(one, todo):
+            if err == "time":
+                skipped += 1
+            elif err:
+                failed += 1
+            else:
+                done[id(x)] = (x, res)
+    if skipped or failed:
+        log(f"상세: 시간 부족으로 미룸 {skipped}, 실패 {failed}")
+    return list(done.values())
+
+
 def ltc():
     out = {}
     for rk, r in regions().items():
@@ -44,16 +70,11 @@ def ltc():
     todo = [x for rows in out.values() for x in rows
             if _stale((cache.get(x.get("longTermAdminSym")) or {}).get("fetched"))]
     todo = todo[:DETAIL_CAP_PER_RUN]
-    ok = 0
-    for x in todo:
-        sym = x.get("longTermAdminSym")
-        try:
-            items, _ = parse(get(LTC_DETAIL, {"longTermAdminSym": sym, "adminPttnCd": x.get("adminPttnCd", "")}), "item")
-        except ApiError as e:
-            log("장기요양 상세 실패", sym, str(e)[:120])
-            continue
-        cache[sym] = {"fetched": today(), "item": items[0] if items else None}
-        ok += 1
+    got = fetch_details(todo, lambda x: parse(get(LTC_DETAIL, {"longTermAdminSym": x.get("longTermAdminSym"),
+                                                               "adminPttnCd": x.get("adminPttnCd", "")}), "item")[0], workers=4)
+    for x, items in got:
+        cache[x.get("longTermAdminSym")] = {"fetched": today(), "item": items[0] if items else None}
+    ok = len(got)
     log(f"장기요양 상세 {ok}/{len(todo)}건 갱신 (캐시 {len(cache)})")
     write_json(cache_p, cache)
     write_json(snap("ltc"), {"list": out, "detail": {s: v["item"] for s, v in cache.items()}}, gz=True)
@@ -66,15 +87,10 @@ def _welfare_details(kind, rows, url, extra):
     todo = [x for x in rows
             if x.get("servId") and ((cache.get(x["servId"]) or {}).get("lastModYmd") != x.get("lastModYmd")
                                     or _stale((cache.get(x["servId"]) or {}).get("fetched"), 30))][:DETAIL_CAP_PER_RUN]
-    ok = 0
-    for x in todo:
-        try:
-            items, _ = parse(get(url, {**extra, "servId": x["servId"]}), "wantedDtl")
-        except ApiError as e:
-            log(f"{kind} 상세 실패", x["servId"], str(e)[:120])
-            continue
+    got = fetch_details(todo, lambda x: parse(get(url, {**extra, "servId": x["servId"]}), "wantedDtl")[0])
+    for x, items in got:
         cache[x["servId"]] = {"fetched": today(), "lastModYmd": x.get("lastModYmd"), "item": items[0] if items else None}
-        ok += 1
+    ok = len(got)
     write_json(cache_p, cache)
     log(f"복지서비스 {kind} 상세 {ok}/{len(todo)}건 갱신 (캐시 {len(cache)})")
     return cache, ok

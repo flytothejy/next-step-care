@@ -40,6 +40,18 @@ def latest(name):
     return read_json(snaps[-1]), snaps[-1].parent.name
 
 
+GU = re.compile(r"(동탄구|만세구|효행구|병점구)")
+
+
+def gu_of(*texts, prefix=""):
+    """구 이름: 시군구명이 구 개편 전 이름("경기도 화성시")인 기관이 많아 주소에서도 찾는다."""
+    for t in texts:
+        m = GU.search(t or "")
+        if m:
+            return m.group(1)
+    return None
+
+
 def tel(s):
     s = (s or "").strip()
     return None if not s or PLACEHOLDER_TEL.search(s) else s
@@ -84,7 +96,7 @@ def provider_institutions(snap, prefix):
         e = by.setdefault(pid, {
             "id": f"ssv:{pid}", "source": "사회서비스 제공기관", "name": r.get("providerName"),
             "services": [], "service_types": [],
-            "gu": (r.get("signguName") or "")[len(prefix):].strip() or None,
+            "gu": gu_of(r.get("signguName"), r.get("loadAddress"), r.get("address"), prefix=prefix),
             "address": " ".join(p for p in (r.get("loadAddress") or r.get("address"), r.get("loadAddressDetail") or r.get("addressDetail")) if p) or None,
             "zip": r.get("loadZip") or r.get("zip") or None,
             "tel": tel(r.get("telNumber")),

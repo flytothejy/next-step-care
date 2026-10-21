@@ -19,6 +19,14 @@ KST = dt.timezone(dt.timedelta(hours=9))
 UA = {"User-Agent": "next-step-care/0.1 (+https://github.com/flytothejy/next-step-care)"}
 
 
+_START = time.monotonic()
+
+
+def budget_left():
+    """남은 시간(초). NSC_BUDGET_MIN(기본 30분)을 넘기면 상세 수집을 멈추고 받은 만큼 저장한다."""
+    return float(os.environ.get("NSC_BUDGET_MIN", "30")) * 60 - (time.monotonic() - _START)
+
+
 def today():
     return dt.datetime.now(KST).date().isoformat()
 
