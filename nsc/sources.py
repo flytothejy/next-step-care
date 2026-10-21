@@ -80,9 +80,25 @@ def _welfare_details(kind, rows, url, extra):
     return cache, ok
 
 
+def _national_list():
+    """중앙부처 목록. 검색어 없는 전체 조회가 안 되면 주제 키워드로 나눠 받아 합친다."""
+    body = get(NAT_LIST, {"callTp": "L", "pageNo": 1, "numOfRows": 50})
+    first, total = parse(body, "servList")
+    if first:
+        rows, total = page_all(NAT_LIST, {"callTp": "L"}, tag="servList", rows=50)
+        return rows, total, "전체"
+    log("중앙부처 전체 조회 결과 없음:", body[:300].replace("\n", " "))
+    seen = {}
+    for w in ("장애", "노인", "돌봄", "요양", "발달", "치매", "활동지원", "재활", "보호자", "간병", "퇴원", "아동", "가족"):
+        rows, _ = page_all(NAT_LIST, {"callTp": "L", "srchKeyCode": "003", "searchWrd": w}, tag="servList", rows=50)
+        for r in rows:
+            seen.setdefault(r.get("servId"), r)
+    return list(seen.values()), len(seen), "키워드"
+
+
 def welfare():
-    nat, total = page_all(NAT_LIST, {"callTp": "L"}, tag="servList", rows=100)
-    log(f"중앙부처 복지서비스 {len(nat)}/{total}")
+    nat, total, how = _national_list()
+    log(f"중앙부처 복지서비스 {len(nat)}/{total} ({how})")
     nat_cache, nat_ok = _welfare_details("national", nat, NAT_DETAIL, {"callTp": "D"})
 
     loc = {}

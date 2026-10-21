@@ -23,7 +23,7 @@ jobs:
           python-version: "3.12"
       - run: pip install -q -r requirements.txt
       - run: python -m nsc sync pull
-      - run: python -m nsc collect ltc welfare providers
+      - run: python -m nsc collect welfare
         continue-on-error: true
       - run: python -m nsc build
         continue-on-error: true
@@ -46,11 +46,19 @@ jobs:
               out["ltc_kind"] = collections.Counter(str(x.get("kind_code")) for x in inst if x["source"] == "장기요양기관")
               out["services_top"] = collections.Counter(s for x in inst for s in x.get("services", [])).most_common(40)
               out["sample_ltc"] = [x for x in inst if x["source"] == "장기요양기관"][:3]
+              out["sample_provider"] = [x for x in inst if x["source"] == "사회서비스 제공기관"][:5]
           if (p / "programs.json").exists():
               pr = json.loads((p / "programs.json").read_text())
               out["programs"] = len(pr)
               out["program_fill"] = {k: sum(1 for x in pr if x.get(k)) for k in ("target", "criteria", "benefit", "apply", "contact", "year")}
               out["program_sample"] = [x for x in pr if "발달재활" in (x.get("name") or "")][:1]
+          import gzip, glob
+          snaps = sorted(glob.glob("data/nsc/snap/*/providers.json.gz"))
+          if snaps:
+              rows = json.loads(gzip.open(snaps[-1]).read())["rows"]
+              hw = [r for r in rows if "화성" in (r.get("signguName") or "") + (r.get("address") or "")]
+              out["raw_provider_signgu"] = collections.Counter(r.get("signguName") for r in hw).most_common(10)
+              out["raw_provider_sample"] = hw[:2]
           pathlib.Path("firstrun/summary.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
           EOF
           git config user.name "github-actions[bot]"
